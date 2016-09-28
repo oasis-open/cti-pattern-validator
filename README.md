@@ -24,10 +24,100 @@
 
 </div>
 
-<div><h2><a id="purposeClarifications">Additions to Statement of Purpose</a></h2>
+## Requirements
 
-<p>Repository Maintainers may include here any clarifications &mdash; any additional sections, subsections, and paragraphs that the Maintainer(s) wish to add as descriptive text, reflecting (sub-) project status, milestones, releases, modifications to statement of purpose, etc.  The project Maintainers will create and maintain this content on behalf of the participants.</p>
-</div>
+-   Python 2.7.6+ or Python 3.4.0+
+-   For Python 2: antlr4-python2-runtime 4.5.3+
+    (<https://pypi.python.org/pypi/antlr4-python2-runtime>)
+-   For Python 3: antlr4-python3-runtime 4.5.3+
+    (<https://pypi.python.org/pypi/antlr4-python3-runtime>)
+-   To run test script - pytest
+    (<http://pytest.org/latest/getting-started.html>)
+
+## Installation
+
+1.  Install the antlr4 python runtime module from the above link using
+    the `MS Windows Installer` option for Windows **OR** download and
+    unzip the source code and run:
+
+    ```bash
+    $ python setup.py install
+    ```
+
+2.  Download zip file or source code for pattern-validator. Unzip the
+    source code if necessary and once again run:
+
+    ```bash
+    $ python setup.py install
+    ```
+
+## Usage
+
+There are two ways to enter patterns into this tool using the command
+line:
+
+- via direct user input
+- by taking a specified file of patterns
+
+### User Input
+
+Navigate to the pattern\_validator folder and type the following on the
+command line:
+
+```bash
+$ python pattern_validator.py
+```
+
+When prompted, enter a pattern to validate and press enter. The
+validator will supply whether the pattern has passed or failed. If the
+pattern fails the test, the validator will supply where the first syntax
+error occurred. The validator will continue to prompt for patterns until
+Ctrl-C is pressed. Example:
+
+```bash
+$ python pattern_validator.py
+
+Enter a pattern to validate:
+file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4'
+
+PASS: file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4'
+```
+
+### File
+
+Navigate to the pattern\_validator folder and type the following on the
+command line:
+
+```bash
+$ python pattern_validator.py -f <path_to_file>
+```
+
+Use &lt;path\_to\_file&gt; to specify the path to a file containing a
+set of patterns to validate. Each pattern must be on a separate line of
+the file so that the validator may determine where the pattern begins
+and ends. The validator will supply the PASS/FAIL result of each
+pattern.
+
+## Testing
+
+The file `test_pattern_validator.py` in the **test** directory is
+supplied in order to test your installation of the pattern validator. To
+run this test script, **pytest** must be installed on your system. This
+script should output the validation results of the patterns found within
+the `test_pattern_validator.py` script. To execute the tests, simply run
+the following within the same directory as this script:
+
+```bash
+$ py.test
+```
+
+If **pytest** is not installed on your system, you can test your
+installation by running the following command:
+
+```bash
+$ python pattern_validator.py -f test/pattern_validator_test_cases.txt
+```
+
 
 <div>
 <h2><a id="maintainers">Maintainers</a></h2>
