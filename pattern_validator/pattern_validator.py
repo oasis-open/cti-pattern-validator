@@ -1,6 +1,3 @@
-# Copyright (c) 2016, The MITRE Corporation. All rights reserved.
-# See LICENSE.txt for complete terms
-
 '''
 Validates a user entered pattern against CyboxPattern and PCRE grammars.
 '''
