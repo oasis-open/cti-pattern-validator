@@ -1,107 +1,113 @@
+
 grammar CyboxPattern;
 
-startExpression
-    :   objectExpression EOF
-    ;
+pattern
+  : observationExpressions
+  ;
 
-objectExpression
-    :   left=objectExpression bop=( AND | OR | ALONGWITH | FOLLOWEDBY ) right=objectExpression
-    |   (NOT)? LPAREN be=objectExpression RPAREN
-    |   (NOT)? booleanExpression
-    |   objectExpression (window=timeWindow)
-    ;
+observationExpressions
+  : <assoc=left> observationExpressions (ALONGWITH|FOLLOWEDBY) observationExpressions
+  | observationExpression
+  ;
 
-timeWindow
-    :   START startTime=Timestamp (STOP stopTime=Timestamp)?
-    |   WITHIN timespec=IntegerLiteral (MILLISECONDS|SECONDS|MINUTES|HOURS|DAYS|MONTHS|YEARS)
-    |   REPEATED repeats=IntegerLiteral TIMES
-    ;
+observationExpression
+  : LBRACK comparisonExpression RBRACK     # observationExpressionSimple
+  | LPAREN observationExpressions RPAREN   # observationExpressionCompound
+  | observationExpression qualifier        # observationExpressionQualified
+  ;
 
-booleanExpression
-    :   expression booleanOperator
-    |   cidrExpression
-    ;
+qualifier
+  : startStopQualifier
+  | withinQualifier
+  ;
 
-cidrExpression     
-    :   cidrLiteral CONTAINS cidrLiteral
-    ;
+comparisonExpression
+  : <assoc=left> comparisonExpression (AND|OR) comparisonExpression
+  | propTest
+  ;
 
-booleanOperator
-    :   comparisonOperator | likeOperator | inOperator | regexOperator;
+propTest
+  : objectPath (EQ|NEQ) primitiveLiteral       # propTestEqual
+  | objectPath (GT|LT|GE|LE) orderableLiteral  # propTestOrder
+  | objectPath IN setLiteral                   # propTestSet
+  | objectPath LIKE StringLiteral              # propTestLike
+  | objectPath MATCHES RegexLiteral            # propTestRegex
+  | objectPath INSUBNET StringLiteral          # propTestInSubnet
+  | objectPath CONTAINS StringLiteral          # propTestContains
+  | LPAREN comparisonExpression RPAREN         # propTestParen
+  | NOT propTest                               # propTestNot
+  ;
 
-comparisonOperator : cop=(EQ | NEQ | LT | LE | GT | GE) expression ;
+startStopQualifier
+  : START StringLiteral STOP StringLiteral
+  ;
 
-likeOperator       : LIKE pattern=expression ;
+withinQualifier
+  : WITHIN IntLiteral timeUnit
+  ;
 
-regexOperator	   : REGEX regexLiteral;
+objectPath
+  : objectType COLON firstPathComponent objectPathComponent?
+  ;
 
-inOperator         : IN LPAREN (expressionList) RPAREN;
+// The following two simple rules are for programmer convenience: you
+// will get "notification" of object path components in order by the
+// generated parser, which enables incremental processing during
+// parsing.
+objectType
+  : Identifier
+  ;
 
-expressionList
-    :   thisexpr+=expression (COMMA thisexpr+=expression)*
-    ;
+firstPathComponent
+  : Identifier
+  ;
 
-expression
-    :   literal
-    |   objectPath
-    |   LPAREN expression arithmeticOperator RPAREN
-    |   expression arithmeticOperator
-    ;
+objectPathComponent
+  : <assoc=left> objectPathComponent objectPathComponent  # pathStep
+  | '.' Identifier                                        # keyPathStep
+  | LBRACK (IntLiteral|ASTERISK) RBRACK                   # indexPathStep
+  ;
 
-arithmeticOperator
-    :   op = POWER_OP expression
-    |   op = ASTERISK expression
-    |   op = DIVIDE expression
-    |   op = PLUS expression
-    |   op = MINUS expression
-    |   op = MODULO expression
-    ;
+setLiteral
+  : LPAREN RPAREN
+  | LPAREN primitiveLiteral (COMMA primitiveLiteral)* RPAREN
+  ;
 
-arguments
-    :   args+=expression (COMMA args+=expression)*
-    ;
+primitiveLiteral
+  : orderableLiteral
+  | BoolLiteral
+  | NULL
+  ;
 
-cidrLiteral
-    :   stringLiteral
-    |   objectPath
-    ;
+orderableLiteral
+  : IntLiteral
+  | FloatLiteral
+  | StringLiteral
+  ;
 
-regexLiteral
-    :   RegexLiteral
-    ;
+timeUnit
+  : MILLISECONDS | SECONDS | MINUTES | HOURS | DAYS | MONTHS | YEARS
+  ;
 
-RegexLiteral
-    :   DIVIDE ( ~'/' | '\'\'' )* DIVIDE
-    ;
+IntLiteral :
+  [+-]? ('0' | [1-9] [0-9]*)
+  ;
 
-literal
-    :   signedInt
-    |   signedFloat
-    |   stringLiteral
-    |   boolLiteral
-    |   binary
-    |   NULL
-    ;
+FloatLiteral :
+  [+-]? [0-9]* '.' [0-9]+
+  ;
 
-signedInt
-    :   (PLUS|MINUS)?IntegerLiteral         #LiteralInteger
-    ;
+StringLiteral :
+  QUOTE ( ~'\'' | '\'\'' )* QUOTE
+  ;
 
-signedFloat
-    :   (PLUS|MINUS)?FloatingPointLiteral   #LiteralFloat
-    ;
+BoolLiteral :
+  TRUE | FALSE
+  ;
 
-stringLiteral
-    :   StringLiteral
-    ;
-
-boolLiteral
-    :   (TRUE|FALSE)                        #LiteralBoolean
-    ;
-
-binary
-    :   Binary
-    ;
+RegexLiteral :
+  DIVIDE ( ~'/' | '\\/' )* DIVIDE
+  ;
 
 //////////////////////////////////////////////
 // Keywords
@@ -110,10 +116,11 @@ AND:  A N D;
 ALONGWITH:  A L O N G W I T H ;
 OR:  O R;
 NOT:  N O T;
-FOLLOWEDBY:  F O L L O W E D B Y ;
+FOLLOWEDBY: F O L L O W E D B Y;
 LIKE:  L I K E ;
-REGEX:  M A T C H E S ;
+MATCHES:  M A T C H E S ;
 CONTAINS:  C O N T A I N S ;
+INSUBNET: I N S U B N E T ;
 LAST:  L A S T ;
 IN:  I N;
 START:  S T A R T ;
@@ -128,201 +135,24 @@ YEARS:  Y E A R S;
 TRUE:  T R U E;
 FALSE:  F A L S E;
 NULL:  N U L L;
-
 WITHIN:  W I T H I N;
 REPEATED:  R E P E A T E D;
 TIMES:  T I M E S;
 
-// Timestamp syntax based on Stix 2.0 Timestamp
-Timestamp
-    :   QUOTE Date Time QUOTE
-    ;
+// After keywords, so the lexer doesn't tokenize them as identifiers.
+Identifier :
+    '"' (~'"' | '""')* '"'
+  | [a-zA-Z_] [a-zA-Z0-9_-]*
+  ;
 
-Date
-    :   Year HYPHEN Month HYPHEN Day 'T'
-    ;
-
-Time
-    :   Hours COLON Minutes COLON Seconds 'Z'
-    ;
-
-fragment
-Year
-    :   [1-2] [0-1] Digit Digit
-    ;
-
-fragment
-Month
-    :   '0' NonZeroDigit
-    |   '1' [0-2]
-    ;
-
-fragment
-Day
-    :   '0' NonZeroDigit
-    |   [1-2] Digit
-    |   '3' [0-1]
-    ;
-
-fragment
-Hours
-    :   [0-1] Digit
-    |   '2' [0-3]
-    ;
-
-fragment
-Seconds
-    :   Minutes DOT Digits
-    ;
-
-fragment
-Minutes
-    :   [0-5] Digit
-    ;
-
-IntegerLiteral
-    :   DecimalNumeral
-    ;
-
-FloatingPointLiteral
-    :   DecimalFloatingPointLiteral
-    ;
-
-fragment
-DecimalFloatingPointLiteral
-    :   Digits DOT Digits? ExponentPart?
-    |   DOT Digits ExponentPart?
-    |   Digits ExponentPart
-    |   Digits
-    ;
-
-fragment
-DecimalNumeral
-    :   '0'
-    |   NonZeroDigit (Digits)?
-    ;
-
-fragment
-Digits
-    :   Digit+
-    ;
-
-fragment
-Digit
-    :   '0'
-    |   NonZeroDigit
-    ;
-
-fragment
-NonZeroDigit
-    :   [1-9]
-    ;
-
-fragment
-ExponentPart
-    :   ExponentIndicator SignedInteger
-    ;
-
-fragment
-ExponentIndicator
-    :   [eE]
-    ;
-
-fragment
-SignedInteger
-    :   Sign? Digits
-    ;
-
-fragment
-Sign
-    :   [+-]
-    ;
-
-Binary
-    :   QUOTE [0-1]+ QUOTE
-    ;
-
-StringLiteral
-    :   QUOTE ( ~'\'' | '\'\'' )* QUOTE
-    ;
-
-fragment
-StringCharacters
-    :   StringCharacter+
-    ;
-
-fragment
-StringCharacter
-    :   ~['\\]
-    ;
-
-fragment
-Letter
-    :   [a-zA-Z$_]
-    ;
-
-fragment
-LetterOrDigit
-    :   [a-zA-Z0-9$_]
-    ;
-
-objectPath
-    :   nestedObject
-    |   listObject
-    |   extObject
-    |   simpleObject
-    ;
-
-extObject
-    :   simpleObject LBRACK StringLiteral RBRACK DOT Identifier
-    ;
-
-listObject
-    :   simpleObjectList
-    |   nestedObjectList
-    |   simpleObjectList ((DOT Identifier) | indexObject)+
-    |   nestedObjectList ((DOT Identifier) | indexObject)+
-    ;
-
-simpleObjectList
-    :   simpleObject indexObject
-    ;
-
-nestedObjectList
-    :   nestedObject indexObject
-    ;
-
-nestedObject
-    :   simpleObject (DOT Identifier)+
-    ;
-
-indexObject
-    :   LBRACK (IntegerLiteral | ASTERISK) RBRACK
-    ;
-
-simpleObject
-    :   Identifier COLON Identifier
-    |   ASTERISK COLON Identifier
-    ;
-
-Identifier
-    :   '"' (~'"' | '""')* '"'
-    |   IdentifierChunk+
-    ;
-
-IdentifierChunk
-    :   [a-zA-Z_0-9]+ HYPHEN?
-    ;
-
-EQ        :   '=';
-NEQ       :   '!=';
+EQ        :   '=' | '==';
+NEQ       :   '!=' | '<>';
 LT        :   '<';
 LE        :   '<=';
 GT        :   '>';
 GE        :   '>=';
 
 QUOTE     : '\'';
-SEMI      : ';' ;
 COLON     : ':' ;
 DOT       : '.' ;
 COMMA     : ',' ;
@@ -331,12 +161,8 @@ LPAREN    : '(' ;
 RBRACK    : ']' ;
 LBRACK    : '[' ;
 PLUS      : '+' ;
-MINUS     : '-' ;
 HYPHEN    : MINUS ;
-NEGATION  : '~' ;
-VERTBAR   : '|' ;
-BITAND    : '&' ;
-MODULO    : '%' ;
+MINUS     : '-' ;
 POWER_OP  : '^' ;
 DIVIDE    : '/' ;
 ASTERISK  : '*';
@@ -370,7 +196,7 @@ fragment Z:  [zZ];
 
 // Whitespace and comments
 //
-WS  :  [ \t\r\n\u000C]+ -> skip
+WS  :  [ \t\v\r\n\u000C\u0085\u00a0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u2028\u2029\u202f\u205f\u3000]+ -> skip
     ;
 
 COMMENT
