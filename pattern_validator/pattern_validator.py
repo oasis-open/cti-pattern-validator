@@ -95,7 +95,7 @@ def run_validator(pattern):
     regexListener = REGEXValidatorListener()
     parser.addParseListener(regexListener)
 
-    parser.startExpression()
+    parser.pattern()
 
     err_strings = parseErrListener.err_strings + regexListener.err_strings
 

@@ -4,201 +4,165 @@ from antlr4 import *
 # This class defines a complete listener for a parse tree produced by CyboxPatternParser.
 class CyboxPatternListener(ParseTreeListener):
 
-    # Enter a parse tree produced by CyboxPatternParser#startExpression.
-    def enterStartExpression(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#pattern.
+    def enterPattern(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#startExpression.
-    def exitStartExpression(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#objectExpression.
-    def enterObjectExpression(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#objectExpression.
-    def exitObjectExpression(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#pattern.
+    def exitPattern(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#timeWindow.
-    def enterTimeWindow(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#observationExpressions.
+    def enterObservationExpressions(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#timeWindow.
-    def exitTimeWindow(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#booleanExpression.
-    def enterBooleanExpression(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#booleanExpression.
-    def exitBooleanExpression(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#observationExpressions.
+    def exitObservationExpressions(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#cidrExpression.
-    def enterCidrExpression(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#observationExpressionSimple.
+    def enterObservationExpressionSimple(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#cidrExpression.
-    def exitCidrExpression(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#booleanOperator.
-    def enterBooleanOperator(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#booleanOperator.
-    def exitBooleanOperator(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#observationExpressionSimple.
+    def exitObservationExpressionSimple(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#comparisonOperator.
-    def enterComparisonOperator(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#observationExpressionCompound.
+    def enterObservationExpressionCompound(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#comparisonOperator.
-    def exitComparisonOperator(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#likeOperator.
-    def enterLikeOperator(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#likeOperator.
-    def exitLikeOperator(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#observationExpressionCompound.
+    def exitObservationExpressionCompound(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#regexOperator.
-    def enterRegexOperator(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#observationExpressionQualified.
+    def enterObservationExpressionQualified(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#regexOperator.
-    def exitRegexOperator(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#inOperator.
-    def enterInOperator(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#inOperator.
-    def exitInOperator(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#observationExpressionQualified.
+    def exitObservationExpressionQualified(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#expressionList.
-    def enterExpressionList(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#qualifier.
+    def enterQualifier(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#expressionList.
-    def exitExpressionList(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#expression.
-    def enterExpression(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#expression.
-    def exitExpression(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#qualifier.
+    def exitQualifier(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#arithmeticOperator.
-    def enterArithmeticOperator(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#comparisonExpression.
+    def enterComparisonExpression(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#arithmeticOperator.
-    def exitArithmeticOperator(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#arguments.
-    def enterArguments(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#arguments.
-    def exitArguments(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#comparisonExpression.
+    def exitComparisonExpression(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#cidrLiteral.
-    def enterCidrLiteral(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#propTestEqual.
+    def enterPropTestEqual(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#cidrLiteral.
-    def exitCidrLiteral(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#regexLiteral.
-    def enterRegexLiteral(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#regexLiteral.
-    def exitRegexLiteral(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#propTestEqual.
+    def exitPropTestEqual(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#literal.
-    def enterLiteral(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#propTestOrder.
+    def enterPropTestOrder(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#literal.
-    def exitLiteral(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#LiteralInteger.
-    def enterLiteralInteger(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#LiteralInteger.
-    def exitLiteralInteger(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#propTestOrder.
+    def exitPropTestOrder(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#LiteralFloat.
-    def enterLiteralFloat(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#propTestSet.
+    def enterPropTestSet(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#LiteralFloat.
-    def exitLiteralFloat(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#stringLiteral.
-    def enterStringLiteral(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#stringLiteral.
-    def exitStringLiteral(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#propTestSet.
+    def exitPropTestSet(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#LiteralBoolean.
-    def enterLiteralBoolean(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#propTestLike.
+    def enterPropTestLike(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#LiteralBoolean.
-    def exitLiteralBoolean(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#propTestLike.
+    def exitPropTestLike(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#binary.
-    def enterBinary(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#propTestRegex.
+    def enterPropTestRegex(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#binary.
-    def exitBinary(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#propTestRegex.
+    def exitPropTestRegex(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#propTestInSubnet.
+    def enterPropTestInSubnet(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#propTestInSubnet.
+    def exitPropTestInSubnet(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#propTestContains.
+    def enterPropTestContains(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#propTestContains.
+    def exitPropTestContains(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#propTestParen.
+    def enterPropTestParen(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#propTestParen.
+    def exitPropTestParen(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#propTestNot.
+    def enterPropTestNot(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#propTestNot.
+    def exitPropTestNot(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#startStopQualifier.
+    def enterStartStopQualifier(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#startStopQualifier.
+    def exitStartStopQualifier(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#withinQualifier.
+    def enterWithinQualifier(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#withinQualifier.
+    def exitWithinQualifier(self, ctx):
         pass
 
 
@@ -211,66 +175,84 @@ class CyboxPatternListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#extObject.
-    def enterExtObject(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#objectType.
+    def enterObjectType(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#extObject.
-    def exitExtObject(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#listObject.
-    def enterListObject(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#listObject.
-    def exitListObject(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#objectType.
+    def exitObjectType(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#simpleObjectList.
-    def enterSimpleObjectList(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#firstPathComponent.
+    def enterFirstPathComponent(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#simpleObjectList.
-    def exitSimpleObjectList(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#nestedObjectList.
-    def enterNestedObjectList(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#nestedObjectList.
-    def exitNestedObjectList(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#firstPathComponent.
+    def exitFirstPathComponent(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#nestedObject.
-    def enterNestedObject(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#indexPathStep.
+    def enterIndexPathStep(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#nestedObject.
-    def exitNestedObject(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by CyboxPatternParser#indexObject.
-    def enterIndexObject(self, ctx):
-        pass
-
-    # Exit a parse tree produced by CyboxPatternParser#indexObject.
-    def exitIndexObject(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#indexPathStep.
+    def exitIndexPathStep(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by CyboxPatternParser#simpleObject.
-    def enterSimpleObject(self, ctx):
+    # Enter a parse tree produced by CyboxPatternParser#pathStep.
+    def enterPathStep(self, ctx):
         pass
 
-    # Exit a parse tree produced by CyboxPatternParser#simpleObject.
-    def exitSimpleObject(self, ctx):
+    # Exit a parse tree produced by CyboxPatternParser#pathStep.
+    def exitPathStep(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#keyPathStep.
+    def enterKeyPathStep(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#keyPathStep.
+    def exitKeyPathStep(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#setLiteral.
+    def enterSetLiteral(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#setLiteral.
+    def exitSetLiteral(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#primitiveLiteral.
+    def enterPrimitiveLiteral(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#primitiveLiteral.
+    def exitPrimitiveLiteral(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#orderableLiteral.
+    def enterOrderableLiteral(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#orderableLiteral.
+    def exitOrderableLiteral(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by CyboxPatternParser#timeUnit.
+    def enterTimeUnit(self, ctx):
+        pass
+
+    # Exit a parse tree produced by CyboxPatternParser#timeUnit.
+    def exitTimeUnit(self, ctx):
         pass
 
 

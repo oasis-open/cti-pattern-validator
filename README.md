@@ -118,6 +118,16 @@ installation by running the following command:
 $ python pattern_validator.py -f test/pattern_validator_test_cases.txt
 ```
 
+## Updating the Grammar.
+
+If you modify CyboxGrammar.g4, you'll need to use the Java ANTLR package to
+generate new Python source files (the ANTLR .jar file is not needed for normal
+use of the pattern-validator).
+
+1. Download antlr-4.5.3-complete.jar from http://www.antlr.org/download/
+2. From the `grammars` directory, run
+
+    java -cp "/path/to/antlr-4.5.3-complete.jar" -Xmx500M org.antlr.v4.Tool -Dlanguage=Python2 CyboxPattern.g4
 
 <div>
 <h2><a id="maintainers">Maintainers</a></h2>
