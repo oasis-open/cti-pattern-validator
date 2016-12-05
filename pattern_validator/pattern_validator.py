@@ -4,14 +4,17 @@ Validates a user entered pattern against CyboxPattern and PCRE grammars.
 
 from __future__ import print_function
 import argparse
+
 from antlr4 import InputStream
 from antlr4 import CommonTokenStream
 from antlr4.error.ErrorListener import ErrorListener
-from grammars.CyboxPatternLexer import CyboxPatternLexer
-from grammars.CyboxPatternParser import CyboxPatternParser
-from grammars.CyboxPatternListener import CyboxPatternListener
-from grammars.PCRELexer import PCRELexer
-from grammars.PCREParser import PCREParser
+import six
+
+from .grammars.CyboxPatternLexer import CyboxPatternLexer
+from .grammars.CyboxPatternParser import CyboxPatternParser
+from .grammars.CyboxPatternListener import CyboxPatternListener
+from .grammars.PCRELexer import PCRELexer
+from .grammars.PCREParser import PCREParser
 
 
 class CyboxPatternErrorListener(ErrorListener):
@@ -76,7 +79,7 @@ def run_validator(pattern):
     returned in a list.  The test passed if the returned list is empty.
     '''
 
-    if isinstance(pattern, (str, unicode)):
+    if isinstance(pattern, six.string_types):
         pattern = InputStream(pattern)
 
     parseErrListener = CyboxPatternErrorListener()
