@@ -150,7 +150,8 @@ def main():
     try:
         while True:
             pattern = nextpattern()
-            if not pattern: break
+            if not pattern:
+                break
             tests_passed, err_strings = validate(pattern, True)
 
             if tests_passed:
@@ -169,6 +170,7 @@ def main():
 
     print("\nPASSED:", pass_count, " patterns")
     print("FAILED:", fail_count, " patterns")
+
 
 if __name__ == '__main__':
     main()

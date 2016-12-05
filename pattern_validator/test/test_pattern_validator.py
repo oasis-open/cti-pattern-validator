@@ -14,9 +14,13 @@ SPEC_CASES = [
     "[ipv4-addr:value = '192.168.0.1/24']",
     "[email-message:from_ref.value MATCHES /.+\@ibm\.com$/ AND email-message:body_multipart[*].body_raw_ref.file_name MATCHES /^Final Report.+\.exe$/]",
     "[file:hashes.SHA-256 = 'aec070645fe53ee3b3763059376134f058cc337247c978add178b6ccdfb0019f' AND file:mime_type = 'application/x-pdf']",
-    "[file:hashes.SHA-256 = 'bf07a7fbb825fc0aae7bf4a1177b2b31fcf8a3feeaf7092761e18c859ee52a9c' OR file:hashes.MD5 = 'cead3f77f6cda6ec00f57d76c9a6879f'] ALONGWITH [file:hashes.SHA-256 = 'aec070645fe53ee3b3763059376134f058cc337247c978add178b6ccdfb0019f']",
+    ("[file:hashes.SHA-256 = 'bf07a7fbb825fc0aae7bf4a1177b2b31fcf8a3feeaf7092761e18c859ee52a9c' OR "
+        "file:hashes.MD5 = 'cead3f77f6cda6ec00f57d76c9a6879f'] ALONGWITH "
+        "[file:hashes.SHA-256 = 'aec070645fe53ee3b3763059376134f058cc337247c978add178b6ccdfb0019f']"),
     "[file:hashes.MD5 = '79054025255fb1a26e4bc422aef54eb4'] FOLLOWEDBY [win-registry-key:key = 'HKEY_LOCAL_MACHINE\\foo\\bar'] WITHIN 300 SECONDS",
-    "[user-account:account_type = 'unix' AND user-account:user_id = '1007' AND user-account:account_login = 'Peter'] ALONGWITH [user-account:account_type = 'unix' AND user-account:user_id = '1008' AND user-account:user_id = 'Paul'] ALONGWITH [user-account:account_type = 'unix' AND user-account:user_id = '1009' AND user-account:user_id = 'Mary']",
+    ("[user-account:account_type = 'unix' AND user-account:user_id = '1007' AND user-account:account_login = 'Peter'] ALONGWITH "
+        "[user-account:account_type = 'unix' AND user-account:user_id = '1008' AND user-account:user_id = 'Paul'] ALONGWITH "
+        "[user-account:account_type = 'unix' AND user-account:user_id = '1009' AND user-account:user_id = 'Mary']"),
     "[artifact:mime_type = 'application/vnd.tcpdump.pcap' AND artifact:payload_bin MATCHES /d4c3b2a102000400/]",
     "[network-traffic:src_payload_ref.payload_bin MATCHES /0026160000d200/]",
     "[file:file_name = 'foo.dll' AND file:parent_directory_ref.path = 'C:\Windows\System32']",
@@ -27,11 +31,13 @@ SPEC_CASES = [
     "[domain-name:value = 'www.5z8.info' OR domain-name:resolves_to_refs[*].value = '184.22.62.34']",
     "[url:value = 'beg.rocklandgrad.com/forum/wm/keys/WFolw' OR url:value = 'beg.rocklandgrad.com/forum/wm/keys/7T8INre2']",
     "[x509-certificate:issuer = 'CN=WEBMAIL' AND x509-certificate:serial_number = '4c:0b:1d:19:74:86:a7:66:b4:1a:bf:40:27:21:76:28']",
-    "[windows-registry-key:key = 'HKEY_CURRENT_USER\Software\CryptoLocker\Files' OR windows-registry-key:key = 'HKEY_CURRENT_USER\Software\Microsoft\CurrentVersion\Run\CryptoLocker_0388']",
+    ("[windows-registry-key:key = 'HKEY_CURRENT_USER\Software\CryptoLocker\Files' OR "
+        "windows-registry-key:key = 'HKEY_CURRENT_USER\Software\Microsoft\CurrentVersion\Run\CryptoLocker_0388']"),
     "[(file:file_name = 'pdf.exe' OR file:size = '371712') AND file:created = '2014-01-13T07:03:17Z']",
     "[email-message:sender_ref.value = 'invite@aeroconf2014.org' AND email-message:subject = 'IEEE Aerospace Conference 2014']",
     "[x-usb-device:usbdrive.serial_number = '575833314133343231313937']",
-    "[process:arguments = '>-add GlobalSign.cer -c -s -r localMachine Root'] FOLLOWEDBY [process:arguments = '>-add GlobalSign.cer -c -s -r localMachineTrustedPublisher'] WITHIN 5 MINUTES",
+    ("[process:arguments = '>-add GlobalSign.cer -c -s -r localMachine Root'] FOLLOWEDBY "
+        "[process:arguments = '>-add GlobalSign.cer -c -s -r localMachineTrustedPublisher'] WITHIN 5 MINUTES"),
     "[x-interface:network CONTAINS '192.168.5.10']",
 ]
 
