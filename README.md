@@ -2,77 +2,72 @@
 
 *This is an [OASIS Open Repository](https://www.oasis-open.org/resources/open-repositories/). See the [Governance](#governance) section for more information.*
 
-The pattern-validator is a software tool for checking the syntax of the Cyber Threat Intelligence (CTI) STIX Pattern expressions, which are used within STIX to express conditions (represented with the Cyber Observable data model) that indicate particular cyber threat activity. The repository contains source code, an ANTLR grammar, automated tests and associated documentation for the tool. The pattern-validator can be used as a command-line tool or as a Python library which can be included in other applications.
+The STIX 2 Pattern Validator is a software tool for checking the syntax of the Cyber Threat Intelligence (CTI) STIX Pattern expressions, which are used within STIX to express conditions (represented with the Cyber Observable data model) that indicate particular cyber threat activity. The repository contains source code, an ANTLR grammar, automated tests and associated documentation for the tool. The validator can be used as a command-line tool or as a Python library which can be included in other applications.
 
 ## Requirements
 
-- Python 2.7.6+ or Python 3.4.0+
-- For Python 2: antlr4-python2-runtime 4.5.3+ ([https://pypi.python.org/pypi/antlr4-python2-runtime](https://pypi.python.org/pypi/antlr4-python2-runtime))
-- For Python 3: antlr4-python3-runtime 4.5.3+ ([https://pypi.python.org/pypi/antlr4-python3-runtime](https://pypi.python.org/pypi/antlr4-python3-runtime))
-- To run test script - pytest ([http://pytest.org/latest/getting-started.html](http://pytest.org/latest/getting-started.html))
+- [Python](https://www.python.org) 2.7, 3.3, 3.4, or 3.5
+- ANTLR grammar runtime (4.5.3 or newer):
+    - [antlr4-python2-runtime](https://pypi.python.org/pypi/antlr4-python2-runtime) (Python 2.7)
+    - [antlr4-python3-runtime](https://pypi.python.org/pypi/antlr4-python3-runtime) (Python 3)
+- [enum34](https://pypi.python.org/pypi/enum34) (Python 3.3)
+- [six](https://pypi.python.org/pypi/six)
 
 ## Installation
 
-1. Install the antlr4 python runtime module from the above link using the `MS Windows Installer` option for Windows **OR** download and unzip the source code and run:
+Using [pip](https://pip.pypa.io) is highly recommended:
 
-    ```bash
-    $ python setup.py install
-    ```
+```bash
+$ pip install stix2-patterns
+```
 
-2. Download zip file or source code for pattern-validator. Unzip the source code if necessary and once again run:
-
-    ```bash
-    $ python setup.py install
-    ```
+For more information about installing Python packages, see the [Python
+Packaging User Guide](https://packaging.python.org/installing/).
 
 ## Usage
 
-There are two ways to enter patterns into this tool using the command line:
-- via direct user input
-- by taking a specified file of patterns
+The STIX Pattern Validator provides an executable script (`validate-patterns`)
+in addition to being an importable Python library.
+
+The `validate-patterns` script accepts patterns from either direct user input
+or a file passed as an option.
 
 ### User Input
 
-Navigate to the pattern\_validator folder and type the following on the command line:
+When prompted, enter a pattern to validate and press enter. The validator will
+supply whether the pattern has passed or failed. If the pattern fails the test,
+the validator will supply where the first syntax error occurred. The validator
+will continue to prompt for patterns until Ctrl-C is pressed. Example:
 
 ```bash
-$ python pattern_validator.py
+$ validate-patterns
+
+Enter a pattern to validate: [file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4']
+
+PASS: [file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4']
 ```
 
-When prompted, enter a pattern to validate and press enter. The validator will supply whether the pattern has passed or failed. If the pattern fails the test, the validator will supply where the first syntax error occurred. The validator will continue to prompt for patterns until Ctrl-C is pressed. Example:
+### File Input
 
 ```bash
-$ python pattern_validator.py
-
-Enter a pattern to validate:
-file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4'
-
-PASS: file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4'
+$ validate-patterns -f <path_to_file>
 ```
 
-### File
-
-
-Navigate to the pattern\_validator folder and type the following on the command line:
-
-```bash
-$ python pattern_validator.py -f <path_to_file>
-```
-
-Use \<path\_to\_file> to specify the path to a file containing a set of patterns to validate. Each pattern must be on a separate line of the file so that the validator may determine where the pattern begins and ends. The validator will supply the PASS/FAIL result of each pattern.
+Use \<path\_to\_file> to specify the path to a file containing a set of
+patterns to validate. Each pattern must be on a separate line of the file so
+that the validator may determine where the pattern begins and ends. The
+validator will supply the PASS/FAIL result of each pattern.
 
 ## Testing
 
-The file `test_pattern_validator.py` in the **test** directory is supplied in order to test your installation of the pattern validator. To run this test script, **pytest** must be installed on your system. This script should output the validation results of the patterns found within the `test_pattern_validator.py` script. To execute the tests, simply run the following within the same directory as this script:
+The STIX Pattern Validator's test suite can be run with
+[pytest](http://pytest.org).
+
+You can also test against the examples provided in the supplied `examples.txt`
+file.
 
 ```bash
-$ py.test
-```
-
-If **pytest** is not installed on your system, you can test your installation by running the following command:
-
-```bash
-$ python pattern_validator.py -f test/pattern_validator_test_cases.txt
+$ validate-patterns -f stix2patterns/examples.txt
 ```
 
 ## Updating the Grammar
