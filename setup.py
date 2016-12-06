@@ -10,7 +10,12 @@ setup(
     install_requires=[
         "antlr4-python2-runtime==4.5.3 ; python_version < '3'",
         "antlr4-python3-runtime==4.5.3 ; python_version >= '3'",
-        "enum34 ; python_version < '3.4'",
+        "enum34 ; python_version ~= '3.3.0'",
         "six",
-    ]
+    ],
+    entry_points={
+        'console_scripts': [
+            'validate-patterns = stix2patterns.validator:main',
+        ],
+    },
 )

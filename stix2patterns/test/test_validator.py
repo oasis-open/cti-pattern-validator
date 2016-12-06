@@ -1,9 +1,10 @@
 '''
-Test cases for pattern_validator.py.
+Test cases for stix2patterns/validator.py.
 '''
 
 import pytest
-from pattern_validator.pattern_validator import validate
+
+from stix2patterns.validator import validate
 
 ###############################################################################
 # EXAMPLES FROM PATTERNING SPEC
