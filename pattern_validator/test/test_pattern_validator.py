@@ -45,7 +45,7 @@ SPEC_CASES = [
 @pytest.mark.parametrize("test_input", SPEC_CASES)
 def test_spec_patterns(test_input):
     '''
-    Validate patterns from CybOX 3.0 spec.
+    Validate patterns from STIX 2.0 Patterning spec.
     '''
     pass_test = validate(test_input, print_errs=True)
     assert pass_test is True

@@ -75,7 +75,7 @@ class REGEXValidatorListener(STIXPatternListener):
 
 def run_validator(pattern):
     '''
-    Validates a pattern against the CybOX grammar.  Error messages are
+    Validates a pattern against the STIX Pattern grammar.  Error messages are
     returned in a list.  The test passed if the returned list is empty.
     '''
 
@@ -108,7 +108,7 @@ def run_validator(pattern):
 def validate(user_input, ret_errs=False, print_errs=False):
     '''
     Wrapper for run_validator function that returns True if the user_input
-    contains a valid CybOX pattern or False otherwise. The error messages may
+    contains a valid STIX pattern or False otherwise. The error messages may
     also be returned or printed based upon the ret_errs and print_errs arg
     values.
     '''
@@ -131,8 +131,7 @@ def main():
     Continues to validate patterns until it encounters EOF within a pattern
     file or Ctrl-C is pressed by the user.
     '''
-    parser = argparse.ArgumentParser(
-        description='Validate CybOX Patterns.')
+    parser = argparse.ArgumentParser(description='Validate STIX Patterns.')
     parser.add_argument('-f', '--file',
                         help="Specify this arg to read patterns from a file.",
                         type=argparse.FileType("r"))

@@ -2,7 +2,7 @@
 
 *This is an [OASIS Open Repository](https://www.oasis-open.org/resources/open-repositories/). See the [Governance](#governance) section for more information.*
 
-The pattern-validator is a software tool for checking the syntax of the Cyber Threat Intelligence (CTI) STIX/CybOX Patterning expressions, which are used within STIX to express conditions (represented with the CybOX data model) that indicate particular cyber threat activity. The repository contains source code, an ANTLR grammar, automated tests and associated documentation for the tool. The pattern-validator can be used as a command-line tool or as a Python library which can be included in other applications.
+The pattern-validator is a software tool for checking the syntax of the Cyber Threat Intelligence (CTI) STIX Pattern expressions, which are used within STIX to express conditions (represented with the Cyber Observable data model) that indicate particular cyber threat activity. The repository contains source code, an ANTLR grammar, automated tests and associated documentation for the tool. The pattern-validator can be used as a command-line tool or as a Python library which can be included in other applications.
 
 ## Requirements
 
@@ -69,7 +69,7 @@ The file `test_pattern_validator.py` in the **test** directory is supplied in or
 $ py.test
 ```
 
-If **pytest** is not installed on your system, you can test your installation by running the following command: 
+If **pytest** is not installed on your system, you can test your installation by running the following command:
 
 ```bash
 $ python pattern_validator.py -f test/pattern_validator_test_cases.txt
@@ -77,15 +77,15 @@ $ python pattern_validator.py -f test/pattern_validator_test_cases.txt
 
 ## Updating the Grammar
 
-If you modify CyboxGrammar.g4, you'll need to use the Java ANTLR package to generate new Python source files (the ANTLR .jar file is not needed for normal use of the pattern-validator).
+If you modify STIXGrammar.g4, you'll need to use the Java ANTLR package to generate new Python source files (the ANTLR .jar file is not needed for normal use of the validator).
 
 1. Download antlr-4.5.3-complete.jar from http://www.antlr.org/download/
 2. From the `grammars` directory, run
 
     ```bash
-    $ java -cp "/path/to/antlr-4.5.3-complete.jar" -Xmx500M org.antlr.v4.Tool -Dlanguage=Python2 CyboxPattern.g4
+    $ java -cp "/path/to/antlr-4.5.3-complete.jar" -Xmx500M org.antlr.v4.Tool -Dlanguage=Python2 STIXPattern.g4
     ```
-    
+
 ## Governance
 
 This GitHub public repository ( **[https://github.com/oasis-open/cti-pattern-validator](https://github.com/oasis-open/cti-pattern-validator)** ) was [proposed](https://lists.oasis-open.org/archives/cti/201609/msg00001.html) and [approved](https://www.oasis-open.org/committees/ballot.php?id=2971) [[bis](https://issues.oasis-open.org/browse/TCADMIN-2431)] by the [OASIS Cyber Threat Intelligence (CTI) TC](https://www.oasis-open.org/committees/cti/) as an [OASIS Open Repository](https://www.oasis-open.org/resources/open-repositories/) to support development of open source resources related to Technical Committee work.

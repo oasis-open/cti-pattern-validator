@@ -59,4 +59,7 @@ docs/_build/
 # PyBuilder
 target/
 
+# Automatically-built grammar tokens
+*.tokens
+
 MANIFEST
