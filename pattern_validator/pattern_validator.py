@@ -1,5 +1,5 @@
 '''
-Validates a user entered pattern against CyboxPattern and PCRE grammars.
+Validates a user entered pattern against STIXPattern and PCRE grammars.
 '''
 
 from __future__ import print_function
@@ -10,20 +10,20 @@ from antlr4 import CommonTokenStream
 from antlr4.error.ErrorListener import ErrorListener
 import six
 
-from .grammars.CyboxPatternLexer import CyboxPatternLexer
-from .grammars.CyboxPatternParser import CyboxPatternParser
-from .grammars.CyboxPatternListener import CyboxPatternListener
+from .grammars.STIXPatternLexer import STIXPatternLexer
+from .grammars.STIXPatternParser import STIXPatternParser
+from .grammars.STIXPatternListener import STIXPatternListener
 from .grammars.PCRELexer import PCRELexer
 from .grammars.PCREParser import PCREParser
 
 
-class CyboxPatternErrorListener(ErrorListener):
+class STIXPatternErrorListener(ErrorListener):
     '''
     Modifies ErrorListener to collect error message and set flag to False when
     invalid pattern is encountered.
     '''
     def __init__(self):
-        super(CyboxPatternErrorListener, self).__init__()
+        super(STIXPatternErrorListener, self).__init__()
         self.err_strings = []
 
     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
@@ -44,7 +44,7 @@ class PCREErrorListener(ErrorListener):
         self.err_strings.append("FAIL: Regex error found. %s." % msg)
 
 
-class REGEXValidatorListener(CyboxPatternListener):
+class REGEXValidatorListener(STIXPatternListener):
     """
     A parser listener which triggers when the parse process encounters regex
     literals.  This listener will validate the regexes and collect error
@@ -82,15 +82,15 @@ def run_validator(pattern):
     if isinstance(pattern, six.string_types):
         pattern = InputStream(pattern)
 
-    parseErrListener = CyboxPatternErrorListener()
+    parseErrListener = STIXPatternErrorListener()
 
-    lexer = CyboxPatternLexer(pattern)
+    lexer = STIXPatternLexer(pattern)
     # it always adds a console listener by default... remove it.
     lexer.removeErrorListeners()
 
     stream = CommonTokenStream(lexer)
 
-    parser = CyboxPatternParser(stream)
+    parser = STIXPatternParser(stream)
     parser.buildParseTrees = False
     # it always adds a console listener by default... remove it.
     parser.removeErrorListeners()
