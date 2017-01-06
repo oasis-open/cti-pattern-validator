@@ -6,7 +6,17 @@ pattern
   ;
 
 observationExpressions
-  : <assoc=left> observationExpressions (ALONGWITH|FOLLOWEDBY) observationExpressions
+  : <assoc=left> observationExpressions FOLLOWEDBY observationExpressions
+  | observationExpressionOr
+  ;
+
+observationExpressionOr
+  : <assoc=left> observationExpressionOr OR observationExpressionOr
+  | observationExpressionAnd
+  ;
+
+observationExpressionAnd
+  : <assoc=left> observationExpressionAnd AND observationExpressionAnd
   | observationExpression
   ;
 
@@ -19,7 +29,12 @@ observationExpression
   ;
 
 comparisonExpression
-  : <assoc=left> comparisonExpression (AND|OR) comparisonExpression
+  : <assoc=left> comparisonExpression OR comparisonExpression
+  | comparisonExpressionAnd
+  ;
+
+comparisonExpressionAnd
+  : <assoc=left> comparisonExpressionAnd AND comparisonExpressionAnd
   | propTest
   ;
 
@@ -29,8 +44,8 @@ propTest
   | objectPath NOT? IN setLiteral              # propTestSet
   | objectPath NOT? LIKE StringLiteral         # propTestLike
   | objectPath NOT? MATCHES RegexLiteral       # propTestRegex
-  | objectPath NOT? INSUBNET StringLiteral     # propTestInSubnet
-  | objectPath NOT? CONTAINS StringLiteral     # propTestContains
+  | objectPath NOT? ISSUBSET StringLiteral     # propTestIsSubset
+  | objectPath NOT? ISSUPERSET StringLiteral   # propTestIsSuperset
   | LPAREN comparisonExpression RPAREN         # propTestParen
   ;
 
@@ -43,7 +58,7 @@ withinQualifier
   ;
 
 repeatedQualifier
-  : REPEATED IntLiteral TIMES
+  : REPEATS IntLiteral TIMES
   ;
 
 objectPath
@@ -83,6 +98,9 @@ orderableLiteral
   : IntLiteral
   | FloatLiteral
   | StringLiteral
+  | BinaryLiteral
+  | HexLiteral
+  | TimestampLiteral
   ;
 
 timeUnit
@@ -97,6 +115,14 @@ FloatLiteral :
   [+-]? [0-9]* '.' [0-9]+
   ;
 
+HexLiteral :
+  'h' QUOTE TwoHexDigits* QUOTE
+  ;
+
+BinaryLiteral :
+  'b' QUOTE Base64Char* QUOTE
+  ;
+
 StringLiteral :
   QUOTE ( ~'\'' | '\'\'' )* QUOTE
   ;
@@ -109,18 +135,26 @@ RegexLiteral :
   DIVIDE ( ~'/' | '\\/' )* DIVIDE
   ;
 
+TimestampLiteral :
+  't' QUOTE
+  [0-9] [0-9] [0-9] [0-9] HYPHEN [0-9] [0-9] HYPHEN [0-9] [0-9]
+  'T'
+  [0-9] [0-9] COLON [0-9] [0-9] COLON [0-9] [0-9] (DOT [0-9]+)?
+  'Z'
+  QUOTE
+  ;
+
 //////////////////////////////////////////////
 // Keywords
 
 AND:  A N D;
-ALONGWITH:  A L O N G W I T H ;
 OR:  O R;
 NOT:  N O T;
 FOLLOWEDBY: F O L L O W E D B Y;
 LIKE:  L I K E ;
 MATCHES:  M A T C H E S ;
-CONTAINS:  C O N T A I N S ;
-INSUBNET: I N S U B N E T ;
+ISSUPERSET:  I S S U P E R S E T ;
+ISSUBSET: I S S U B S E T ;
 LAST:  L A S T ;
 IN:  I N;
 START:  S T A R T ;
@@ -136,7 +170,7 @@ TRUE:  T R U E;
 FALSE:  F A L S E;
 NULL:  N U L L;
 WITHIN:  W I T H I N;
-REPEATED:  R E P E A T E D;
+REPEATS:  R E P E A T S;
 TIMES:  T I M E S;
 
 // After keywords, so the lexer doesn't tokenize them as identifiers.
@@ -193,6 +227,10 @@ fragment W:  [wW];
 fragment X:  [xX];
 fragment Y:  [yY];
 fragment Z:  [zZ];
+
+fragment HexDigit: [A-Fa-f0-9];
+fragment TwoHexDigits: HexDigit HexDigit;
+fragment Base64Char: [A-Za-z0-9+/=];
 
 // Whitespace and comments
 //

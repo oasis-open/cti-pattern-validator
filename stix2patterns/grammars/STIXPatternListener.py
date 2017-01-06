@@ -22,6 +22,24 @@ class STIXPatternListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by STIXPatternParser#observationExpressionOr.
+    def enterObservationExpressionOr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by STIXPatternParser#observationExpressionOr.
+    def exitObservationExpressionOr(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by STIXPatternParser#observationExpressionAnd.
+    def enterObservationExpressionAnd(self, ctx):
+        pass
+
+    # Exit a parse tree produced by STIXPatternParser#observationExpressionAnd.
+    def exitObservationExpressionAnd(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by STIXPatternParser#observationExpressionRepeated.
     def enterObservationExpressionRepeated(self, ctx):
         pass
@@ -76,6 +94,15 @@ class STIXPatternListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by STIXPatternParser#comparisonExpressionAnd.
+    def enterComparisonExpressionAnd(self, ctx):
+        pass
+
+    # Exit a parse tree produced by STIXPatternParser#comparisonExpressionAnd.
+    def exitComparisonExpressionAnd(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by STIXPatternParser#propTestEqual.
     def enterPropTestEqual(self, ctx):
         pass
@@ -121,21 +148,21 @@ class STIXPatternListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by STIXPatternParser#propTestInSubnet.
-    def enterPropTestInSubnet(self, ctx):
+    # Enter a parse tree produced by STIXPatternParser#propTestIsSubset.
+    def enterPropTestIsSubset(self, ctx):
         pass
 
-    # Exit a parse tree produced by STIXPatternParser#propTestInSubnet.
-    def exitPropTestInSubnet(self, ctx):
+    # Exit a parse tree produced by STIXPatternParser#propTestIsSubset.
+    def exitPropTestIsSubset(self, ctx):
         pass
 
 
-    # Enter a parse tree produced by STIXPatternParser#propTestContains.
-    def enterPropTestContains(self, ctx):
+    # Enter a parse tree produced by STIXPatternParser#propTestIsSuperset.
+    def enterPropTestIsSuperset(self, ctx):
         pass
 
-    # Exit a parse tree produced by STIXPatternParser#propTestContains.
-    def exitPropTestContains(self, ctx):
+    # Exit a parse tree produced by STIXPatternParser#propTestIsSuperset.
+    def exitPropTestIsSuperset(self, ctx):
         pass
 
 
