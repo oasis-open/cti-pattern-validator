@@ -52,7 +52,7 @@ FAIL_CASES = [
     "file:size = 1280",  # Does not use square brackets
     "[file:hashes.MD5 = cead3f77f6cda6ec00f57d76c9a6879f]"  # No quotes around string
     "[file.size = 1280]",  # Use period instead of colon
-    "[file:name MATCHES '/.*\\.dll/'",  # Quotes around regular expression
+    "[file:name MATCHES /.*\\.dll/]",  # Quotes around regular expression
     # TODO: add more failing test cases.
 ]
 
@@ -78,14 +78,14 @@ PASS_CASES = [
     "[file:size >= 1024]",
     "[file:file_name = 'my_file_name']",
     "[file:extended_properties.ntfs-ext.sid = '234']",
-    "[emailaddr:value MATCHES /.+\@ibm\.com$/ OR file:name MATCHES /^Final Report.+\.exe$/]",
+    "[emailaddr:value MATCHES '.+\@ibm\.com$' OR file:name MATCHES '^Final Report.+\.exe$']",
     "[ipv4addr:value ISSUBSET '192.168.0.1/24']",
     "[ipv4addr:value NOT ISSUBSET '192.168.0.1/24']",
     "[user-account:value = 'Peter'] AND [user-account:value != 'Paul'] AND [user-account:value = 'Mary'] WITHIN 5 MINUTES",
     "[file:file_system_properties.file_name LIKE 'name%']",
     "[file:file_name IN ('test.txt', 'test2.exe', 'README')]",
     "[file:size IN (1024, 2048, 4096)]",
-    "[network-connection:extended_properties[0].source_payload MATCHES /dGVzdHRlc3R0ZXN0/]",
+    "[network-connection:extended_properties[0].source_payload MATCHES 'dGVzdHRlc3R0ZXN0']",
     "[win-registry-key:key = 'hkey_local_machine\\foo\\bar'] WITHIN 5 MILLISECONDS",
     "[win-registry-key:key = 'hkey_local_machine\\foo\\bar'] WITHIN 5 SECONDS",
     "[win-registry-key:key = 'hkey_local_machine\\foo\\bar'] WITHIN 5 HOURS",
