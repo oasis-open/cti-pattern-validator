@@ -1,4 +1,4 @@
-# Generated from PCRE.g4 by ANTLR 4.5.3
+# Generated from PCRE.g4 by ANTLR 4.6
 # encoding: utf-8
 from __future__ import print_function
 from antlr4 import *
@@ -712,7 +712,7 @@ class PCREParser ( Parser ):
 
     def __init__(self, input):
         super(PCREParser, self).__init__(input)
-        self.checkVersion("4.5.3")
+        self.checkVersion("4.6")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -863,7 +863,7 @@ class PCREParser ( Parser ):
             self.state = 86
             self.atom()
             self.state = 88
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 self.state = 87
@@ -915,7 +915,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_quantifier)
         try:
             self.state = 114
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1019,21 +1019,22 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_quantifier_type)
         try:
             self.state = 119
+            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [PCREParser.Plus]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 116
                 self.match(PCREParser.Plus)
-
+                pass
             elif token in [PCREParser.QuestionMark]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 117
                 self.match(PCREParser.QuestionMark)
-
+                pass
             elif token in [PCREParser.Quoted, PCREParser.BlockQuoted, PCREParser.BellChar, PCREParser.ControlChar, PCREParser.EscapeChar, PCREParser.FormFeed, PCREParser.NewLine, PCREParser.CarriageReturn, PCREParser.Tab, PCREParser.Backslash, PCREParser.HexChar, PCREParser.Dot, PCREParser.OneDataUnit, PCREParser.DecimalDigit, PCREParser.NotDecimalDigit, PCREParser.HorizontalWhiteSpace, PCREParser.NotHorizontalWhiteSpace, PCREParser.NotNewLine, PCREParser.CharWithProperty, PCREParser.CharWithoutProperty, PCREParser.NewLineSequence, PCREParser.WhiteSpace, PCREParser.NotWhiteSpace, PCREParser.VerticalWhiteSpace, PCREParser.NotVerticalWhiteSpace, PCREParser.WordChar, PCREParser.NotWordChar, PCREParser.ExtendedUnicodeChar, PCREParser.CharacterClassStart, PCREParser.CharacterClassEnd, PCREParser.Caret, PCREParser.Hyphen, PCREParser.POSIXNamedSet, PCREParser.POSIXNegatedNamedSet, PCREParser.OpenBrace, PCREParser.CloseBrace, PCREParser.Comma, PCREParser.WordBoundary, PCREParser.NonWordBoundary, PCREParser.StartOfSubject, PCREParser.EndOfSubjectOrLine, PCREParser.EndOfSubjectOrLineEndOfSubject, PCREParser.EndOfSubject, PCREParser.PreviousMatchInSubject, PCREParser.ResetStartMatch, PCREParser.SubroutineOrNamedReferenceStartG, PCREParser.NamedReferenceStartK, PCREParser.Pipe, PCREParser.OpenParen, PCREParser.CloseParen, PCREParser.LessThan, PCREParser.GreaterThan, PCREParser.SingleQuote, PCREParser.Underscore, PCREParser.Colon, PCREParser.Hash, PCREParser.Equals, PCREParser.Exclamation, PCREParser.Ampersand, PCREParser.ALC, PCREParser.BLC, PCREParser.CLC, PCREParser.DLC, PCREParser.ELC, PCREParser.FLC, PCREParser.GLC, PCREParser.HLC, PCREParser.ILC, PCREParser.JLC, PCREParser.KLC, PCREParser.LLC, PCREParser.MLC, PCREParser.NLC, PCREParser.OLC, PCREParser.PLC, PCREParser.QLC, PCREParser.RLC, PCREParser.SLC, PCREParser.TLC, PCREParser.ULC, PCREParser.VLC, PCREParser.WLC, PCREParser.XLC, PCREParser.YLC, PCREParser.ZLC, PCREParser.AUC, PCREParser.BUC, PCREParser.CUC, PCREParser.DUC, PCREParser.EUC, PCREParser.FUC, PCREParser.GUC, PCREParser.HUC, PCREParser.IUC, PCREParser.JUC, PCREParser.KUC, PCREParser.LUC, PCREParser.MUC, PCREParser.NUC, PCREParser.OUC, PCREParser.PUC, PCREParser.QUC, PCREParser.RUC, PCREParser.SUC, PCREParser.TUC, PCREParser.UUC, PCREParser.VUC, PCREParser.WUC, PCREParser.XUC, PCREParser.YUC, PCREParser.ZUC, PCREParser.D1, PCREParser.D2, PCREParser.D3, PCREParser.D4, PCREParser.D5, PCREParser.D6, PCREParser.D7, PCREParser.D8, PCREParser.D9, PCREParser.D0, PCREParser.OtherChar]:
                 self.enterOuterAlt(localctx, 3)
 
-
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -1085,7 +1086,7 @@ class PCREParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 178
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1268,7 +1269,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_backreference)
         try:
             self.state = 221
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1420,7 +1421,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_backreference_or_octal)
         try:
             self.state = 226
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1479,7 +1480,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_capture)
         try:
             self.state = 257
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1586,7 +1587,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_non_capture)
         try:
             self.state = 277
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1720,7 +1721,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_option)
         try:
             self.state = 339
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,16,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1948,6 +1949,7 @@ class PCREParser ( Parser ):
             if not(((((_la - 71)) & ~0x3f) == 0 and ((1 << (_la - 71)) & ((1 << (PCREParser.ILC - 71)) | (1 << (PCREParser.MLC - 71)) | (1 << (PCREParser.SLC - 71)) | (1 << (PCREParser.XLC - 71)) | (1 << (PCREParser.JUC - 71)) | (1 << (PCREParser.UUC - 71)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re
@@ -1987,7 +1989,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 28, self.RULE_look_around)
         try:
             self.state = 374
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -2092,7 +2094,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 30, self.RULE_subroutine_reference)
         try:
             self.state = 454
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,19,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -2331,7 +2333,7 @@ class PCREParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 607
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,31,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -2348,6 +2350,7 @@ class PCREParser ( Parser ):
                 self.state = 461
                 self.alternation()
                 self.state = 464
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 462
@@ -2377,6 +2380,7 @@ class PCREParser ( Parser ):
                 self.state = 474
                 self.alternation()
                 self.state = 477
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 475
@@ -2406,6 +2410,7 @@ class PCREParser ( Parser ):
                 self.state = 487
                 self.alternation()
                 self.state = 490
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 488
@@ -2437,6 +2442,7 @@ class PCREParser ( Parser ):
                 self.state = 501
                 self.alternation()
                 self.state = 504
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 502
@@ -2468,6 +2474,7 @@ class PCREParser ( Parser ):
                 self.state = 515
                 self.alternation()
                 self.state = 518
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 516
@@ -2497,6 +2504,7 @@ class PCREParser ( Parser ):
                 self.state = 528
                 self.alternation()
                 self.state = 531
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 529
@@ -2524,6 +2532,7 @@ class PCREParser ( Parser ):
                 self.state = 540
                 self.alternation()
                 self.state = 543
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 541
@@ -2555,6 +2564,7 @@ class PCREParser ( Parser ):
                 self.state = 554
                 self.alternation()
                 self.state = 557
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 555
@@ -2592,6 +2602,7 @@ class PCREParser ( Parser ):
                 self.state = 571
                 self.alternation()
                 self.state = 574
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 572
@@ -2629,6 +2640,7 @@ class PCREParser ( Parser ):
                 self.state = 588
                 self.alternation()
                 self.state = 591
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 589
@@ -2656,6 +2668,7 @@ class PCREParser ( Parser ):
                 self.state = 600
                 self.alternation()
                 self.state = 603
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.Pipe:
                     self.state = 601
@@ -2705,7 +2718,7 @@ class PCREParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 709
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,34,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -2738,6 +2751,7 @@ class PCREParser ( Parser ):
                 self.state = 620
                 self.match(PCREParser.FUC)
                 self.state = 624
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.AUC:
                     self.state = 621
@@ -2759,6 +2773,7 @@ class PCREParser ( Parser ):
                 self.state = 628
                 self.match(PCREParser.Star)
                 self.state = 633
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PCREParser.MUC:
                     self.state = 629
@@ -2985,7 +3000,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 36, self.RULE_newline_convention)
         try:
             self.state = 772
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,35,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -3176,7 +3191,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 38, self.RULE_callout)
         try:
             self.state = 784
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,36,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -3331,7 +3346,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 40, self.RULE_atom)
         try:
             self.state = 812
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,37,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -3542,7 +3557,7 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 42, self.RULE_cc_atom)
         try:
             self.state = 821
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,38,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -3664,6 +3679,7 @@ class PCREParser ( Parser ):
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PCREParser.ControlChar) | (1 << PCREParser.DecimalDigit) | (1 << PCREParser.NotDecimalDigit) | (1 << PCREParser.HorizontalWhiteSpace) | (1 << PCREParser.NotHorizontalWhiteSpace) | (1 << PCREParser.NotNewLine) | (1 << PCREParser.CharWithProperty) | (1 << PCREParser.CharWithoutProperty) | (1 << PCREParser.NewLineSequence) | (1 << PCREParser.WhiteSpace) | (1 << PCREParser.NotWhiteSpace) | (1 << PCREParser.VerticalWhiteSpace) | (1 << PCREParser.NotVerticalWhiteSpace) | (1 << PCREParser.WordChar) | (1 << PCREParser.NotWordChar) | (1 << PCREParser.POSIXNamedSet) | (1 << PCREParser.POSIXNegatedNamedSet))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re
@@ -3706,17 +3722,18 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 46, self.RULE_pcre_literal)
         try:
             self.state = 827
+            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [PCREParser.Quoted, PCREParser.BlockQuoted, PCREParser.BellChar, PCREParser.EscapeChar, PCREParser.FormFeed, PCREParser.NewLine, PCREParser.CarriageReturn, PCREParser.Tab, PCREParser.Backslash, PCREParser.HexChar, PCREParser.Hyphen, PCREParser.OpenBrace, PCREParser.CloseBrace, PCREParser.Comma, PCREParser.LessThan, PCREParser.GreaterThan, PCREParser.SingleQuote, PCREParser.Underscore, PCREParser.Colon, PCREParser.Hash, PCREParser.Equals, PCREParser.Exclamation, PCREParser.Ampersand, PCREParser.ALC, PCREParser.BLC, PCREParser.CLC, PCREParser.DLC, PCREParser.ELC, PCREParser.FLC, PCREParser.GLC, PCREParser.HLC, PCREParser.ILC, PCREParser.JLC, PCREParser.KLC, PCREParser.LLC, PCREParser.MLC, PCREParser.NLC, PCREParser.OLC, PCREParser.PLC, PCREParser.QLC, PCREParser.RLC, PCREParser.SLC, PCREParser.TLC, PCREParser.ULC, PCREParser.VLC, PCREParser.WLC, PCREParser.XLC, PCREParser.YLC, PCREParser.ZLC, PCREParser.AUC, PCREParser.BUC, PCREParser.CUC, PCREParser.DUC, PCREParser.EUC, PCREParser.FUC, PCREParser.GUC, PCREParser.HUC, PCREParser.IUC, PCREParser.JUC, PCREParser.KUC, PCREParser.LUC, PCREParser.MUC, PCREParser.NUC, PCREParser.OUC, PCREParser.PUC, PCREParser.QUC, PCREParser.RUC, PCREParser.SUC, PCREParser.TUC, PCREParser.UUC, PCREParser.VUC, PCREParser.WUC, PCREParser.XUC, PCREParser.YUC, PCREParser.ZUC, PCREParser.D1, PCREParser.D2, PCREParser.D3, PCREParser.D4, PCREParser.D5, PCREParser.D6, PCREParser.D7, PCREParser.D8, PCREParser.D9, PCREParser.D0, PCREParser.OtherChar]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 825
                 self.shared_literal()
-
+                pass
             elif token in [PCREParser.CharacterClassEnd]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 826
                 self.match(PCREParser.CharacterClassEnd)
-
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -3791,67 +3808,68 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 48, self.RULE_cc_literal)
         try:
             self.state = 841
+            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [PCREParser.Quoted, PCREParser.BlockQuoted, PCREParser.BellChar, PCREParser.EscapeChar, PCREParser.FormFeed, PCREParser.NewLine, PCREParser.CarriageReturn, PCREParser.Tab, PCREParser.Backslash, PCREParser.HexChar, PCREParser.Hyphen, PCREParser.OpenBrace, PCREParser.CloseBrace, PCREParser.Comma, PCREParser.LessThan, PCREParser.GreaterThan, PCREParser.SingleQuote, PCREParser.Underscore, PCREParser.Colon, PCREParser.Hash, PCREParser.Equals, PCREParser.Exclamation, PCREParser.Ampersand, PCREParser.ALC, PCREParser.BLC, PCREParser.CLC, PCREParser.DLC, PCREParser.ELC, PCREParser.FLC, PCREParser.GLC, PCREParser.HLC, PCREParser.ILC, PCREParser.JLC, PCREParser.KLC, PCREParser.LLC, PCREParser.MLC, PCREParser.NLC, PCREParser.OLC, PCREParser.PLC, PCREParser.QLC, PCREParser.RLC, PCREParser.SLC, PCREParser.TLC, PCREParser.ULC, PCREParser.VLC, PCREParser.WLC, PCREParser.XLC, PCREParser.YLC, PCREParser.ZLC, PCREParser.AUC, PCREParser.BUC, PCREParser.CUC, PCREParser.DUC, PCREParser.EUC, PCREParser.FUC, PCREParser.GUC, PCREParser.HUC, PCREParser.IUC, PCREParser.JUC, PCREParser.KUC, PCREParser.LUC, PCREParser.MUC, PCREParser.NUC, PCREParser.OUC, PCREParser.PUC, PCREParser.QUC, PCREParser.RUC, PCREParser.SUC, PCREParser.TUC, PCREParser.UUC, PCREParser.VUC, PCREParser.WUC, PCREParser.XUC, PCREParser.YUC, PCREParser.ZUC, PCREParser.D1, PCREParser.D2, PCREParser.D3, PCREParser.D4, PCREParser.D5, PCREParser.D6, PCREParser.D7, PCREParser.D8, PCREParser.D9, PCREParser.D0, PCREParser.OtherChar]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 829
                 self.shared_literal()
-
+                pass
             elif token in [PCREParser.Dot]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 830
                 self.match(PCREParser.Dot)
-
+                pass
             elif token in [PCREParser.CharacterClassStart]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 831
                 self.match(PCREParser.CharacterClassStart)
-
+                pass
             elif token in [PCREParser.Caret]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 832
                 self.match(PCREParser.Caret)
-
+                pass
             elif token in [PCREParser.QuestionMark]:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 833
                 self.match(PCREParser.QuestionMark)
-
+                pass
             elif token in [PCREParser.Plus]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 834
                 self.match(PCREParser.Plus)
-
+                pass
             elif token in [PCREParser.Star]:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 835
                 self.match(PCREParser.Star)
-
+                pass
             elif token in [PCREParser.WordBoundary]:
                 self.enterOuterAlt(localctx, 8)
                 self.state = 836
                 self.match(PCREParser.WordBoundary)
-
+                pass
             elif token in [PCREParser.EndOfSubjectOrLine]:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 837
                 self.match(PCREParser.EndOfSubjectOrLine)
-
+                pass
             elif token in [PCREParser.Pipe]:
                 self.enterOuterAlt(localctx, 10)
                 self.state = 838
                 self.match(PCREParser.Pipe)
-
+                pass
             elif token in [PCREParser.OpenParen]:
                 self.enterOuterAlt(localctx, 11)
                 self.state = 839
                 self.match(PCREParser.OpenParen)
-
+                pass
             elif token in [PCREParser.CloseParen]:
                 self.enterOuterAlt(localctx, 12)
                 self.state = 840
                 self.match(PCREParser.CloseParen)
-
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -3970,137 +3988,138 @@ class PCREParser ( Parser ):
         self.enterRule(localctx, 50, self.RULE_shared_literal)
         try:
             self.state = 869
+            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [PCREParser.Backslash]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 843
                 self.octal_char()
-
+                pass
             elif token in [PCREParser.ALC, PCREParser.BLC, PCREParser.CLC, PCREParser.DLC, PCREParser.ELC, PCREParser.FLC, PCREParser.GLC, PCREParser.HLC, PCREParser.ILC, PCREParser.JLC, PCREParser.KLC, PCREParser.LLC, PCREParser.MLC, PCREParser.NLC, PCREParser.OLC, PCREParser.PLC, PCREParser.QLC, PCREParser.RLC, PCREParser.SLC, PCREParser.TLC, PCREParser.ULC, PCREParser.VLC, PCREParser.WLC, PCREParser.XLC, PCREParser.YLC, PCREParser.ZLC, PCREParser.AUC, PCREParser.BUC, PCREParser.CUC, PCREParser.DUC, PCREParser.EUC, PCREParser.FUC, PCREParser.GUC, PCREParser.HUC, PCREParser.IUC, PCREParser.JUC, PCREParser.KUC, PCREParser.LUC, PCREParser.MUC, PCREParser.NUC, PCREParser.OUC, PCREParser.PUC, PCREParser.QUC, PCREParser.RUC, PCREParser.SUC, PCREParser.TUC, PCREParser.UUC, PCREParser.VUC, PCREParser.WUC, PCREParser.XUC, PCREParser.YUC, PCREParser.ZUC]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 844
                 self.letter()
-
+                pass
             elif token in [PCREParser.D1, PCREParser.D2, PCREParser.D3, PCREParser.D4, PCREParser.D5, PCREParser.D6, PCREParser.D7, PCREParser.D8, PCREParser.D9, PCREParser.D0]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 845
                 self.digit()
-
+                pass
             elif token in [PCREParser.BellChar]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 846
                 self.match(PCREParser.BellChar)
-
+                pass
             elif token in [PCREParser.EscapeChar]:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 847
                 self.match(PCREParser.EscapeChar)
-
+                pass
             elif token in [PCREParser.FormFeed]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 848
                 self.match(PCREParser.FormFeed)
-
+                pass
             elif token in [PCREParser.NewLine]:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 849
                 self.match(PCREParser.NewLine)
-
+                pass
             elif token in [PCREParser.CarriageReturn]:
                 self.enterOuterAlt(localctx, 8)
                 self.state = 850
                 self.match(PCREParser.CarriageReturn)
-
+                pass
             elif token in [PCREParser.Tab]:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 851
                 self.match(PCREParser.Tab)
-
+                pass
             elif token in [PCREParser.HexChar]:
                 self.enterOuterAlt(localctx, 10)
                 self.state = 852
                 self.match(PCREParser.HexChar)
-
+                pass
             elif token in [PCREParser.Quoted]:
                 self.enterOuterAlt(localctx, 11)
                 self.state = 853
                 self.match(PCREParser.Quoted)
-
+                pass
             elif token in [PCREParser.BlockQuoted]:
                 self.enterOuterAlt(localctx, 12)
                 self.state = 854
                 self.match(PCREParser.BlockQuoted)
-
+                pass
             elif token in [PCREParser.OpenBrace]:
                 self.enterOuterAlt(localctx, 13)
                 self.state = 855
                 self.match(PCREParser.OpenBrace)
-
+                pass
             elif token in [PCREParser.CloseBrace]:
                 self.enterOuterAlt(localctx, 14)
                 self.state = 856
                 self.match(PCREParser.CloseBrace)
-
+                pass
             elif token in [PCREParser.Comma]:
                 self.enterOuterAlt(localctx, 15)
                 self.state = 857
                 self.match(PCREParser.Comma)
-
+                pass
             elif token in [PCREParser.Hyphen]:
                 self.enterOuterAlt(localctx, 16)
                 self.state = 858
                 self.match(PCREParser.Hyphen)
-
+                pass
             elif token in [PCREParser.LessThan]:
                 self.enterOuterAlt(localctx, 17)
                 self.state = 859
                 self.match(PCREParser.LessThan)
-
+                pass
             elif token in [PCREParser.GreaterThan]:
                 self.enterOuterAlt(localctx, 18)
                 self.state = 860
                 self.match(PCREParser.GreaterThan)
-
+                pass
             elif token in [PCREParser.SingleQuote]:
                 self.enterOuterAlt(localctx, 19)
                 self.state = 861
                 self.match(PCREParser.SingleQuote)
-
+                pass
             elif token in [PCREParser.Underscore]:
                 self.enterOuterAlt(localctx, 20)
                 self.state = 862
                 self.match(PCREParser.Underscore)
-
+                pass
             elif token in [PCREParser.Colon]:
                 self.enterOuterAlt(localctx, 21)
                 self.state = 863
                 self.match(PCREParser.Colon)
-
+                pass
             elif token in [PCREParser.Hash]:
                 self.enterOuterAlt(localctx, 22)
                 self.state = 864
                 self.match(PCREParser.Hash)
-
+                pass
             elif token in [PCREParser.Equals]:
                 self.enterOuterAlt(localctx, 23)
                 self.state = 865
                 self.match(PCREParser.Equals)
-
+                pass
             elif token in [PCREParser.Exclamation]:
                 self.enterOuterAlt(localctx, 24)
                 self.state = 866
                 self.match(PCREParser.Exclamation)
-
+                pass
             elif token in [PCREParser.Ampersand]:
                 self.enterOuterAlt(localctx, 25)
                 self.state = 867
                 self.match(PCREParser.Ampersand)
-
+                pass
             elif token in [PCREParser.OtherChar]:
                 self.enterOuterAlt(localctx, 26)
                 self.state = 868
                 self.match(PCREParser.OtherChar)
-
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -4202,7 +4221,7 @@ class PCREParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 882
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,42,self._ctx)
             if la_ == 1:
                 self.state = 873
@@ -4212,6 +4231,7 @@ class PCREParser ( Parser ):
                 if not(((((_la - 115)) & ~0x3f) == 0 and ((1 << (_la - 115)) & ((1 << (PCREParser.D1 - 115)) | (1 << (PCREParser.D2 - 115)) | (1 << (PCREParser.D3 - 115)) | (1 << (PCREParser.D0 - 115)))) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
+                    self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 875
                 self.octal_digit()
@@ -4293,6 +4313,7 @@ class PCREParser ( Parser ):
             if not(((((_la - 115)) & ~0x3f) == 0 and ((1 << (_la - 115)) & ((1 << (PCREParser.D1 - 115)) | (1 << (PCREParser.D2 - 115)) | (1 << (PCREParser.D3 - 115)) | (1 << (PCREParser.D4 - 115)) | (1 << (PCREParser.D5 - 115)) | (1 << (PCREParser.D6 - 115)) | (1 << (PCREParser.D7 - 115)) | (1 << (PCREParser.D0 - 115)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re
@@ -4419,6 +4440,7 @@ class PCREParser ( Parser ):
             if not(((((_la - 115)) & ~0x3f) == 0 and ((1 << (_la - 115)) & ((1 << (PCREParser.D1 - 115)) | (1 << (PCREParser.D2 - 115)) | (1 << (PCREParser.D3 - 115)) | (1 << (PCREParser.D4 - 115)) | (1 << (PCREParser.D5 - 115)) | (1 << (PCREParser.D6 - 115)) | (1 << (PCREParser.D7 - 115)) | (1 << (PCREParser.D8 - 115)) | (1 << (PCREParser.D9 - 115)) | (1 << (PCREParser.D0 - 115)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re
@@ -4516,15 +4538,16 @@ class PCREParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 897
+            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [PCREParser.ALC, PCREParser.BLC, PCREParser.CLC, PCREParser.DLC, PCREParser.ELC, PCREParser.FLC, PCREParser.GLC, PCREParser.HLC, PCREParser.ILC, PCREParser.JLC, PCREParser.KLC, PCREParser.LLC, PCREParser.MLC, PCREParser.NLC, PCREParser.OLC, PCREParser.PLC, PCREParser.QLC, PCREParser.RLC, PCREParser.SLC, PCREParser.TLC, PCREParser.ULC, PCREParser.VLC, PCREParser.WLC, PCREParser.XLC, PCREParser.YLC, PCREParser.ZLC, PCREParser.AUC, PCREParser.BUC, PCREParser.CUC, PCREParser.DUC, PCREParser.EUC, PCREParser.FUC, PCREParser.GUC, PCREParser.HUC, PCREParser.IUC, PCREParser.JUC, PCREParser.KUC, PCREParser.LUC, PCREParser.MUC, PCREParser.NUC, PCREParser.OUC, PCREParser.PUC, PCREParser.QUC, PCREParser.RUC, PCREParser.SUC, PCREParser.TUC, PCREParser.UUC, PCREParser.VUC, PCREParser.WUC, PCREParser.XUC, PCREParser.YUC, PCREParser.ZUC]:
                 self.state = 895
                 self.letter()
-
+                pass
             elif token in [PCREParser.Underscore]:
                 self.state = 896
                 self.match(PCREParser.Underscore)
-
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -4533,19 +4556,20 @@ class PCREParser ( Parser ):
             _la = self._input.LA(1)
             while _la==PCREParser.Underscore or _la==PCREParser.ALC or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (PCREParser.BLC - 64)) | (1 << (PCREParser.CLC - 64)) | (1 << (PCREParser.DLC - 64)) | (1 << (PCREParser.ELC - 64)) | (1 << (PCREParser.FLC - 64)) | (1 << (PCREParser.GLC - 64)) | (1 << (PCREParser.HLC - 64)) | (1 << (PCREParser.ILC - 64)) | (1 << (PCREParser.JLC - 64)) | (1 << (PCREParser.KLC - 64)) | (1 << (PCREParser.LLC - 64)) | (1 << (PCREParser.MLC - 64)) | (1 << (PCREParser.NLC - 64)) | (1 << (PCREParser.OLC - 64)) | (1 << (PCREParser.PLC - 64)) | (1 << (PCREParser.QLC - 64)) | (1 << (PCREParser.RLC - 64)) | (1 << (PCREParser.SLC - 64)) | (1 << (PCREParser.TLC - 64)) | (1 << (PCREParser.ULC - 64)) | (1 << (PCREParser.VLC - 64)) | (1 << (PCREParser.WLC - 64)) | (1 << (PCREParser.XLC - 64)) | (1 << (PCREParser.YLC - 64)) | (1 << (PCREParser.ZLC - 64)) | (1 << (PCREParser.AUC - 64)) | (1 << (PCREParser.BUC - 64)) | (1 << (PCREParser.CUC - 64)) | (1 << (PCREParser.DUC - 64)) | (1 << (PCREParser.EUC - 64)) | (1 << (PCREParser.FUC - 64)) | (1 << (PCREParser.GUC - 64)) | (1 << (PCREParser.HUC - 64)) | (1 << (PCREParser.IUC - 64)) | (1 << (PCREParser.JUC - 64)) | (1 << (PCREParser.KUC - 64)) | (1 << (PCREParser.LUC - 64)) | (1 << (PCREParser.MUC - 64)) | (1 << (PCREParser.NUC - 64)) | (1 << (PCREParser.OUC - 64)) | (1 << (PCREParser.PUC - 64)) | (1 << (PCREParser.QUC - 64)) | (1 << (PCREParser.RUC - 64)) | (1 << (PCREParser.SUC - 64)) | (1 << (PCREParser.TUC - 64)) | (1 << (PCREParser.UUC - 64)) | (1 << (PCREParser.VUC - 64)) | (1 << (PCREParser.WUC - 64)) | (1 << (PCREParser.XUC - 64)) | (1 << (PCREParser.YUC - 64)) | (1 << (PCREParser.ZUC - 64)) | (1 << (PCREParser.D1 - 64)) | (1 << (PCREParser.D2 - 64)) | (1 << (PCREParser.D3 - 64)) | (1 << (PCREParser.D4 - 64)) | (1 << (PCREParser.D5 - 64)) | (1 << (PCREParser.D6 - 64)) | (1 << (PCREParser.D7 - 64)) | (1 << (PCREParser.D8 - 64)) | (1 << (PCREParser.D9 - 64)) | (1 << (PCREParser.D0 - 64)))) != 0):
                 self.state = 902
+                self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [PCREParser.ALC, PCREParser.BLC, PCREParser.CLC, PCREParser.DLC, PCREParser.ELC, PCREParser.FLC, PCREParser.GLC, PCREParser.HLC, PCREParser.ILC, PCREParser.JLC, PCREParser.KLC, PCREParser.LLC, PCREParser.MLC, PCREParser.NLC, PCREParser.OLC, PCREParser.PLC, PCREParser.QLC, PCREParser.RLC, PCREParser.SLC, PCREParser.TLC, PCREParser.ULC, PCREParser.VLC, PCREParser.WLC, PCREParser.XLC, PCREParser.YLC, PCREParser.ZLC, PCREParser.AUC, PCREParser.BUC, PCREParser.CUC, PCREParser.DUC, PCREParser.EUC, PCREParser.FUC, PCREParser.GUC, PCREParser.HUC, PCREParser.IUC, PCREParser.JUC, PCREParser.KUC, PCREParser.LUC, PCREParser.MUC, PCREParser.NUC, PCREParser.OUC, PCREParser.PUC, PCREParser.QUC, PCREParser.RUC, PCREParser.SUC, PCREParser.TUC, PCREParser.UUC, PCREParser.VUC, PCREParser.WUC, PCREParser.XUC, PCREParser.YUC, PCREParser.ZUC]:
                     self.state = 899
                     self.letter()
-
+                    pass
                 elif token in [PCREParser.Underscore]:
                     self.state = 900
                     self.match(PCREParser.Underscore)
-
+                    pass
                 elif token in [PCREParser.D1, PCREParser.D2, PCREParser.D3, PCREParser.D4, PCREParser.D5, PCREParser.D6, PCREParser.D7, PCREParser.D8, PCREParser.D9, PCREParser.D0]:
                     self.state = 901
                     self.digit()
-
+                    pass
                 else:
                     raise NoViableAltException(self)
 
@@ -4650,6 +4674,7 @@ class PCREParser ( Parser ):
             if _la <= 0 or _la==PCREParser.CloseParen:
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re
@@ -4847,6 +4872,7 @@ class PCREParser ( Parser ):
             if not(((((_la - 63)) & ~0x3f) == 0 and ((1 << (_la - 63)) & ((1 << (PCREParser.ALC - 63)) | (1 << (PCREParser.BLC - 63)) | (1 << (PCREParser.CLC - 63)) | (1 << (PCREParser.DLC - 63)) | (1 << (PCREParser.ELC - 63)) | (1 << (PCREParser.FLC - 63)) | (1 << (PCREParser.GLC - 63)) | (1 << (PCREParser.HLC - 63)) | (1 << (PCREParser.ILC - 63)) | (1 << (PCREParser.JLC - 63)) | (1 << (PCREParser.KLC - 63)) | (1 << (PCREParser.LLC - 63)) | (1 << (PCREParser.MLC - 63)) | (1 << (PCREParser.NLC - 63)) | (1 << (PCREParser.OLC - 63)) | (1 << (PCREParser.PLC - 63)) | (1 << (PCREParser.QLC - 63)) | (1 << (PCREParser.RLC - 63)) | (1 << (PCREParser.SLC - 63)) | (1 << (PCREParser.TLC - 63)) | (1 << (PCREParser.ULC - 63)) | (1 << (PCREParser.VLC - 63)) | (1 << (PCREParser.WLC - 63)) | (1 << (PCREParser.XLC - 63)) | (1 << (PCREParser.YLC - 63)) | (1 << (PCREParser.ZLC - 63)) | (1 << (PCREParser.AUC - 63)) | (1 << (PCREParser.BUC - 63)) | (1 << (PCREParser.CUC - 63)) | (1 << (PCREParser.DUC - 63)) | (1 << (PCREParser.EUC - 63)) | (1 << (PCREParser.FUC - 63)) | (1 << (PCREParser.GUC - 63)) | (1 << (PCREParser.HUC - 63)) | (1 << (PCREParser.IUC - 63)) | (1 << (PCREParser.JUC - 63)) | (1 << (PCREParser.KUC - 63)) | (1 << (PCREParser.LUC - 63)) | (1 << (PCREParser.MUC - 63)) | (1 << (PCREParser.NUC - 63)) | (1 << (PCREParser.OUC - 63)) | (1 << (PCREParser.PUC - 63)) | (1 << (PCREParser.QUC - 63)) | (1 << (PCREParser.RUC - 63)) | (1 << (PCREParser.SUC - 63)) | (1 << (PCREParser.TUC - 63)) | (1 << (PCREParser.UUC - 63)) | (1 << (PCREParser.VUC - 63)) | (1 << (PCREParser.WUC - 63)) | (1 << (PCREParser.XUC - 63)) | (1 << (PCREParser.YUC - 63)) | (1 << (PCREParser.ZUC - 63)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re

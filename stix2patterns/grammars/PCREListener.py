@@ -1,4 +1,4 @@
-# Generated from PCRE.g4 by ANTLR 4.5.3
+# Generated from PCRE.g4 by ANTLR 4.6
 from antlr4 import *
 
 # This class defines a complete listener for a parse tree produced by PCREParser.
