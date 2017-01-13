@@ -1,5 +1,5 @@
 '''
-Validates a user entered pattern against STIXPattern and PCRE grammars.
+Validates a user entered pattern against STIXPattern grammar.
 '''
 
 from __future__ import print_function
@@ -13,8 +13,6 @@ import six
 from .grammars.STIXPatternLexer import STIXPatternLexer
 from .grammars.STIXPatternParser import STIXPatternParser
 from .grammars.STIXPatternListener import STIXPatternListener
-from .grammars.PCRELexer import PCRELexer
-from .grammars.PCREParser import PCREParser
 
 
 class STIXPatternErrorListener(ErrorListener):
@@ -29,48 +27,6 @@ class STIXPatternErrorListener(ErrorListener):
     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
         self.err_strings.append("FAIL: Error found at line %d:%d. %s" %
                                 (line, column, msg))
-
-
-class PCREErrorListener(ErrorListener):
-    '''
-    Modifies ErrorListener for PCRE to collect a more appropriate error
-    message.
-    '''
-    def __init__(self):
-        super(PCREErrorListener, self).__init__()
-        self.err_strings = []
-
-    def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
-        self.err_strings.append("FAIL: Regex error found. %s." % msg)
-
-
-class REGEXValidatorListener(STIXPatternListener):
-    """
-    A parser listener which triggers when the parse process encounters regex
-    literals.  This listener will validate the regexes and collect error
-    messages into a list.
-    """
-    def __init__(self):
-        self.err_strings = []
-
-    def exitRegexLiteral(self, ctx):
-        # returns a TerminalNode; we need the actual token string
-        regex = str(ctx.RegexLiteral())
-
-        # strip leading/trailing "/"
-        in_ = InputStream(regex[1:-1])
-        lexer = PCRELexer(in_)
-        lexer.removeErrorListeners()
-        stream = CommonTokenStream(lexer)
-        pcre_parser = PCREParser(stream)
-        pcre_parser.buildParseTrees = False
-        pcre_parser.removeErrorListeners()
-        errListener = PCREErrorListener()
-        pcre_parser.addErrorListener(errListener)
-        pcre_parser.alternation()
-
-        self.err_strings.extend(err + ' REGEX: ' + regex
-                                for err in errListener.err_strings)
 
 
 def run_validator(pattern):
@@ -95,14 +51,10 @@ def run_validator(pattern):
     # it always adds a console listener by default... remove it.
     parser.removeErrorListeners()
     parser.addErrorListener(parseErrListener)
-    regexListener = REGEXValidatorListener()
-    parser.addParseListener(regexListener)
 
     parser.pattern()
 
-    err_strings = parseErrListener.err_strings + regexListener.err_strings
-
-    return err_strings
+    return parseErrListener.err_strings
 
 
 def validate(user_input, ret_errs=False, print_errs=False):
