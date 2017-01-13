@@ -1,4 +1,4 @@
-# Generated from STIXPattern.g4 by ANTLR 4.6
+# Generated from STIXPattern.g4 by ANTLR 4.5.3
 # encoding: utf-8
 from __future__ import print_function
 from antlr4 import *
@@ -383,7 +383,7 @@ class STIXPatternLexer(Lexer):
 
     def __init__(self, input=None):
         super(STIXPatternLexer, self).__init__(input)
-        self.checkVersion("4.6")
+        self.checkVersion("4.5.3")
         self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None

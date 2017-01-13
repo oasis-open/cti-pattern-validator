@@ -1,4 +1,4 @@
-# Generated from STIXPattern.g4 by ANTLR 4.6
+# Generated from STIXPattern.g4 by ANTLR 4.5.3
 # encoding: utf-8
 from __future__ import print_function
 from antlr4 import *
@@ -229,7 +229,7 @@ class STIXPatternParser ( Parser ):
 
     def __init__(self, input):
         super(STIXPatternParser, self).__init__(input)
-        self.checkVersion("4.6")
+        self.checkVersion("4.5.3")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -638,7 +638,6 @@ class STIXPatternParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 82
-            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [STIXPatternParser.LBRACK]:
                 localctx = STIXPatternParser.ObservationExpressionSimpleContext(self, localctx)
@@ -651,7 +650,7 @@ class STIXPatternParser ( Parser ):
                 self.comparisonExpression(0)
                 self.state = 76
                 self.match(STIXPatternParser.RBRACK)
-                pass
+
             elif token in [STIXPatternParser.LPAREN]:
                 localctx = STIXPatternParser.ObservationExpressionCompoundContext(self, localctx)
                 self._ctx = localctx
@@ -662,7 +661,7 @@ class STIXPatternParser ( Parser ):
                 self.observationExpressions(0)
                 self.state = 80
                 self.match(STIXPatternParser.RPAREN)
-                pass
+
             else:
                 raise NoViableAltException(self)
 
@@ -676,7 +675,7 @@ class STIXPatternParser ( Parser ):
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 90
-                    self._errHandler.sync(self)
+                    self._errHandler.sync(self);
                     la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
                     if la_ == 1:
                         localctx = STIXPatternParser.ObservationExpressionStartStopContext(self, STIXPatternParser.ObservationExpressionContext(self, _parentctx, _parentState))
@@ -1103,7 +1102,7 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 164
-            self._errHandler.sync(self)
+            self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
             if la_ == 1:
                 localctx = STIXPatternParser.PropTestEqualContext(self, localctx)
@@ -1115,7 +1114,6 @@ class STIXPatternParser ( Parser ):
                 if not(_la==STIXPatternParser.EQ or _la==STIXPatternParser.NEQ):
                     self._errHandler.recoverInline(self)
                 else:
-                    self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 119
                 self.primitiveLiteral()
@@ -1131,7 +1129,6 @@ class STIXPatternParser ( Parser ):
                 if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << STIXPatternParser.LT) | (1 << STIXPatternParser.LE) | (1 << STIXPatternParser.GT) | (1 << STIXPatternParser.GE))) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
-                    self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 123
                 self.orderableLiteral()
@@ -1143,7 +1140,6 @@ class STIXPatternParser ( Parser ):
                 self.state = 125
                 self.objectPath()
                 self.state = 127
-                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 126
@@ -1162,7 +1158,6 @@ class STIXPatternParser ( Parser ):
                 self.state = 132
                 self.objectPath()
                 self.state = 134
-                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 133
@@ -1181,7 +1176,6 @@ class STIXPatternParser ( Parser ):
                 self.state = 139
                 self.objectPath()
                 self.state = 141
-                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 140
@@ -1200,7 +1194,6 @@ class STIXPatternParser ( Parser ):
                 self.state = 146
                 self.objectPath()
                 self.state = 148
-                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 147
@@ -1219,7 +1212,6 @@ class STIXPatternParser ( Parser ):
                 self.state = 153
                 self.objectPath()
                 self.state = 155
-                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 154
@@ -1454,7 +1446,6 @@ class STIXPatternParser ( Parser ):
             self.state = 181
             self.firstPathComponent()
             self.state = 183
-            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==STIXPatternParser.DOT or _la==STIXPatternParser.LBRACK:
                 self.state = 182
@@ -1638,7 +1629,6 @@ class STIXPatternParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 195
-            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [STIXPatternParser.DOT]:
                 localctx = STIXPatternParser.KeyPathStepContext(self, localctx)
@@ -1649,7 +1639,7 @@ class STIXPatternParser ( Parser ):
                 self.match(STIXPatternParser.DOT)
                 self.state = 191
                 self.match(STIXPatternParser.Identifier)
-                pass
+
             elif token in [STIXPatternParser.LBRACK]:
                 localctx = STIXPatternParser.IndexPathStepContext(self, localctx)
                 self._ctx = localctx
@@ -1661,11 +1651,10 @@ class STIXPatternParser ( Parser ):
                 if not(_la==STIXPatternParser.IntLiteral or _la==STIXPatternParser.ASTERISK):
                     self._errHandler.recoverInline(self)
                 else:
-                    self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 194
                 self.match(STIXPatternParser.RBRACK)
-                pass
+
             else:
                 raise NoViableAltException(self)
 
@@ -1744,7 +1733,7 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 217
-            self._errHandler.sync(self)
+            self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1821,23 +1810,22 @@ class STIXPatternParser ( Parser ):
         self.enterRule(localctx, 32, self.RULE_primitiveLiteral)
         try:
             self.state = 222
-            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [STIXPatternParser.IntLiteral, STIXPatternParser.FloatLiteral, STIXPatternParser.HexLiteral, STIXPatternParser.BinaryLiteral, STIXPatternParser.StringLiteral, STIXPatternParser.TimestampLiteral]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 219
                 self.orderableLiteral()
-                pass
+
             elif token in [STIXPatternParser.BoolLiteral]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 220
                 self.match(STIXPatternParser.BoolLiteral)
-                pass
+
             elif token in [STIXPatternParser.NULL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 221
                 self.match(STIXPatternParser.NULL)
-                pass
+
             else:
                 raise NoViableAltException(self)
 
@@ -1899,7 +1887,6 @@ class STIXPatternParser ( Parser ):
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << STIXPatternParser.IntLiteral) | (1 << STIXPatternParser.FloatLiteral) | (1 << STIXPatternParser.HexLiteral) | (1 << STIXPatternParser.BinaryLiteral) | (1 << STIXPatternParser.StringLiteral) | (1 << STIXPatternParser.TimestampLiteral))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
-                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re
@@ -1962,7 +1949,6 @@ class STIXPatternParser ( Parser ):
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << STIXPatternParser.MILLISECONDS) | (1 << STIXPatternParser.SECONDS) | (1 << STIXPatternParser.MINUTES) | (1 << STIXPatternParser.HOURS) | (1 << STIXPatternParser.DAYS) | (1 << STIXPatternParser.MONTHS) | (1 << STIXPatternParser.YEARS))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
-                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re
