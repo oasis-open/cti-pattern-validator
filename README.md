@@ -69,7 +69,7 @@ You can also test against the examples provided in the supplied `examples.txt`
 file.
 
 ```bash
-$ validate-patterns -f stix2patterns/examples.txt
+$ validate-patterns -f stix2patterns/test/spec_examples.txt
 ```
 
 ## Updating the Grammar
