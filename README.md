@@ -34,6 +34,18 @@ in addition to being an importable Python library.
 The `validate-patterns` script accepts patterns from either direct user input
 or a file passed as an option.
 
+### From Python Code
+
+The `run_validator` function can be called on any Python string. It returns a
+list of errors encountered while parsing the pattern.
+
+```python
+from stix2patterns.validator import run_validator
+
+pattern = "[file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4']"
+errors = run_validator(pattern)
+```
+
 ### User Input
 
 When prompted, enter a pattern to validate and press enter. The validator will
@@ -74,13 +86,17 @@ $ validate-patterns -f stix2patterns/test/spec_examples.txt
 
 ## Updating the Grammar
 
-If you modify STIXGrammar.g4, you'll need to use the Java ANTLR package to generate new Python source files (the ANTLR .jar file is not needed for normal use of the validator).
+The ANTLR pattern grammar is maintained in the
+[stix2-json-schemas](https://github.com/oasis-open/cti-stix2-json-schemas/blob/master/pattern_grammar/STIXPattern.g4)
+repository. If the grammar changes, the code in this repository should be
+updated to match. To do so, use the Java ANTLR package to generate new Python
+source files. (The .jar file is not needed for normal use of the validator).
 
 1. Download antlr-4.5.3-complete.jar from http://www.antlr.org/download/
-2. From the `grammars` directory, run
+2. From inside the `grammars` directory, run
 
     ```bash
-    $ java -cp "/path/to/antlr-4.5.3-complete.jar" -Xmx500M org.antlr.v4.Tool -Dlanguage=Python2 STIXPattern.g4
+    $ java -cp "/path/to/antlr-4.5.3-complete.jar" -Xmx500M org.antlr.v4.Tool -Dlanguage=Python2 /path/to/STIXPattern.g4
     ```
 
 ## Governance
