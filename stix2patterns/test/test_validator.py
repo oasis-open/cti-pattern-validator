@@ -26,6 +26,7 @@ FAIL_CASES = [
     "[file:hashes.MD5 = cead3f77f6cda6ec00f57d76c9a6879f]"  # No quotes around string
     "[file.size = 1280]",  # Use period instead of colon
     "[file:name MATCHES /.*\\.dll/]",  # Quotes around regular expression
+    "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS",  # SECONDS is the only valid time unit
     # TODO: add more failing test cases.
 ]
 
@@ -51,17 +52,12 @@ PASS_CASES = [
     r"[emailaddr:value MATCHES '.+\\@ibm\\.com$' OR file:name MATCHES '^Final Report.+\\.exe$']",
     "[ipv4addr:value ISSUBSET '192.168.0.1/24']",
     "[ipv4addr:value NOT ISSUBSET '192.168.0.1/24']",
-    "[user-account:value = 'Peter'] AND [user-account:value != 'Paul'] AND [user-account:value = 'Mary'] WITHIN 5 MINUTES",
+    "[user-account:value = 'Peter'] AND [user-account:value != 'Paul'] AND [user-account:value = 'Mary'] WITHIN 5 SECONDS",
     "[file:file_system_properties.file_name LIKE 'name%']",
     "[file:file_name IN ('test.txt', 'test2.exe', 'README')]",
     "[file:size IN (1024, 2048, 4096)]",
     "[network-connection:extended_properties[0].source_payload MATCHES 'dGVzdHRlc3R0ZXN0']",
-    "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 MILLISECONDS",
     "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 SECONDS",
-    "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS",
-    "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 DAYS",
-    "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 MONTHS",
-    "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 YEARS"
 ]
 
 
