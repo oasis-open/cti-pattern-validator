@@ -98,8 +98,9 @@ source files. (The .jar file is not needed for normal use of the validator).
 4. Run the following command
 
     ```bash
-    $ java -cp "/path/to/antlr-4.5.3-complete.jar" -Xmx500M org.antlr.v4.Tool -Dlanguage=Python2 STIXPattern.g4 -o /path/to/cti-pattern-validator/stix2patterns/grammars
+    $ java -jar "/path/to/antlr-4.5.3-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -o /path/to/cti-pattern-validator/stix2patterns/grammars
     ```
+    
 5. Commit the resulting files to git.
 
 ## Governance
