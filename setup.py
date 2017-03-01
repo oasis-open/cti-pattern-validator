@@ -2,11 +2,15 @@
 
 from setuptools import setup, find_packages
 
+with open('README.rst') as f:
+    readme = f.read()
+
 setup(
     name='stix2-patterns',
     version='0.2.2',
     packages=find_packages(),
     description='Validate STIX 2 Patterns.',
+    long_description=readme,
     install_requires=[
         "six",
     ],
