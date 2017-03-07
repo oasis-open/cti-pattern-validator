@@ -2,17 +2,23 @@
 
 from setuptools import setup, find_packages
 
+with open('README.rst') as f:
+    readme = f.read()
+
 setup(
     name='stix2-patterns',
-    version='0.2.0',
+    version='0.2.2',
     packages=find_packages(),
     description='Validate STIX 2 Patterns.',
+    long_description=readme,
     install_requires=[
-        "antlr4-python2-runtime==4.5.3 ; python_version < '3'",
-        "antlr4-python3-runtime==4.5.3 ; python_version >= '3'",
-        "enum34 ; python_version ~= '3.3.0'",
         "six",
     ],
+    extras_require={
+        ':python_version<"3"': ['antlr4-python2-runtime==4.5.3'],
+        ':python_version>="3"': ['antlr4-python3-runtime==4.5.3'],
+        ':python_version~="3.3.0"': ['enum34'],
+    },
     entry_points={
         'console_scripts': [
             'validate-patterns = stix2patterns.validator:main',
