@@ -35,8 +35,14 @@ def run_validator(pattern):
     returned in a list.  The test passed if the returned list is empty.
     '''
 
+    start = ''
     if isinstance(pattern, six.string_types):
+        start = pattern[:2]
         pattern = InputStream(pattern)
+
+    if not start:
+        start = pattern.readline()[:2]
+        pattern.seek(0)
 
     parseErrListener = STIXPatternErrorListener()
 
@@ -53,6 +59,11 @@ def run_validator(pattern):
     parser.addErrorListener(parseErrListener)
 
     parser.pattern()
+
+    # replace with easier-to-understand error message
+    if not (start[0] == '[' or start == '(['):
+        parseErrListener.err_strings[0] = "FAIL: Error found at line 1:0. " \
+                                          "input is missing square brackets"
 
     return parseErrListener.err_strings
 

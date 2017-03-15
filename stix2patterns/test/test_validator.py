@@ -2,7 +2,6 @@
 Test cases for stix2patterns/validator.py.
 '''
 import os
-
 import pytest
 
 from stix2patterns.validator import validate
@@ -22,21 +21,33 @@ def test_spec_patterns(test_input):
 
 
 FAIL_CASES = [
-    "file:size = 1280",  # Does not use square brackets
-    "[file:hashes.MD5 = cead3f77f6cda6ec00f57d76c9a6879f]"  # No quotes around string
-    "[file.size = 1280]",  # Use period instead of colon
-    "[file:name MATCHES /.*\\.dll/]",  # Quotes around regular expression
-    "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS",  # SECONDS is the only valid time unit
+    ("file:size = 1280",  # Does not use square brackets
+        "FAIL: Error found at line 1:0. input is missing square brackets"),
+    ("[file:size = ]",  # Missing value
+        "FAIL: Error found at line 1:13. no viable alternative at input ']'"),
+    ("[file:hashes.MD5 = cead3f77f6cda6ec00f57d76c9a6879f]",  # No quotes around string
+        "FAIL: Error found at line 1:19. no viable alternative at input 'cead3f77f6cda6ec00f57d76c9a6879f'"),
+    ("[file.size = 1280]",  # Use period instead of colon
+        "FAIL: Error found at line 1:5. no viable alternative at input 'file.'"),
+    ("[file:name MATCHES /.*\\.dll/]",  # Quotes around regular expression
+        "FAIL: Error found at line 1:19. mismatched input '/' expecting <INVALID>"),
+    ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN ]",  # Missing Qualifier value
+        "FAIL: Error found at line 1:63. mismatched input ']' expecting {<INVALID>, <INVALID>}"),
+    ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS]",  # SECONDS is the only valid time unit
+        "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting <INVALID>"),
+    ("[network-traffic:dst_ref.value ISSUBSET ]",  # Missing second Comparison operand
+        "FAIL: Error found at line 1:40. missing <INVALID> at ']'"),
     # TODO: add more failing test cases.
 ]
 
 
-@pytest.mark.parametrize("test_input", FAIL_CASES)
-def test_fail_patterns(test_input):
+@pytest.mark.parametrize("test_input,test_output", FAIL_CASES)
+def test_fail_patterns(test_input, test_output):
     '''
     Validate that patterns fail as expected.
     '''
-    pass_test = validate(test_input, print_errs=True)
+    pass_test, errors = validate(test_input, ret_errs=True, print_errs=True)
+    assert errors[0] == test_output
     assert pass_test is False
 
 
