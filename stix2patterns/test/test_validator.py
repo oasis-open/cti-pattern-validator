@@ -35,7 +35,7 @@ FAIL_CASES = [
         "FAIL: Error found at line 1:63. mismatched input ']' expecting {<INVALID>, <INVALID>}"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS]",  # SECONDS is the only valid time unit
         "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting <INVALID>"),
-    ("[network-traffic:dst_ref.value ISSUBSET ]",  # Missing second Comparison operand 
+    ("[network-traffic:dst_ref.value ISSUBSET ]",  # Missing second Comparison operand
         "FAIL: Error found at line 1:40. missing <INVALID> at ']'"),
     # TODO: add more failing test cases.
 ]
