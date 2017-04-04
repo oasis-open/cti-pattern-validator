@@ -42,7 +42,7 @@ def test_observation_opts(pattern, expected_obs_ops):
 
 @pytest.mark.parametrize(u"pattern,expected_comparisons", [
     (u"[foo:bar = 1]", {u"foo": [(u"bar", u"=", u"1")]}),
-    (u"[foo:bar=1 and foo:baz=2]", {u"foo": [(u"bar",u"=",u"1"),(u"baz",u"=",u"2")]}),
+    (u"[foo:bar=1 and foo:baz=2]", {u"foo": [(u"bar", u"=", u"1"), (u"baz", u"=", u"2")]}),
     (u"[foo:bar=1 or bar:foo<12.3]", {
         u"foo": [(u"bar", u"=", u"1")],
         u"bar": [(u"foo", u"<", u"12.3")]
@@ -55,7 +55,7 @@ def test_observation_opts(pattern, expected_obs_ops):
         u"foo": [(u"bar", u"=", u"1")],
         u"bar": [(u"foo", u">", u"33")],
         u"baz": [(u"bar", u"ISSUBSET", u"'1234'"), (u"quux", u"NOT LIKE", u"'a_cd'")]
-    })
+        })
 ])
 def test_comparisons(pattern, expected_comparisons):
     pattern_data = inspect_pattern(pattern)

@@ -29,6 +29,7 @@ class ParseException(Exception):
 _PatternData = collections.namedtuple("pattern_data",
                                       "comparisons observation_ops qualifiers")
 
+
 class InspectionListener(STIXPatternListener):
     """This listener collects info about a pattern and puts it
     in a python structure.  It is intended to assist apps which wish to
