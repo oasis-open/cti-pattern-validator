@@ -65,21 +65,21 @@ class InspectionListener(STIXPatternListener):
 
     def exitStartStopQualifier(self, ctx):
         self.__qualifiers.add(
-            u"START {} STOP {}".format(
+            u"START {0} STOP {1}".format(
                 ctx.StringLiteral(0), ctx.StringLiteral(1)
             )
         )
 
     def exitWithinQualifier(self, ctx):
         self.__qualifiers.add(
-            u"WITHIN {} SECONDS".format(
+            u"WITHIN {0} SECONDS".format(
                 ctx.IntLiteral() or ctx.FloatLiteral()
             )
         )
 
     def exitRepeatedQualifier(self, ctx):
         self.__qualifiers.add(
-            u"REPEATS {} TIMES".format(
+            u"REPEATS {0} TIMES".format(
                 ctx.IntLiteral()
             )
         )
