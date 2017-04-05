@@ -1,5 +1,6 @@
 import antlr4
 import antlr4.error.ErrorListener
+import collections
 import six
 
 from stix2patterns.grammars.STIXPatternListener import STIXPatternListener
@@ -25,6 +26,10 @@ class ParseException(Exception):
     pass
 
 
+_PatternData = collections.namedtuple("pattern_data",
+                                      "comparisons observation_ops qualifiers")
+
+
 class InspectionListener(STIXPatternListener):
     """This listener collects info about a pattern and puts it
     in a python structure.  It is intended to assist apps which wish to
@@ -32,16 +37,52 @@ class InspectionListener(STIXPatternListener):
     """
 
     def __init__(self):
-        self.__pattern_data = {}
+        self.__comparison_data = {}
+        self.__qualifiers = set()
+        self.__observation_ops = set()
 
     def pattern_data(self):
-        return self.__pattern_data
+        return _PatternData(self.__comparison_data, self.__observation_ops,
+                            self.__qualifiers)
 
     def __add_prop_tuple(self, obj_type, obj_path, op, value):
-        if obj_type not in self.__pattern_data:
-            self.__pattern_data[obj_type] = []
+        if obj_type not in self.__comparison_data:
+            self.__comparison_data[obj_type] = []
 
-        self.__pattern_data[obj_type].append((obj_path, op, value))
+        self.__comparison_data[obj_type].append((obj_path, op, value))
+
+    def exitObservationExpressions(self, ctx):
+        if ctx.FOLLOWEDBY():
+            self.__observation_ops.add(u"FOLLOWEDBY")
+
+    def exitObservationExpressionOr(self, ctx):
+        if ctx.OR():
+            self.__observation_ops.add(u"OR")
+
+    def exitObservationExpressionAnd(self, ctx):
+        if ctx.AND():
+            self.__observation_ops.add(u"AND")
+
+    def exitStartStopQualifier(self, ctx):
+        self.__qualifiers.add(
+            u"START {0} STOP {1}".format(
+                ctx.StringLiteral(0), ctx.StringLiteral(1)
+            )
+        )
+
+    def exitWithinQualifier(self, ctx):
+        self.__qualifiers.add(
+            u"WITHIN {0} SECONDS".format(
+                ctx.IntLiteral() or ctx.FloatLiteral()
+            )
+        )
+
+    def exitRepeatedQualifier(self, ctx):
+        self.__qualifiers.add(
+            u"REPEATS {0} TIMES".format(
+                ctx.IntLiteral()
+            )
+        )
 
     def exitPropTestEqual(self, ctx):
         op_tok = ctx.EQ() or ctx.NEQ()
@@ -109,14 +150,14 @@ class InspectionListener(STIXPatternListener):
     def exitObjectPath(self, ctx):
         path = ctx.getText()
 
-        colonIdx = path.find(u":")
+        colon_idx = path.find(u":")
         # shouldn't happen unless the antlr parser failed...
-        if colonIdx < 0:
+        if colon_idx < 0:
             raise InspectionException(u'Object path didn''t contain ":": {}'
                                       .format(path))
 
-        self.__obj_type = path[:colonIdx]
-        self.__obj_path = path[colonIdx+1:]
+        self.__obj_type = path[:colon_idx]
+        self.__obj_path = path[colon_idx+1:]
 
 
 def get_parse_tree(pattern):
@@ -187,12 +228,3 @@ def inspect_pattern(pattern):
     antlr4.ParseTreeWalker.DEFAULT.walk(inspector, tree)
 
     return inspector.pattern_data()
-
-
-if __name__ == "__main__":
-    pattern = "[foo:name.s[3][*].bar not issuperset 'asdf' and foo:age > 3] or [bar:name matches '^b.*']"
-
-    import pprint
-    pprint.pprint(
-        inspect_pattern(pattern)
-    )
