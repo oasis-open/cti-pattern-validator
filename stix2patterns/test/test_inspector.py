@@ -11,7 +11,7 @@ from stix2patterns.inspector import inspect_pattern
     (u"[foo:bar = 1] start '1932-11-12T15:42:15Z' stop '1964-10-53T21:12:26Z'",
         set([u"START '1932-11-12T15:42:15Z' STOP '1964-10-53T21:12:26Z'"])),
     (u"[foo:bar = 1] repeats 1 times repeats 2 times",
-        {u"REPEATS 1 TIMES", u"REPEATS 2 TIMES"}),
+        set([u"REPEATS 1 TIMES", u"REPEATS 2 TIMES"])),
     (u"[foo:bar = 1] repeats 1 times and [foo:baz = 2] within 1.23 seconds",
         set([u"REPEATS 1 TIMES", u"WITHIN 1.23 SECONDS"])),
     (u"([foo:bar = 1] start '1932-11-12T15:42:15Z' stop '1964-10-53T21:12:26Z' and [foo:abc < h'12ab']) within 22 seconds "
