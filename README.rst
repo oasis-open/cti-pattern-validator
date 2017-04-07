@@ -19,8 +19,8 @@ other applications.
 Requirements
 ------------
 
--  `Python <https://www.python.org>`__ 2.7, 3.3, 3.4, or 3.5
--  ANTLR grammar runtime (4.5.3 or newer):
+-  `Python <https://www.python.org>`__ 2.6, 2.7, 3.3, 3.4, 3.5, or 3.6
+-  ANTLR grammar runtime (4.7 or newer):
 
    -  `antlr4-python2-runtime <https://pypi.python.org/pypi/antlr4-python2-runtime>`__
       (Python 2.7)
@@ -29,6 +29,7 @@ Requirements
 
 -  `enum34 <https://pypi.python.org/pypi/enum34>`__ (Python 3.3)
 -  `six <https://pypi.python.org/pypi/six>`__
+-  `typing <https://pypi.python.org/pypi/typing>`__ (Python 3.0-3.4)
 
 Installation
 ------------
@@ -117,7 +118,7 @@ be updated to match. To do so, use the Java ANTLR package to generate
 new Python source files. (The .jar file is not needed for normal use of
 the validator).
 
-1. Download antlr-4.5.3-complete.jar from http://www.antlr.org/download/
+1. Download antlr-4.7-complete.jar from http://www.antlr.org/download/
 2. Clone the stix2-json-schemas repository or download the
    STIXPattern.g4 file.
 3. Change to the directory containing the STIXPattern.g4 file.
@@ -125,7 +126,7 @@ the validator).
 
    .. code:: bash
 
-       $ java -jar "/path/to/antlr-4.5.3-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -o /path/to/cti-pattern-validator/stix2patterns/grammars
+       $ java -jar "/path/to/antlr-4.7-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -o /path/to/cti-pattern-validator/stix2patterns/grammars
 
 5. Commit the resulting files to git.
 

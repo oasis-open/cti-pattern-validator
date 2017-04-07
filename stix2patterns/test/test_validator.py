@@ -24,9 +24,9 @@ FAIL_CASES = [
     ("file:size = 1280",  # Does not use square brackets
         "FAIL: Error found at line 1:0. input is missing square brackets"),
     ("[file:size = ]",  # Missing value
-        "FAIL: Error found at line 1:13. no viable alternative at input ']'"),
+        "FAIL: Error found at line 1:13. mismatched input ']'"),
     ("[file:hashes.MD5 = cead3f77f6cda6ec00f57d76c9a6879f]",  # No quotes around string
-        "FAIL: Error found at line 1:19. no viable alternative at input 'cead3f77f6cda6ec00f57d76c9a6879f'"),
+        "FAIL: Error found at line 1:19. mismatched input 'cead3f77f6cda6ec00f57d76c9a6879f'"),
     ("[file.size = 1280]",  # Use period instead of colon
         "FAIL: Error found at line 1:5. no viable alternative at input 'file.'"),
     ("[file:name MATCHES /.*\\.dll/]",  # Quotes around regular expression
@@ -47,7 +47,7 @@ def test_fail_patterns(test_input, test_output):
     Validate that patterns fail as expected.
     '''
     pass_test, errors = validate(test_input, ret_errs=True, print_errs=True)
-    assert errors[0] == test_output
+    assert errors[0].startswith(test_output)
     assert pass_test is False
 
 

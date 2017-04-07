@@ -1,12 +1,13 @@
-# Generated from STIXPattern.g4 by ANTLR 4.5.3
+# Generated from STIXPattern.g4 by ANTLR 4.7
 # encoding: utf-8
 from __future__ import print_function
 from antlr4 import *
 from io import StringIO
+import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write(u"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3")
+        buf.write(u"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3")
         buf.write(u"\63\u00e2\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7")
         buf.write(u"\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t")
         buf.write(u"\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22")
@@ -29,7 +30,7 @@ def serializedATN():
         buf.write(u"\21\u00d6\13\21\3\21\3\21\5\21\u00da\n\21\3\22\3\22\5")
         buf.write(u"\22\u00de\n\22\3\23\3\23\3\23\2\t\4\6\b\n\f\16\36\24")
         buf.write(u"\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$\2\7\3\2\35")
-        buf.write(u"\36\3\2\37\"\3\2\3\4\4\2\3\3\60\60\4\2\3\7\t\t\u00ea")
+        buf.write(u"\36\3\2\37\"\3\2\3\4\4\2\3\3\60\60\4\2\3\7\t\t\2\u00ea")
         buf.write(u"\2&\3\2\2\2\4(\3\2\2\2\6\63\3\2\2\2\b>\3\2\2\2\nR\3\2")
         buf.write(u"\2\2\f_\3\2\2\2\16j\3\2\2\2\20\u00a4\3\2\2\2\22\u00a6")
         buf.write(u"\3\2\2\2\24\u00ab\3\2\2\2\26\u00af\3\2\2\2\30\u00b3\3")
@@ -213,9 +214,9 @@ class STIXPatternParser ( Parser ):
     COMMENT=48
     LINE_COMMENT=49
 
-    def __init__(self, input):
-        super(STIXPatternParser, self).__init__(input)
-        self.checkVersion("4.5.3")
+    def __init__(self, input, output=sys.stdout):
+        super(STIXPatternParser, self).__init__(input, output=output)
+        self.checkVersion("4.7")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -624,6 +625,7 @@ class STIXPatternParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 80
+            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [STIXPatternParser.LBRACK]:
                 localctx = STIXPatternParser.ObservationExpressionSimpleContext(self, localctx)
@@ -636,7 +638,7 @@ class STIXPatternParser ( Parser ):
                 self.comparisonExpression(0)
                 self.state = 74
                 self.match(STIXPatternParser.RBRACK)
-
+                pass
             elif token in [STIXPatternParser.LPAREN]:
                 localctx = STIXPatternParser.ObservationExpressionCompoundContext(self, localctx)
                 self._ctx = localctx
@@ -647,7 +649,7 @@ class STIXPatternParser ( Parser ):
                 self.observationExpressions(0)
                 self.state = 78
                 self.match(STIXPatternParser.RPAREN)
-
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -661,7 +663,7 @@ class STIXPatternParser ( Parser ):
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 88
-                    self._errHandler.sync(self);
+                    self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
                     if la_ == 1:
                         localctx = STIXPatternParser.ObservationExpressionStartStopContext(self, STIXPatternParser.ObservationExpressionContext(self, _parentctx, _parentState))
@@ -1088,7 +1090,7 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 162
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
             if la_ == 1:
                 localctx = STIXPatternParser.PropTestEqualContext(self, localctx)
@@ -1100,6 +1102,7 @@ class STIXPatternParser ( Parser ):
                 if not(_la==STIXPatternParser.EQ or _la==STIXPatternParser.NEQ):
                     self._errHandler.recoverInline(self)
                 else:
+                    self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 117
                 self.primitiveLiteral()
@@ -1115,6 +1118,7 @@ class STIXPatternParser ( Parser ):
                 if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << STIXPatternParser.LT) | (1 << STIXPatternParser.LE) | (1 << STIXPatternParser.GT) | (1 << STIXPatternParser.GE))) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
+                    self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 121
                 self.orderableLiteral()
@@ -1126,6 +1130,7 @@ class STIXPatternParser ( Parser ):
                 self.state = 123
                 self.objectPath()
                 self.state = 125
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 124
@@ -1144,6 +1149,7 @@ class STIXPatternParser ( Parser ):
                 self.state = 130
                 self.objectPath()
                 self.state = 132
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 131
@@ -1162,6 +1168,7 @@ class STIXPatternParser ( Parser ):
                 self.state = 137
                 self.objectPath()
                 self.state = 139
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 138
@@ -1180,6 +1187,7 @@ class STIXPatternParser ( Parser ):
                 self.state = 144
                 self.objectPath()
                 self.state = 146
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 145
@@ -1198,6 +1206,7 @@ class STIXPatternParser ( Parser ):
                 self.state = 151
                 self.objectPath()
                 self.state = 153
+                self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==STIXPatternParser.NOT:
                     self.state = 152
@@ -1330,6 +1339,7 @@ class STIXPatternParser ( Parser ):
             if not(_la==STIXPatternParser.IntLiteral or _la==STIXPatternParser.FloatLiteral):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
             self.state = 171
             self.match(STIXPatternParser.SECONDS)
@@ -1439,6 +1449,7 @@ class STIXPatternParser ( Parser ):
             self.state = 179
             self.firstPathComponent()
             self.state = 181
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==STIXPatternParser.DOT or _la==STIXPatternParser.LBRACK:
                 self.state = 180
@@ -1622,6 +1633,7 @@ class STIXPatternParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 193
+            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [STIXPatternParser.DOT]:
                 localctx = STIXPatternParser.KeyPathStepContext(self, localctx)
@@ -1632,7 +1644,7 @@ class STIXPatternParser ( Parser ):
                 self.match(STIXPatternParser.DOT)
                 self.state = 189
                 self.match(STIXPatternParser.Identifier)
-
+                pass
             elif token in [STIXPatternParser.LBRACK]:
                 localctx = STIXPatternParser.IndexPathStepContext(self, localctx)
                 self._ctx = localctx
@@ -1644,10 +1656,11 @@ class STIXPatternParser ( Parser ):
                 if not(_la==STIXPatternParser.IntLiteral or _la==STIXPatternParser.ASTERISK):
                     self._errHandler.recoverInline(self)
                 else:
+                    self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 192
                 self.match(STIXPatternParser.RBRACK)
-
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -1726,7 +1739,7 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 215
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -1800,17 +1813,18 @@ class STIXPatternParser ( Parser ):
         self.enterRule(localctx, 32, self.RULE_primitiveLiteral)
         try:
             self.state = 219
+            self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [STIXPatternParser.IntLiteral, STIXPatternParser.FloatLiteral, STIXPatternParser.HexLiteral, STIXPatternParser.BinaryLiteral, STIXPatternParser.StringLiteral, STIXPatternParser.TimestampLiteral]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 217
                 self.orderableLiteral()
-
+                pass
             elif token in [STIXPatternParser.BoolLiteral]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 218
                 self.match(STIXPatternParser.BoolLiteral)
-
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -1872,6 +1886,7 @@ class STIXPatternParser ( Parser ):
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << STIXPatternParser.IntLiteral) | (1 << STIXPatternParser.FloatLiteral) | (1 << STIXPatternParser.HexLiteral) | (1 << STIXPatternParser.BinaryLiteral) | (1 << STIXPatternParser.StringLiteral) | (1 << STIXPatternParser.TimestampLiteral))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re

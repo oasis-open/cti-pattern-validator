@@ -13,12 +13,11 @@ setup(
     long_description=readme,
     install_requires=[
         "six",
+        'antlr4-python2-runtime==4.7 ; python_version<"3"',
+        'antlr4-python3-runtime==4.7 ; python_version>="3"',
+        'typing ; python_version<"3.5" and python_version>="3"',
+        'enum34 ; python_version~="3.3.0"'
     ],
-    extras_require={
-        ':python_version<"3"': ['antlr4-python2-runtime==4.5.3'],
-        ':python_version>="3"': ['antlr4-python3-runtime==4.5.3'],
-        ':python_version~="3.3.0"': ['enum34'],
-    },
     entry_points={
         'console_scripts': [
             'validate-patterns = stix2patterns.validator:main',
