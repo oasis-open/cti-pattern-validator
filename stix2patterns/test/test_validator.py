@@ -30,13 +30,13 @@ FAIL_CASES = [
     ("[file.size = 1280]",  # Use period instead of colon
         "FAIL: Error found at line 1:5. no viable alternative at input 'file.'"),
     ("[file:name MATCHES /.*\\.dll/]",  # Quotes around regular expression
-        "FAIL: Error found at line 1:19. mismatched input '/' expecting <INVALID>"),
+        "FAIL: Error found at line 1:19. mismatched input '/' expecting StringLiteral"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN ]",  # Missing Qualifier value
-        "FAIL: Error found at line 1:63. mismatched input ']' expecting {<INVALID>, <INVALID>}"),
+        "FAIL: Error found at line 1:63. mismatched input ']' expecting {IntLiteral, FloatLiteral}"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS]",  # SECONDS is the only valid time unit
-        "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting <INVALID>"),
+        "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting SECONDS"),
     ("[network-traffic:dst_ref.value ISSUBSET ]",  # Missing second Comparison operand
-        "FAIL: Error found at line 1:40. missing <INVALID> at ']'"),
+        "FAIL: Error found at line 1:40. missing StringLiteral at ']'"),
     # TODO: add more failing test cases.
 ]
 
