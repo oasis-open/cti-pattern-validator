@@ -186,6 +186,13 @@ def get_parse_tree(pattern):
     # handling the built-in RecognitionException errors.)
     parser._errHandler = antlr4.BailErrorStrategy()
 
+    # To improve error messages, replace "<INVALID>" in the literal
+    # names with symbolic names.  This is a hack, but seemed like
+    # the simplest workaround.
+    for i, lit_name in enumerate(parser.literalNames):
+        if lit_name == u"<INVALID>":
+            parser.literalNames[i] = parser.symbolicNames[i]
+
     # parser.setTrace(True)
 
     try:

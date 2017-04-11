@@ -58,6 +58,13 @@ def run_validator(pattern):
     parser.removeErrorListeners()
     parser.addErrorListener(parseErrListener)
 
+    # To improve error messages, replace "<INVALID>" in the literal
+    # names with symbolic names.  This is a hack, but seemed like
+    # the simplest workaround.
+    for i, lit_name in enumerate(parser.literalNames):
+        if lit_name == u"<INVALID>":
+            parser.literalNames[i] = parser.symbolicNames[i]
+
     parser.pattern()
 
     # replace with easier-to-understand error message
