@@ -117,7 +117,7 @@ def main():
     if args.file:
         nextpattern = args.file.readline
     else:
-        nextpattern = functools.partial(raw_input, "Enter a pattern to validate: ")
+        nextpattern = functools.partial(six.moves.input, "Enter a pattern to validate: ")
 
     try:
         while True:
