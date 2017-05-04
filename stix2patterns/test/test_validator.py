@@ -59,7 +59,7 @@ PASS_CASES = [
     "[file:size > 1024]",
     "[file:size >= 1024]",
     "[file:file_name = 'my_file_name']",
-    "[file:extended_properties.ntfs-ext.sid = '234']",
+    "[file:extended_properties.'ntfs-ext'.sid = '234']",
     r"[emailaddr:value MATCHES '.+\\@ibm\\.com$' OR file:name MATCHES '^Final Report.+\\.exe$']",
     "[ipv4addr:value ISSUBSET '192.168.0.1/24']",
     "[ipv4addr:value NOT ISSUBSET '192.168.0.1/24']",
