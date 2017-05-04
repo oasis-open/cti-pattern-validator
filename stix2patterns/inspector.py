@@ -162,12 +162,11 @@ class InspectionListener(STIXPatternListener):
 
 def get_parse_tree(pattern):
     """
-    Match the given pattern against the given observations.  Returns matching
-    SDOs.  The matcher can find many bindings; this function returns the SDOs
-    corresponding to only the first binding found.
+    Parses the given pattern and returns the antlr parse tree.
 
     :param pattern: The STIX pattern
     :return: The parse tree
+    :raises ParseException: If there is a parse error
     """
 
     in_ = antlr4.InputStream(pattern)
@@ -227,7 +226,8 @@ def get_parse_tree(pattern):
 
 
 def inspect_pattern(pattern):
-    """Inspect a pattern and pull "stuff" out of it.  The details are TBD."""
+    """Inspect a pattern and extract information from it.  The details are TBD.
+    """
 
     tree = get_parse_tree(pattern)
 
