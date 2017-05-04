@@ -6,7 +6,7 @@
 [user-account:account_type = 'unix' AND user-account:user_id = '1007' AND user-account:account_login = 'Peter'] AND [user-account:account_type = 'unix' AND user-account:user_id = '1008' AND user-account:account_login = 'Paul'] AND [user-account:account_type = 'unix' AND user-account:user_id = '1009' AND user-account:account_login = 'Mary']
 [artifact:mime_type = 'application/vnd.tcpdump.pcap' AND artifact:payload_bin MATCHES '\\xd4\\xc3\\xb2\\xa1\\x02\\x00\\x04\\x00']
 [file:name = 'foo.dll' AND file:parent_directory_ref.path = 'C:\\Windows\\System32']
-[file:extensions.windows-pebinary-ext.sections[*].entropy > 7.0]
+[file:extensions.'windows-pebinary-ext'.sections[*].entropy > 7.0]
 [file:mime_type = 'image/bmp' AND file:magic_number_hex = h'ffd8']
 [network-traffic:dst_ref.type = 'ipv4-addr' AND network-traffic:dst_ref.value = '203.0.113.33/32']
 [network-traffic:dst_ref.type = 'domain-name' AND network-traffic:dst_ref.value = 'example.com'] REPEATS 5 TIMES WITHIN 1800 SECONDS
