@@ -12,7 +12,6 @@ import six
 
 from .grammars.STIXPatternLexer import STIXPatternLexer
 from .grammars.STIXPatternParser import STIXPatternParser
-from .grammars.STIXPatternListener import STIXPatternListener
 
 
 class STIXPatternErrorListener(ErrorListener):
