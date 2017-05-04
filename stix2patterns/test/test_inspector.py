@@ -34,7 +34,7 @@ def test_qualifiers(pattern, expected_qualifiers):
     (u"[foo:bar = 1] or ([foo:baz = false] followedby [frob:abc like '123']) within 46.1 seconds",
         set([u"OR", u"FOLLOWEDBY"]))
 ])
-def test_observation_opts(pattern, expected_obs_ops):
+def test_observation_ops(pattern, expected_obs_ops):
     pattern_data = inspect_pattern(pattern)
 
     assert pattern_data.observation_ops == expected_obs_ops
