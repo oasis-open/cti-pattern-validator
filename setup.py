@@ -7,7 +7,7 @@ with open('README.rst') as f:
 
 setup(
     name='stix2-patterns',
-    version='0.2.2',
+    version='0.3.0',
     packages=find_packages(),
     description='Validate STIX 2 Patterns.',
     long_description=readme,
