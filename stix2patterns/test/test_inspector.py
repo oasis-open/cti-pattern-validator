@@ -1,6 +1,6 @@
 import pytest
 
-from stix2patterns.inspector import inspect_pattern
+from stix2patterns.pattern import Pattern
 
 
 @pytest.mark.parametrize(u"pattern,expected_qualifiers", [
@@ -20,7 +20,8 @@ from stix2patterns.inspector import inspect_pattern
             u"WITHIN 22 SECONDS", u"REPEATS 31 TIMES"]))
 ])
 def test_qualifiers(pattern, expected_qualifiers):
-    pattern_data = inspect_pattern(pattern)
+    compiled_pattern = Pattern(pattern)
+    pattern_data = compiled_pattern.inspect()
 
     assert pattern_data.qualifiers == expected_qualifiers
 
@@ -35,7 +36,8 @@ def test_qualifiers(pattern, expected_qualifiers):
         set([u"OR", u"FOLLOWEDBY"]))
 ])
 def test_observation_ops(pattern, expected_obs_ops):
-    pattern_data = inspect_pattern(pattern)
+    compiled_pattern = Pattern(pattern)
+    pattern_data = compiled_pattern.inspect()
 
     assert pattern_data.observation_ops == expected_obs_ops
 
@@ -58,6 +60,7 @@ def test_observation_ops(pattern, expected_obs_ops):
         })
 ])
 def test_comparisons(pattern, expected_comparisons):
-    pattern_data = inspect_pattern(pattern)
+    compiled_pattern = Pattern(pattern)
+    pattern_data = compiled_pattern.inspect()
 
     assert pattern_data.comparisons == expected_comparisons
