@@ -7,7 +7,7 @@ from stix2patterns.grammars.STIXPatternLexer import STIXPatternLexer
 from stix2patterns.grammars.STIXPatternParser import STIXPatternParser
 
 
-class MatcherErrorListener(antlr4.error.ErrorListener.ErrorListener):
+class ParserErrorListener(antlr4.error.ErrorListener.ErrorListener):
     """
     Simple error listener which just remembers the last error message received.
     """
@@ -25,6 +25,12 @@ class Pattern(object):
     Represents a pattern in a "compiled" form, for more efficient reuse.
     """
     def __init__(self, pattern_str):
+        """
+        Compile a pattern.
+
+        :param pattern_str: The pattern to compile
+        :raises ParseException: If there is a parse error
+        """
         self.__parse_tree = self.__do_parse(pattern_str)
 
     def inspect(self):
@@ -33,9 +39,6 @@ class Pattern(object):
         antlr4.ParseTreeWalker.DEFAULT.walk(inspector, self.__parse_tree)
 
         return inspector.pattern_data()
-
-    def get_parse_tree(self):
-        return self.__parse_tree
 
     def __do_parse(self, pattern_str):
         """
@@ -52,7 +55,7 @@ class Pattern(object):
 
         parser = STIXPatternParser(token_stream)
         parser.removeErrorListeners()  # remove the default "console" listener
-        error_listener = MatcherErrorListener()
+        error_listener = ParserErrorListener()
         parser.addErrorListener(error_listener)
 
         # I found no public API for this...
@@ -76,8 +79,8 @@ class Pattern(object):
 
             return tree
         except antlr4.error.Errors.ParseCancellationException as e:
-            # The cancellation exception wraps the real RecognitionException which
-            # caused the parser to bail.
+            # The cancellation exception wraps the real RecognitionException
+            # which caused the parser to bail.
             real_exc = e.args[0]
 
             # I want to bail when the first error is hit.  But I also want
