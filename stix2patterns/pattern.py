@@ -34,6 +34,12 @@ class Pattern(object):
         self.__parse_tree = self.__do_parse(pattern_str)
 
     def inspect(self):
+        """
+        Inspect a pattern.  This gives information regarding the sorts of
+        operations, content, etc in use in the pattern.
+
+        :return: Pattern information
+        """
 
         inspector = stix2patterns.inspector.InspectionListener()
         antlr4.ParseTreeWalker.DEFAULT.walk(inspector, self.__parse_tree)
