@@ -12,6 +12,22 @@ _PatternData = collections.namedtuple("pattern_data",
                                       "comparisons observation_ops qualifiers")
 
 
+# For representing a "star" array index step in an object path
+INDEX_STAR = object()
+
+
+def _string_literal_to_string(string_literal_token):
+    """Converts the StringLiteral token to a plain string: get text content,
+    removes quote characters, and unescapes it.
+
+    :param string_literal_token: The string literal
+    :return:
+    """
+    token_text = string_literal_token.getText()
+    return token_text[1:-1].replace(u"\\'", u"'"). \
+        replace(u"\\\\", u"\\")
+
+
 class InspectionListener(STIXPatternListener):
     """This listener collects info about a pattern and puts it
     in a python structure.  It is intended to assist apps which wish to
@@ -22,6 +38,8 @@ class InspectionListener(STIXPatternListener):
         self.__comparison_data = {}
         self.__qualifiers = set()
         self.__observation_ops = set()
+        self.__obj_type = None
+        self.__obj_path = None
 
     def pattern_data(self):
         return _PatternData(self.__comparison_data, self.__observation_ops,
@@ -129,14 +147,27 @@ class InspectionListener(STIXPatternListener):
         self.__add_prop_tuple(self.__obj_type, self.__obj_path, op_str,
                               value)
 
-    def exitObjectPath(self, ctx):
-        path = ctx.getText()
+    def exitObjectType(self, ctx):
+        self.__obj_type = ctx.getText()
 
-        colon_idx = path.find(u":")
-        # shouldn't happen unless the antlr parser failed...
-        if colon_idx < 0:
-            raise InspectionException(u'Object path didn''t contain ":": {}'
-                                      .format(path))
+    def exitFirstPathComponent(self, ctx):
+        if ctx.StringLiteral():
+            path_component = _string_literal_to_string(ctx.StringLiteral())
+        else:
+            path_component = ctx.getText()
 
-        self.__obj_type = path[:colon_idx]
-        self.__obj_path = path[colon_idx+1:]
+        self.__obj_path = [path_component]
+
+    def exitKeyPathStep(self, ctx):
+        if ctx.IdentifierWithoutHyphen():
+            path_component = ctx.IdentifierWithoutHyphen().getText()
+        else:  # A StringLiteral
+            path_component = _string_literal_to_string(ctx.StringLiteral())
+
+        self.__obj_path.append(path_component)
+
+    def exitIndexPathStep(self, ctx):
+        if ctx.ASTERISK():
+            self.__obj_path.append(INDEX_STAR)
+        else:
+            self.__obj_path.append(int(ctx.IntLiteral().getText()))
