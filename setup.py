@@ -5,9 +5,19 @@ from setuptools import setup, find_packages
 with open('README.rst') as f:
     readme = f.read()
 
+
+def get_version():
+    with open('stix2patterns/version.py') as f:
+        for line in f.readlines():
+            if line.startswith("__version__"):
+                version = line.split()[-1].strip('"')
+                return version
+        raise AttributeError("Package does not have a __version__")
+
+
 setup(
     name='stix2-patterns',
-    version='0.4.1',
+    version=get_version(),
     packages=find_packages(),
     description='Validate STIX 2 Patterns.',
     long_description=readme,
