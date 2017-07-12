@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.5.0 - Released 2017-07-12
+
+* Separate object and path components in inspector.
+* Support "NOT" qualifier on all comparison operators.
+
 0.4.1 - Released 2017-05-19
 
 * Repackaged to not use a Wheel distribution
