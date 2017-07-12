@@ -86,7 +86,8 @@ class InspectionListener(STIXPatternListener):
 
     def exitPropTestEqual(self, ctx):
         op_tok = ctx.EQ() or ctx.NEQ()
-        op_str = op_tok.getText()
+        op_str = u"NOT " if ctx.NOT() else u""
+        op_str += op_tok.getText()
 
         value = ctx.primitiveLiteral().getText()
 
@@ -95,7 +96,8 @@ class InspectionListener(STIXPatternListener):
 
     def exitPropTestOrder(self, ctx):
         op_tok = ctx.GT() or ctx.LT() or ctx.GE() or ctx.LE()
-        op_str = op_tok.getText()
+        op_str = u"NOT " if ctx.NOT() else u""
+        op_str += op_tok.getText()
 
         value = ctx.orderableLiteral().getText()
 
