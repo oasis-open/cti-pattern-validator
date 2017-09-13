@@ -1,7 +1,6 @@
 import pytest
-
-from stix2patterns.pattern import Pattern
 from stix2patterns.inspector import INDEX_STAR
+from stix2patterns.pattern import Pattern
 
 
 @pytest.mark.parametrize(u"pattern,expected_qualifiers", [
@@ -54,11 +53,12 @@ def test_observation_ops(pattern, expected_obs_ops):
         u"foo": [([u"bar"], u"=", u"1"), ([u"baz"], u"MATCHES", u"'123\\\\d+'")]
     }),
     (u"[foo:bar=1 and bar:foo not >33] repeats 12 times or "
-     u"  ([baz:bar issubset '1234'] followedby [baz:quux not like 'a_cd'])", {
-        u"foo": [([u"bar"], u"=", u"1")],
-        u"bar": [([u"foo"], u"NOT >", u"33")],
-        u"baz": [([u"bar"], u"ISSUBSET", u"'1234'"), ([u"quux"], u"NOT LIKE", u"'a_cd'")]
-        }),
+     u"  ([baz:bar issubset '1234'] followedby [baz:quux not like 'a_cd'])",
+     {
+         u"foo": [([u"bar"], u"=", u"1")],
+         u"bar": [([u"foo"], u"NOT >", u"33")],
+         u"baz": [([u"bar"], u"ISSUBSET", u"'1234'"), ([u"quux"], u"NOT LIKE", u"'a_cd'")]
+     }),
     (u"[obj-type:a.b[*][1].'c-d' not issuperset '1.2.3.4/16']", {
         u"obj-type": [([u"a", u"b", INDEX_STAR, 1, u"c-d"], u"NOT ISSUPERSET", u"'1.2.3.4/16'")]
     }),

@@ -1,9 +1,9 @@
-'''
+"""
 Test cases for stix2patterns/validator.py.
-'''
+"""
 import os
-import pytest
 
+import pytest
 from stix2patterns.validator import validate
 
 TEST_CASE_FILE = os.path.join(os.path.dirname(__file__), 'spec_examples.txt')
@@ -13,9 +13,9 @@ with open(TEST_CASE_FILE) as f:
 
 @pytest.mark.parametrize("test_input", SPEC_CASES)
 def test_spec_patterns(test_input):
-    '''
+    """
     Validate patterns from STIX 2.0 Patterning spec.
-    '''
+    """
     pass_test = validate(test_input, print_errs=True)
     assert pass_test is True
 
@@ -43,9 +43,9 @@ FAIL_CASES = [
 
 @pytest.mark.parametrize("test_input,test_output", FAIL_CASES)
 def test_fail_patterns(test_input, test_output):
-    '''
+    """
     Validate that patterns fail as expected.
-    '''
+    """
     pass_test, errors = validate(test_input, ret_errs=True, print_errs=True)
     assert errors[0].startswith(test_output)
     assert pass_test is False
@@ -74,8 +74,8 @@ PASS_CASES = [
 
 @pytest.mark.parametrize("test_input", PASS_CASES)
 def test_pass_patterns(test_input):
-    '''
+    """
     Validate that patterns pass as expected.
-    '''
+    """
     pass_test = validate(test_input, print_errs=True)
     assert pass_test is True

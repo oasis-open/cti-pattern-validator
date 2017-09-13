@@ -2,9 +2,9 @@ import antlr4
 import antlr4.error.ErrorListener
 import six
 
-import stix2patterns.inspector
 from stix2patterns.grammars.STIXPatternLexer import STIXPatternLexer
 from stix2patterns.grammars.STIXPatternParser import STIXPatternParser
+import stix2patterns.inspector
 
 
 class ParserErrorListener(antlr4.error.ErrorListener.ErrorListener):

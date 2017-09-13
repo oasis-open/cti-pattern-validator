@@ -1,9 +1,12 @@
 # Generated from STIXPattern.g4 by ANTLR 4.7
 # encoding: utf-8
 from __future__ import print_function
-from antlr4 import *
+
 from io import StringIO
 import sys
+
+from antlr4 import *
+
 
 def serializedATN():
     with StringIO() as buf:
@@ -107,39 +110,43 @@ def serializedATN():
         return buf.getvalue()
 
 
-class STIXPatternParser ( Parser ):
+class STIXPatternParser(Parser):
 
     grammarFileName = "STIXPattern.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                     u"<INVALID>", u"<INVALID>", u"'<'", u"'<='", u"'>'", 
-                     u"'>='", u"'''", u"':'", u"'.'", u"','", u"')'", u"'('", 
-                     u"']'", u"'['", u"'+'", u"<INVALID>", u"'-'", u"'^'", 
-                     u"'/'", u"'*'" ]
+    literalNames = [
+        u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+        u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+        u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+        u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+        u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+        u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+        u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+        u"<INVALID>", u"<INVALID>", u"'<'", u"'<='", u"'>'",
+        u"'>='", u"'''", u"':'", u"'.'", u"','", u"')'", u"'('",
+        u"']'", u"'['", u"'+'", u"<INVALID>", u"'-'", u"'^'",
+        u"'/'", u"'*'"
+    ]
 
-    symbolicNames = [ u"<INVALID>", u"IntLiteral", u"FloatLiteral", u"HexLiteral", 
-                      u"BinaryLiteral", u"StringLiteral", u"BoolLiteral", 
-                      u"TimestampLiteral", u"AND", u"OR", u"NOT", u"FOLLOWEDBY", 
-                      u"LIKE", u"MATCHES", u"ISSUPERSET", u"ISSUBSET", u"LAST", 
-                      u"IN", u"START", u"STOP", u"SECONDS", u"TRUE", u"FALSE", 
-                      u"WITHIN", u"REPEATS", u"TIMES", u"IdentifierWithoutHyphen", 
-                      u"IdentifierWithHyphen", u"EQ", u"NEQ", u"LT", u"LE", 
-                      u"GT", u"GE", u"QUOTE", u"COLON", u"DOT", u"COMMA", 
-                      u"RPAREN", u"LPAREN", u"RBRACK", u"LBRACK", u"PLUS", 
-                      u"HYPHEN", u"MINUS", u"POWER_OP", u"DIVIDE", u"ASTERISK", 
-                      u"WS", u"COMMENT", u"LINE_COMMENT" ]
+    symbolicNames = [
+        u"<INVALID>", u"IntLiteral", u"FloatLiteral", u"HexLiteral",
+        u"BinaryLiteral", u"StringLiteral", u"BoolLiteral",
+        u"TimestampLiteral", u"AND", u"OR", u"NOT", u"FOLLOWEDBY",
+        u"LIKE", u"MATCHES", u"ISSUPERSET", u"ISSUBSET", u"LAST",
+        u"IN", u"START", u"STOP", u"SECONDS", u"TRUE", u"FALSE",
+        u"WITHIN", u"REPEATS", u"TIMES", u"IdentifierWithoutHyphen",
+        u"IdentifierWithHyphen", u"EQ", u"NEQ", u"LT", u"LE",
+        u"GT", u"GE", u"QUOTE", u"COLON", u"DOT", u"COMMA",
+        u"RPAREN", u"LPAREN", u"RBRACK", u"LBRACK", u"PLUS",
+        u"HYPHEN", u"MINUS", u"POWER_OP", u"DIVIDE", u"ASTERISK",
+        u"WS", u"COMMENT", u"LINE_COMMENT"
+    ]
 
     RULE_pattern = 0
     RULE_observationExpressions = 1
@@ -160,73 +167,73 @@ class STIXPatternParser ( Parser ):
     RULE_primitiveLiteral = 16
     RULE_orderableLiteral = 17
 
-    ruleNames =  [ u"pattern", u"observationExpressions", u"observationExpressionOr", 
-                   u"observationExpressionAnd", u"observationExpression", 
-                   u"comparisonExpression", u"comparisonExpressionAnd", 
-                   u"propTest", u"startStopQualifier", u"withinQualifier", 
-                   u"repeatedQualifier", u"objectPath", u"objectType", u"firstPathComponent", 
-                   u"objectPathComponent", u"setLiteral", u"primitiveLiteral", 
-                   u"orderableLiteral" ]
+    ruleNames = [
+        u"pattern", u"observationExpressions", u"observationExpressionOr",
+        u"observationExpressionAnd", u"observationExpression",
+        u"comparisonExpression", u"comparisonExpressionAnd",
+        u"propTest", u"startStopQualifier", u"withinQualifier",
+        u"repeatedQualifier", u"objectPath", u"objectType", u"firstPathComponent",
+        u"objectPathComponent", u"setLiteral", u"primitiveLiteral",
+        u"orderableLiteral"
+    ]
 
     EOF = Token.EOF
-    IntLiteral=1
-    FloatLiteral=2
-    HexLiteral=3
-    BinaryLiteral=4
-    StringLiteral=5
-    BoolLiteral=6
-    TimestampLiteral=7
-    AND=8
-    OR=9
-    NOT=10
-    FOLLOWEDBY=11
-    LIKE=12
-    MATCHES=13
-    ISSUPERSET=14
-    ISSUBSET=15
-    LAST=16
-    IN=17
-    START=18
-    STOP=19
-    SECONDS=20
-    TRUE=21
-    FALSE=22
-    WITHIN=23
-    REPEATS=24
-    TIMES=25
-    IdentifierWithoutHyphen=26
-    IdentifierWithHyphen=27
-    EQ=28
-    NEQ=29
-    LT=30
-    LE=31
-    GT=32
-    GE=33
-    QUOTE=34
-    COLON=35
-    DOT=36
-    COMMA=37
-    RPAREN=38
-    LPAREN=39
-    RBRACK=40
-    LBRACK=41
-    PLUS=42
-    HYPHEN=43
-    MINUS=44
-    POWER_OP=45
-    DIVIDE=46
-    ASTERISK=47
-    WS=48
-    COMMENT=49
-    LINE_COMMENT=50
+    IntLiteral = 1
+    FloatLiteral = 2
+    HexLiteral = 3
+    BinaryLiteral = 4
+    StringLiteral = 5
+    BoolLiteral = 6
+    TimestampLiteral = 7
+    AND = 8
+    OR = 9
+    NOT = 10
+    FOLLOWEDBY = 11
+    LIKE = 12
+    MATCHES = 13
+    ISSUPERSET = 14
+    ISSUBSET = 15
+    LAST = 16
+    IN = 17
+    START = 18
+    STOP = 19
+    SECONDS = 20
+    TRUE = 21
+    FALSE = 22
+    WITHIN = 23
+    REPEATS = 24
+    TIMES = 25
+    IdentifierWithoutHyphen = 26
+    IdentifierWithHyphen = 27
+    EQ = 28
+    NEQ = 29
+    LT = 30
+    LE = 31
+    GT = 32
+    GE = 33
+    QUOTE = 34
+    COLON = 35
+    DOT = 36
+    COMMA = 37
+    RPAREN = 38
+    LPAREN = 39
+    RBRACK = 40
+    LBRACK = 41
+    PLUS = 42
+    HYPHEN = 43
+    MINUS = 44
+    POWER_OP = 45
+    DIVIDE = 46
+    ASTERISK = 47
+    WS = 48
+    COMMENT = 49
+    LINE_COMMENT = 50
 
     def __init__(self, input, output=sys.stdout):
         super(STIXPatternParser, self).__init__(input, output=output)
         self.checkVersion("4.7")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
-
-
 
     class PatternContext(ParserRuleContext):
 
@@ -235,8 +242,7 @@ class STIXPatternParser ( Parser ):
             self.parser = parser
 
         def observationExpressions(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionsContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionsContext, 0)
 
         def getRuleIndex(self):
             return STIXPatternParser.RULE_pattern
@@ -249,11 +255,7 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPattern"):
                 listener.exitPattern(self)
 
-
-
-
     def pattern(self):
-
         localctx = STIXPatternParser.PatternContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_pattern)
         try:
@@ -275,15 +277,13 @@ class STIXPatternParser ( Parser ):
             self.parser = parser
 
         def observationExpressionOr(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionOrContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionOrContext, 0)
 
         def observationExpressions(self, i=None):
             if i is None:
                 return self.getTypedRuleContexts(STIXPatternParser.ObservationExpressionsContext)
             else:
-                return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionsContext,i)
-
+                return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionsContext, i)
 
         def FOLLOWEDBY(self):
             return self.getToken(STIXPatternParser.FOLLOWEDBY, 0)
@@ -299,13 +299,10 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObservationExpressions"):
                 listener.exitObservationExpressions(self)
 
-
-
     def observationExpressions(self, _p=0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = STIXPatternParser.ObservationExpressionsContext(self, self._ctx, _parentState)
-        _prevctx = localctx
         _startState = 2
         self.enterRecursionRule(localctx, 2, self.RULE_observationExpressions, _p)
         try:
@@ -315,12 +312,11 @@ class STIXPatternParser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 46
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 0, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
-                    _prevctx = localctx
                     localctx = STIXPatternParser.ObservationExpressionsContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_observationExpressions)
                     self.state = 41
@@ -330,10 +326,10 @@ class STIXPatternParser ( Parser ):
                     self.state = 42
                     self.match(STIXPatternParser.FOLLOWEDBY)
                     self.state = 43
-                    self.observationExpressions(3) 
+                    self.observationExpressions(3)
                 self.state = 48
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 0, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -350,15 +346,13 @@ class STIXPatternParser ( Parser ):
             self.parser = parser
 
         def observationExpressionAnd(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionAndContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionAndContext, 0)
 
         def observationExpressionOr(self, i=None):
             if i is None:
                 return self.getTypedRuleContexts(STIXPatternParser.ObservationExpressionOrContext)
             else:
-                return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionOrContext,i)
-
+                return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionOrContext, i)
 
         def OR(self):
             return self.getToken(STIXPatternParser.OR, 0)
@@ -374,13 +368,10 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObservationExpressionOr"):
                 listener.exitObservationExpressionOr(self)
 
-
-
     def observationExpressionOr(self, _p=0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = STIXPatternParser.ObservationExpressionOrContext(self, self._ctx, _parentState)
-        _prevctx = localctx
         _startState = 4
         self.enterRecursionRule(localctx, 4, self.RULE_observationExpressionOr, _p)
         try:
@@ -390,12 +381,11 @@ class STIXPatternParser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 57
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,1,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 1, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
-                    _prevctx = localctx
                     localctx = STIXPatternParser.ObservationExpressionOrContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_observationExpressionOr)
                     self.state = 52
@@ -405,11 +395,10 @@ class STIXPatternParser ( Parser ):
                     self.state = 53
                     self.match(STIXPatternParser.OR)
                     self.state = 54
-                    self.observationExpressionOr(3) 
+                    self.observationExpressionOr(3)
                 self.state = 59
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,1,self._ctx)
-
+                _alt = self._interp.adaptivePredict(self._input, 1, self._ctx)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -425,15 +414,13 @@ class STIXPatternParser ( Parser ):
             self.parser = parser
 
         def observationExpression(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionContext, 0)
 
         def observationExpressionAnd(self, i=None):
             if i is None:
                 return self.getTypedRuleContexts(STIXPatternParser.ObservationExpressionAndContext)
             else:
-                return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionAndContext,i)
-
+                return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionAndContext, i)
 
         def AND(self):
             return self.getToken(STIXPatternParser.AND, 0)
@@ -449,13 +436,10 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObservationExpressionAnd"):
                 listener.exitObservationExpressionAnd(self)
 
-
-
     def observationExpressionAnd(self, _p=0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = STIXPatternParser.ObservationExpressionAndContext(self, self._ctx, _parentState)
-        _prevctx = localctx
         _startState = 6
         self.enterRecursionRule(localctx, 6, self.RULE_observationExpressionAnd, _p)
         try:
@@ -465,12 +449,11 @@ class STIXPatternParser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 68
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,2,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 2, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
-                    _prevctx = localctx
                     localctx = STIXPatternParser.ObservationExpressionAndContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_observationExpressionAnd)
                     self.state = 63
@@ -480,11 +463,10 @@ class STIXPatternParser ( Parser ):
                     self.state = 64
                     self.match(STIXPatternParser.AND)
                     self.state = 65
-                    self.observationExpressionAnd(3) 
+                    self.observationExpressionAnd(3)
                 self.state = 70
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,2,self._ctx)
-
+                _alt = self._interp.adaptivePredict(self._input, 2, self._ctx)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -499,27 +481,23 @@ class STIXPatternParser ( Parser ):
             super(STIXPatternParser.ObservationExpressionContext, self).__init__(parent, invokingState)
             self.parser = parser
 
-
         def getRuleIndex(self):
             return STIXPatternParser.RULE_observationExpression
 
-     
         def copyFrom(self, ctx):
             super(STIXPatternParser.ObservationExpressionContext, self).copyFrom(ctx)
 
-
     class ObservationExpressionRepeatedContext(ObservationExpressionContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.ObservationExpressionContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.ObservationExpressionContext)
             super(STIXPatternParser.ObservationExpressionRepeatedContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def observationExpression(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionContext, 0)
 
         def repeatedQualifier(self):
-            return self.getTypedRuleContext(STIXPatternParser.RepeatedQualifierContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.RepeatedQualifierContext, 0)
 
         def enterRule(self, listener):
             if hasattr(listener, "enterObservationExpressionRepeated"):
@@ -529,17 +507,17 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObservationExpressionRepeated"):
                 listener.exitObservationExpressionRepeated(self)
 
-
     class ObservationExpressionSimpleContext(ObservationExpressionContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.ObservationExpressionContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.ObservationExpressionContext)
             super(STIXPatternParser.ObservationExpressionSimpleContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def LBRACK(self):
             return self.getToken(STIXPatternParser.LBRACK, 0)
+
         def comparisonExpression(self):
-            return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionContext, 0)
 
         def RBRACK(self):
             return self.getToken(STIXPatternParser.RBRACK, 0)
@@ -552,17 +530,17 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObservationExpressionSimple"):
                 listener.exitObservationExpressionSimple(self)
 
-
     class ObservationExpressionCompoundContext(ObservationExpressionContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.ObservationExpressionContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.ObservationExpressionContext)
             super(STIXPatternParser.ObservationExpressionCompoundContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def LPAREN(self):
             return self.getToken(STIXPatternParser.LPAREN, 0)
+
         def observationExpressions(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionsContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionsContext, 0)
 
         def RPAREN(self):
             return self.getToken(STIXPatternParser.RPAREN, 0)
@@ -575,19 +553,17 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObservationExpressionCompound"):
                 listener.exitObservationExpressionCompound(self)
 
-
     class ObservationExpressionWithinContext(ObservationExpressionContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.ObservationExpressionContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.ObservationExpressionContext)
             super(STIXPatternParser.ObservationExpressionWithinContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def observationExpression(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionContext, 0)
 
         def withinQualifier(self):
-            return self.getTypedRuleContext(STIXPatternParser.WithinQualifierContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.WithinQualifierContext, 0)
 
         def enterRule(self, listener):
             if hasattr(listener, "enterObservationExpressionWithin"):
@@ -597,19 +573,17 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObservationExpressionWithin"):
                 listener.exitObservationExpressionWithin(self)
 
-
     class ObservationExpressionStartStopContext(ObservationExpressionContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.ObservationExpressionContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.ObservationExpressionContext)
             super(STIXPatternParser.ObservationExpressionStartStopContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def observationExpression(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObservationExpressionContext, 0)
 
         def startStopQualifier(self):
-            return self.getTypedRuleContext(STIXPatternParser.StartStopQualifierContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.StartStopQualifierContext, 0)
 
         def enterRule(self, listener):
             if hasattr(listener, "enterObservationExpressionStartStop"):
@@ -619,13 +593,10 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObservationExpressionStartStop"):
                 listener.exitObservationExpressionStartStop(self)
 
-
-
     def observationExpression(self, _p=0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = STIXPatternParser.ObservationExpressionContext(self, self._ctx, _parentState)
-        _prevctx = localctx
         _startState = 8
         self.enterRecursionRule(localctx, 8, self.RULE_observationExpression, _p)
         try:
@@ -636,7 +607,6 @@ class STIXPatternParser ( Parser ):
             if token in [STIXPatternParser.LBRACK]:
                 localctx = STIXPatternParser.ObservationExpressionSimpleContext(self, localctx)
                 self._ctx = localctx
-                _prevctx = localctx
 
                 self.state = 72
                 self.match(STIXPatternParser.LBRACK)
@@ -648,7 +618,6 @@ class STIXPatternParser ( Parser ):
             elif token in [STIXPatternParser.LPAREN]:
                 localctx = STIXPatternParser.ObservationExpressionCompoundContext(self, localctx)
                 self._ctx = localctx
-                _prevctx = localctx
                 self.state = 76
                 self.match(STIXPatternParser.LPAREN)
                 self.state = 77
@@ -662,17 +631,17 @@ class STIXPatternParser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 90
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 5, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
-                    _prevctx = localctx
                     self.state = 88
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 4, self._ctx)
                     if la_ == 1:
-                        localctx = STIXPatternParser.ObservationExpressionStartStopContext(self, STIXPatternParser.ObservationExpressionContext(self, _parentctx, _parentState))
+                        localctx = STIXPatternParser.\
+                            ObservationExpressionStartStopContext(self, STIXPatternParser.ObservationExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_observationExpression)
                         self.state = 82
                         if not self.precpred(self._ctx, 3):
@@ -683,7 +652,8 @@ class STIXPatternParser ( Parser ):
                         pass
 
                     elif la_ == 2:
-                        localctx = STIXPatternParser.ObservationExpressionWithinContext(self, STIXPatternParser.ObservationExpressionContext(self, _parentctx, _parentState))
+                        localctx = STIXPatternParser.\
+                            ObservationExpressionWithinContext(self, STIXPatternParser.ObservationExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_observationExpression)
                         self.state = 84
                         if not self.precpred(self._ctx, 2):
@@ -694,7 +664,8 @@ class STIXPatternParser ( Parser ):
                         pass
 
                     elif la_ == 3:
-                        localctx = STIXPatternParser.ObservationExpressionRepeatedContext(self, STIXPatternParser.ObservationExpressionContext(self, _parentctx, _parentState))
+                        localctx = STIXPatternParser.\
+                            ObservationExpressionRepeatedContext(self, STIXPatternParser.ObservationExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_observationExpression)
                         self.state = 86
                         if not self.precpred(self._ctx, 1):
@@ -704,10 +675,9 @@ class STIXPatternParser ( Parser ):
                         self.repeatedQualifier()
                         pass
 
-             
                 self.state = 92
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 5, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -724,15 +694,13 @@ class STIXPatternParser ( Parser ):
             self.parser = parser
 
         def comparisonExpressionAnd(self):
-            return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionAndContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionAndContext, 0)
 
         def comparisonExpression(self, i=None):
             if i is None:
                 return self.getTypedRuleContexts(STIXPatternParser.ComparisonExpressionContext)
             else:
-                return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionContext,i)
-
+                return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionContext, i)
 
         def OR(self):
             return self.getToken(STIXPatternParser.OR, 0)
@@ -748,13 +716,10 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitComparisonExpression"):
                 listener.exitComparisonExpression(self)
 
-
-
     def comparisonExpression(self, _p=0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = STIXPatternParser.ComparisonExpressionContext(self, self._ctx, _parentState)
-        _prevctx = localctx
         _startState = 10
         self.enterRecursionRule(localctx, 10, self.RULE_comparisonExpression, _p)
         try:
@@ -764,12 +729,11 @@ class STIXPatternParser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 101
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 6, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
-                    _prevctx = localctx
                     localctx = STIXPatternParser.ComparisonExpressionContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_comparisonExpression)
                     self.state = 96
@@ -779,10 +743,10 @@ class STIXPatternParser ( Parser ):
                     self.state = 97
                     self.match(STIXPatternParser.OR)
                     self.state = 98
-                    self.comparisonExpression(3) 
+                    self.comparisonExpression(3)
                 self.state = 103
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 6, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -799,15 +763,13 @@ class STIXPatternParser ( Parser ):
             self.parser = parser
 
         def propTest(self):
-            return self.getTypedRuleContext(STIXPatternParser.PropTestContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.PropTestContext, 0)
 
         def comparisonExpressionAnd(self, i=None):
             if i is None:
                 return self.getTypedRuleContexts(STIXPatternParser.ComparisonExpressionAndContext)
             else:
-                return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionAndContext,i)
-
+                return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionAndContext, i)
 
         def AND(self):
             return self.getToken(STIXPatternParser.AND, 0)
@@ -823,13 +785,10 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitComparisonExpressionAnd"):
                 listener.exitComparisonExpressionAnd(self)
 
-
-
     def comparisonExpressionAnd(self, _p=0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = STIXPatternParser.ComparisonExpressionAndContext(self, self._ctx, _parentState)
-        _prevctx = localctx
         _startState = 12
         self.enterRecursionRule(localctx, 12, self.RULE_comparisonExpressionAnd, _p)
         try:
@@ -839,12 +798,11 @@ class STIXPatternParser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 112
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 7, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
-                    _prevctx = localctx
                     localctx = STIXPatternParser.ComparisonExpressionAndContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_comparisonExpressionAnd)
                     self.state = 107
@@ -854,10 +812,10 @@ class STIXPatternParser ( Parser ):
                     self.state = 108
                     self.match(STIXPatternParser.AND)
                     self.state = 109
-                    self.comparisonExpressionAnd(3) 
+                    self.comparisonExpressionAnd(3)
                 self.state = 114
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 7, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -873,29 +831,27 @@ class STIXPatternParser ( Parser ):
             super(STIXPatternParser.PropTestContext, self).__init__(parent, invokingState)
             self.parser = parser
 
-
         def getRuleIndex(self):
             return STIXPatternParser.RULE_propTest
 
-     
         def copyFrom(self, ctx):
             super(STIXPatternParser.PropTestContext, self).copyFrom(ctx)
 
-
-
     class PropTestRegexContext(PropTestContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.PropTestContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.PropTestContext)
             super(STIXPatternParser.PropTestRegexContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def objectPath(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext, 0)
 
         def MATCHES(self):
             return self.getToken(STIXPatternParser.MATCHES, 0)
+
         def StringLiteral(self):
             return self.getToken(STIXPatternParser.StringLiteral, 0)
+
         def NOT(self):
             return self.getToken(STIXPatternParser.NOT, 0)
 
@@ -907,27 +863,30 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPropTestRegex"):
                 listener.exitPropTestRegex(self)
 
-
     class PropTestOrderContext(PropTestContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.PropTestContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.PropTestContext)
             super(STIXPatternParser.PropTestOrderContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def objectPath(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext, 0)
 
         def orderableLiteral(self):
-            return self.getTypedRuleContext(STIXPatternParser.OrderableLiteralContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.OrderableLiteralContext, 0)
 
         def GT(self):
             return self.getToken(STIXPatternParser.GT, 0)
+
         def LT(self):
             return self.getToken(STIXPatternParser.LT, 0)
+
         def GE(self):
             return self.getToken(STIXPatternParser.GE, 0)
+
         def LE(self):
             return self.getToken(STIXPatternParser.LE, 0)
+
         def NOT(self):
             return self.getToken(STIXPatternParser.NOT, 0)
 
@@ -939,20 +898,21 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPropTestOrder"):
                 listener.exitPropTestOrder(self)
 
-
     class PropTestLikeContext(PropTestContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.PropTestContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.PropTestContext)
             super(STIXPatternParser.PropTestLikeContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def objectPath(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext, 0)
 
         def LIKE(self):
             return self.getToken(STIXPatternParser.LIKE, 0)
+
         def StringLiteral(self):
             return self.getToken(STIXPatternParser.StringLiteral, 0)
+
         def NOT(self):
             return self.getToken(STIXPatternParser.NOT, 0)
 
@@ -964,23 +924,24 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPropTestLike"):
                 listener.exitPropTestLike(self)
 
-
     class PropTestEqualContext(PropTestContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.PropTestContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.PropTestContext)
             super(STIXPatternParser.PropTestEqualContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def objectPath(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext, 0)
 
         def primitiveLiteral(self):
-            return self.getTypedRuleContext(STIXPatternParser.PrimitiveLiteralContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.PrimitiveLiteralContext, 0)
 
         def EQ(self):
             return self.getToken(STIXPatternParser.EQ, 0)
+
         def NEQ(self):
             return self.getToken(STIXPatternParser.NEQ, 0)
+
         def NOT(self):
             return self.getToken(STIXPatternParser.NOT, 0)
 
@@ -992,20 +953,20 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPropTestEqual"):
                 listener.exitPropTestEqual(self)
 
-
     class PropTestSetContext(PropTestContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.PropTestContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.PropTestContext)
             super(STIXPatternParser.PropTestSetContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def objectPath(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext, 0)
 
         def IN(self):
             return self.getToken(STIXPatternParser.IN, 0)
+
         def setLiteral(self):
-            return self.getTypedRuleContext(STIXPatternParser.SetLiteralContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.SetLiteralContext, 0)
 
         def NOT(self):
             return self.getToken(STIXPatternParser.NOT, 0)
@@ -1018,20 +979,21 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPropTestSet"):
                 listener.exitPropTestSet(self)
 
-
     class PropTestIsSubsetContext(PropTestContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.PropTestContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.PropTestContext)
             super(STIXPatternParser.PropTestIsSubsetContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def objectPath(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext, 0)
 
         def ISSUBSET(self):
             return self.getToken(STIXPatternParser.ISSUBSET, 0)
+
         def StringLiteral(self):
             return self.getToken(STIXPatternParser.StringLiteral, 0)
+
         def NOT(self):
             return self.getToken(STIXPatternParser.NOT, 0)
 
@@ -1043,17 +1005,17 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPropTestIsSubset"):
                 listener.exitPropTestIsSubset(self)
 
-
     class PropTestParenContext(PropTestContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.PropTestContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.PropTestContext)
             super(STIXPatternParser.PropTestParenContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def LPAREN(self):
             return self.getToken(STIXPatternParser.LPAREN, 0)
+
         def comparisonExpression(self):
-            return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ComparisonExpressionContext, 0)
 
         def RPAREN(self):
             return self.getToken(STIXPatternParser.RPAREN, 0)
@@ -1066,20 +1028,21 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPropTestParen"):
                 listener.exitPropTestParen(self)
 
-
     class PropTestIsSupersetContext(PropTestContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.PropTestContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.PropTestContext)
             super(STIXPatternParser.PropTestIsSupersetContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def objectPath(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext,0)
+            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext, 0)
 
         def ISSUPERSET(self):
             return self.getToken(STIXPatternParser.ISSUPERSET, 0)
+
         def StringLiteral(self):
             return self.getToken(STIXPatternParser.StringLiteral, 0)
+
         def NOT(self):
             return self.getToken(STIXPatternParser.NOT, 0)
 
@@ -1091,17 +1054,14 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPropTestIsSuperset"):
                 listener.exitPropTestIsSuperset(self)
 
-
-
     def propTest(self):
-
         localctx = STIXPatternParser.PropTestContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_propTest)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 168
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 15, self._ctx)
             if la_ == 1:
                 localctx = STIXPatternParser.PropTestEqualContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
@@ -1110,14 +1070,13 @@ class STIXPatternParser ( Parser ):
                 self.state = 117
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==STIXPatternParser.NOT:
+                if _la == STIXPatternParser.NOT:
                     self.state = 116
                     self.match(STIXPatternParser.NOT)
 
-
                 self.state = 119
                 _la = self._input.LA(1)
-                if not(_la==STIXPatternParser.EQ or _la==STIXPatternParser.NEQ):
+                if not(_la == STIXPatternParser.EQ or _la == STIXPatternParser.NEQ):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1134,14 +1093,17 @@ class STIXPatternParser ( Parser ):
                 self.state = 124
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==STIXPatternParser.NOT:
+                if _la == STIXPatternParser.NOT:
                     self.state = 123
                     self.match(STIXPatternParser.NOT)
 
-
                 self.state = 126
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << STIXPatternParser.LT) | (1 << STIXPatternParser.LE) | (1 << STIXPatternParser.GT) | (1 << STIXPatternParser.GE))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & (
+                        (1 << STIXPatternParser.LT) |
+                        (1 << STIXPatternParser.LE) |
+                        (1 << STIXPatternParser.GT) |
+                        (1 << STIXPatternParser.GE))) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1158,10 +1120,9 @@ class STIXPatternParser ( Parser ):
                 self.state = 131
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==STIXPatternParser.NOT:
+                if _la == STIXPatternParser.NOT:
                     self.state = 130
                     self.match(STIXPatternParser.NOT)
-
 
                 self.state = 133
                 self.match(STIXPatternParser.IN)
@@ -1177,10 +1138,9 @@ class STIXPatternParser ( Parser ):
                 self.state = 138
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==STIXPatternParser.NOT:
+                if _la == STIXPatternParser.NOT:
                     self.state = 137
                     self.match(STIXPatternParser.NOT)
-
 
                 self.state = 140
                 self.match(STIXPatternParser.LIKE)
@@ -1196,10 +1156,9 @@ class STIXPatternParser ( Parser ):
                 self.state = 145
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==STIXPatternParser.NOT:
+                if _la == STIXPatternParser.NOT:
                     self.state = 144
                     self.match(STIXPatternParser.NOT)
-
 
                 self.state = 147
                 self.match(STIXPatternParser.MATCHES)
@@ -1215,10 +1174,9 @@ class STIXPatternParser ( Parser ):
                 self.state = 152
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==STIXPatternParser.NOT:
+                if _la == STIXPatternParser.NOT:
                     self.state = 151
                     self.match(STIXPatternParser.NOT)
-
 
                 self.state = 154
                 self.match(STIXPatternParser.ISSUBSET)
@@ -1234,10 +1192,9 @@ class STIXPatternParser ( Parser ):
                 self.state = 159
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==STIXPatternParser.NOT:
+                if _la == STIXPatternParser.NOT:
                     self.state = 158
                     self.match(STIXPatternParser.NOT)
-
 
                 self.state = 161
                 self.match(STIXPatternParser.ISSUPERSET)
@@ -1255,7 +1212,6 @@ class STIXPatternParser ( Parser ):
                 self.state = 166
                 self.match(STIXPatternParser.RPAREN)
                 pass
-
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1294,11 +1250,7 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitStartStopQualifier"):
                 listener.exitStartStopQualifier(self)
 
-
-
-
     def startStopQualifier(self):
-
         localctx = STIXPatternParser.StartStopQualifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_startStopQualifier)
         try:
@@ -1348,21 +1300,17 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitWithinQualifier"):
                 listener.exitWithinQualifier(self)
 
-
-
-
     def withinQualifier(self):
-
         localctx = STIXPatternParser.WithinQualifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_withinQualifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 175
             self.match(STIXPatternParser.WITHIN)
             self.state = 176
             _la = self._input.LA(1)
-            if not(_la==STIXPatternParser.IntLiteral or _la==STIXPatternParser.FloatLiteral):
+            if not(_la == STIXPatternParser.IntLiteral or _la == STIXPatternParser.FloatLiteral):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1403,11 +1351,7 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitRepeatedQualifier"):
                 listener.exitRepeatedQualifier(self)
 
-
-
-
     def repeatedQualifier(self):
-
         localctx = STIXPatternParser.RepeatedQualifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_repeatedQualifier)
         try:
@@ -1433,19 +1377,16 @@ class STIXPatternParser ( Parser ):
             self.parser = parser
 
         def objectType(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectTypeContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.ObjectTypeContext, 0)
 
         def COLON(self):
             return self.getToken(STIXPatternParser.COLON, 0)
 
         def firstPathComponent(self):
-            return self.getTypedRuleContext(STIXPatternParser.FirstPathComponentContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.FirstPathComponentContext, 0)
 
         def objectPathComponent(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathComponentContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.ObjectPathComponentContext, 0)
 
         def getRuleIndex(self):
             return STIXPatternParser.RULE_objectPath
@@ -1458,14 +1399,10 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObjectPath"):
                 listener.exitObjectPath(self)
 
-
-
-
     def objectPath(self):
-
         localctx = STIXPatternParser.ObjectPathContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_objectPath)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 183
@@ -1477,11 +1414,9 @@ class STIXPatternParser ( Parser ):
             self.state = 187
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==STIXPatternParser.DOT or _la==STIXPatternParser.LBRACK:
+            if _la == STIXPatternParser.DOT or _la == STIXPatternParser.LBRACK:
                 self.state = 186
                 self.objectPathComponent(0)
-
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1513,19 +1448,15 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitObjectType"):
                 listener.exitObjectType(self)
 
-
-
-
     def objectType(self):
-
         localctx = STIXPatternParser.ObjectTypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 24, self.RULE_objectType)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 189
             _la = self._input.LA(1)
-            if not(_la==STIXPatternParser.IdentifierWithoutHyphen or _la==STIXPatternParser.IdentifierWithHyphen):
+            if not(_la == STIXPatternParser.IdentifierWithoutHyphen or _la == STIXPatternParser.IdentifierWithHyphen):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1561,19 +1492,15 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitFirstPathComponent"):
                 listener.exitFirstPathComponent(self)
 
-
-
-
     def firstPathComponent(self):
-
         localctx = STIXPatternParser.FirstPathComponentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_firstPathComponent)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 191
             _la = self._input.LA(1)
-            if not(_la==STIXPatternParser.StringLiteral or _la==STIXPatternParser.IdentifierWithoutHyphen):
+            if not(_la == STIXPatternParser.StringLiteral or _la == STIXPatternParser.IdentifierWithoutHyphen):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1592,27 +1519,27 @@ class STIXPatternParser ( Parser ):
             super(STIXPatternParser.ObjectPathComponentContext, self).__init__(parent, invokingState)
             self.parser = parser
 
-
         def getRuleIndex(self):
             return STIXPatternParser.RULE_objectPathComponent
 
-     
         def copyFrom(self, ctx):
             super(STIXPatternParser.ObjectPathComponentContext, self).copyFrom(ctx)
 
-
     class IndexPathStepContext(ObjectPathComponentContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.ObjectPathComponentContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.ObjectPathComponentContext)
             super(STIXPatternParser.IndexPathStepContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def LBRACK(self):
             return self.getToken(STIXPatternParser.LBRACK, 0)
+
         def RBRACK(self):
             return self.getToken(STIXPatternParser.RBRACK, 0)
+
         def IntLiteral(self):
             return self.getToken(STIXPatternParser.IntLiteral, 0)
+
         def ASTERISK(self):
             return self.getToken(STIXPatternParser.ASTERISK, 0)
 
@@ -1624,10 +1551,9 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitIndexPathStep"):
                 listener.exitIndexPathStep(self)
 
-
     class PathStepContext(ObjectPathComponentContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.ObjectPathComponentContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.ObjectPathComponentContext)
             super(STIXPatternParser.PathStepContext, self).__init__(parser)
             self.copyFrom(ctx)
 
@@ -1635,8 +1561,7 @@ class STIXPatternParser ( Parser ):
             if i is None:
                 return self.getTypedRuleContexts(STIXPatternParser.ObjectPathComponentContext)
             else:
-                return self.getTypedRuleContext(STIXPatternParser.ObjectPathComponentContext,i)
-
+                return self.getTypedRuleContext(STIXPatternParser.ObjectPathComponentContext, i)
 
         def enterRule(self, listener):
             if hasattr(listener, "enterPathStep"):
@@ -1646,15 +1571,15 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPathStep"):
                 listener.exitPathStep(self)
 
-
     class KeyPathStepContext(ObjectPathComponentContext):
 
-        def __init__(self, parser, ctx): # actually a STIXPatternParser.ObjectPathComponentContext)
+        def __init__(self, parser, ctx):  # actually a STIXPatternParser.ObjectPathComponentContext)
             super(STIXPatternParser.KeyPathStepContext, self).__init__(parser)
             self.copyFrom(ctx)
 
         def IdentifierWithoutHyphen(self):
             return self.getToken(STIXPatternParser.IdentifierWithoutHyphen, 0)
+
         def StringLiteral(self):
             return self.getToken(STIXPatternParser.StringLiteral, 0)
 
@@ -1666,16 +1591,13 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitKeyPathStep"):
                 listener.exitKeyPathStep(self)
 
-
-
     def objectPathComponent(self, _p=0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = STIXPatternParser.ObjectPathComponentContext(self, self._ctx, _parentState)
-        _prevctx = localctx
         _startState = 28
         self.enterRecursionRule(localctx, 28, self.RULE_objectPathComponent, _p)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 199
@@ -1684,13 +1606,12 @@ class STIXPatternParser ( Parser ):
             if token in [STIXPatternParser.DOT]:
                 localctx = STIXPatternParser.KeyPathStepContext(self, localctx)
                 self._ctx = localctx
-                _prevctx = localctx
 
                 self.state = 194
                 self.match(STIXPatternParser.DOT)
                 self.state = 195
                 _la = self._input.LA(1)
-                if not(_la==STIXPatternParser.StringLiteral or _la==STIXPatternParser.IdentifierWithoutHyphen):
+                if not(_la == STIXPatternParser.StringLiteral or _la == STIXPatternParser.IdentifierWithoutHyphen):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1699,12 +1620,11 @@ class STIXPatternParser ( Parser ):
             elif token in [STIXPatternParser.LBRACK]:
                 localctx = STIXPatternParser.IndexPathStepContext(self, localctx)
                 self._ctx = localctx
-                _prevctx = localctx
                 self.state = 196
                 self.match(STIXPatternParser.LBRACK)
                 self.state = 197
                 _la = self._input.LA(1)
-                if not(_la==STIXPatternParser.IntLiteral or _la==STIXPatternParser.ASTERISK):
+                if not(_la == STIXPatternParser.IntLiteral or _la == STIXPatternParser.ASTERISK):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1718,12 +1638,11 @@ class STIXPatternParser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 205
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 18, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
-                    _prevctx = localctx
                     localctx = STIXPatternParser.PathStepContext(self, STIXPatternParser.ObjectPathComponentContext(self, _parentctx, _parentState))
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_objectPathComponent)
                     self.state = 201
@@ -1731,10 +1650,10 @@ class STIXPatternParser ( Parser ):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
                     self.state = 202
-                    self.objectPathComponent(4) 
+                    self.objectPathComponent(4)
                 self.state = 207
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 18, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1760,8 +1679,7 @@ class STIXPatternParser ( Parser ):
             if i is None:
                 return self.getTypedRuleContexts(STIXPatternParser.PrimitiveLiteralContext)
             else:
-                return self.getTypedRuleContext(STIXPatternParser.PrimitiveLiteralContext,i)
-
+                return self.getTypedRuleContext(STIXPatternParser.PrimitiveLiteralContext, i)
 
         def COMMA(self, i=None):
             if i is None:
@@ -1780,18 +1698,14 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitSetLiteral"):
                 listener.exitSetLiteral(self)
 
-
-
-
     def setLiteral(self):
-
         localctx = STIXPatternParser.SetLiteralContext(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_setLiteral)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 221
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,20,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 20, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 208
@@ -1809,7 +1723,7 @@ class STIXPatternParser ( Parser ):
                 self.state = 216
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==STIXPatternParser.COMMA:
+                while _la == STIXPatternParser.COMMA:
                     self.state = 212
                     self.match(STIXPatternParser.COMMA)
                     self.state = 213
@@ -1821,7 +1735,6 @@ class STIXPatternParser ( Parser ):
                 self.state = 219
                 self.match(STIXPatternParser.RPAREN)
                 pass
-
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1838,8 +1751,7 @@ class STIXPatternParser ( Parser ):
             self.parser = parser
 
         def orderableLiteral(self):
-            return self.getTypedRuleContext(STIXPatternParser.OrderableLiteralContext,0)
-
+            return self.getTypedRuleContext(STIXPatternParser.OrderableLiteralContext, 0)
 
         def BoolLiteral(self):
             return self.getToken(STIXPatternParser.BoolLiteral, 0)
@@ -1855,18 +1767,19 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitPrimitiveLiteral"):
                 listener.exitPrimitiveLiteral(self)
 
-
-
-
     def primitiveLiteral(self):
-
         localctx = STIXPatternParser.PrimitiveLiteralContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_primitiveLiteral)
         try:
             self.state = 225
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [STIXPatternParser.IntLiteral, STIXPatternParser.FloatLiteral, STIXPatternParser.HexLiteral, STIXPatternParser.BinaryLiteral, STIXPatternParser.StringLiteral, STIXPatternParser.TimestampLiteral]:
+            if token in [STIXPatternParser.IntLiteral,
+                         STIXPatternParser.FloatLiteral,
+                         STIXPatternParser.HexLiteral,
+                         STIXPatternParser.BinaryLiteral,
+                         STIXPatternParser.StringLiteral,
+                         STIXPatternParser.TimestampLiteral]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 223
                 self.orderableLiteral()
@@ -1878,7 +1791,6 @@ class STIXPatternParser ( Parser ):
                 pass
             else:
                 raise NoViableAltException(self)
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1922,19 +1834,21 @@ class STIXPatternParser ( Parser ):
             if hasattr(listener, "exitOrderableLiteral"):
                 listener.exitOrderableLiteral(self)
 
-
-
-
     def orderableLiteral(self):
-
         localctx = STIXPatternParser.OrderableLiteralContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_orderableLiteral)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 227
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << STIXPatternParser.IntLiteral) | (1 << STIXPatternParser.FloatLiteral) | (1 << STIXPatternParser.HexLiteral) | (1 << STIXPatternParser.BinaryLiteral) | (1 << STIXPatternParser.StringLiteral) | (1 << STIXPatternParser.TimestampLiteral))) != 0)):
+            if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
+                    (1 << STIXPatternParser.IntLiteral) |
+                    (1 << STIXPatternParser.FloatLiteral) |
+                    (1 << STIXPatternParser.HexLiteral) |
+                    (1 << STIXPatternParser.BinaryLiteral) |
+                    (1 << STIXPatternParser.StringLiteral) |
+                    (1 << STIXPatternParser.TimestampLiteral))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1947,10 +1861,8 @@ class STIXPatternParser ( Parser ):
             self.exitRule()
         return localctx
 
-
-
     def sempred(self, localctx, ruleIndex, predIndex):
-        if self._predicates == None:
+        if self._predicates is None:
             self._predicates = dict()
         self._predicates[1] = self.observationExpressions_sempred
         self._predicates[2] = self.observationExpressionOr_sempred
@@ -1968,46 +1880,33 @@ class STIXPatternParser ( Parser ):
     def observationExpressions_sempred(self, localctx, predIndex):
             if predIndex == 0:
                 return self.precpred(self._ctx, 2)
-         
 
     def observationExpressionOr_sempred(self, localctx, predIndex):
             if predIndex == 1:
                 return self.precpred(self._ctx, 2)
-         
 
     def observationExpressionAnd_sempred(self, localctx, predIndex):
             if predIndex == 2:
                 return self.precpred(self._ctx, 2)
-         
 
     def observationExpression_sempred(self, localctx, predIndex):
             if predIndex == 3:
                 return self.precpred(self._ctx, 3)
-         
 
             if predIndex == 4:
                 return self.precpred(self._ctx, 2)
-         
 
             if predIndex == 5:
                 return self.precpred(self._ctx, 1)
-         
 
     def comparisonExpression_sempred(self, localctx, predIndex):
             if predIndex == 6:
                 return self.precpred(self._ctx, 2)
-         
 
     def comparisonExpressionAnd_sempred(self, localctx, predIndex):
             if predIndex == 7:
                 return self.precpred(self._ctx, 2)
-         
 
     def objectPathComponent_sempred(self, localctx, predIndex):
             if predIndex == 8:
                 return self.precpred(self._ctx, 3)
-         
-
-
-
-
