@@ -1,5 +1,10 @@
-pytest==3.0.5
-tox==2.5.0
+bumpversion
+pre-commit
+pytest
+pytest-cov
+sphinx
+sphinx-prompt
+tox
 
 # See https://github.com/oasis-open/cti-pattern-validator/pull/23#issuecomment-321096564
 # We can take this out eventually.

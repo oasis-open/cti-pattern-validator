@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open('README.rst') as f:
     readme = f.read()
@@ -22,11 +22,11 @@ setup(
     description='Validate STIX 2 Patterns.',
     long_description=readme,
     install_requires=[
-        "six",
         'antlr4-python2-runtime==4.7 ; python_version<"3"',
         'antlr4-python3-runtime==4.7 ; python_version>="3"',
-        'typing ; python_version<"3.5" and python_version>="3"',
-        'enum34 ; python_version~="3.3.0"'
+        'enum34 ; python_version~="3.3.0"',
+        'six',
+        'typing ; python_version<"3.5" and python_version>="3"'
     ],
     entry_points={
         'console_scripts': [
@@ -42,5 +42,6 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
 )

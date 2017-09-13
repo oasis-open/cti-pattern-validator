@@ -1,9 +1,11 @@
 # Generated from STIXPattern.g4 by ANTLR 4.7
 # encoding: utf-8
 from __future__ import print_function
-from antlr4 import *
+
 from io import StringIO
 import sys
+
+from antlr4 import *
 
 
 def serializedATN():
@@ -254,7 +256,7 @@ class STIXPatternLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     IntLiteral = 1
     FloatLiteral = 2
@@ -307,40 +309,41 @@ class STIXPatternLexer(Lexer):
     COMMENT = 49
     LINE_COMMENT = 50
 
-    channelNames = [ u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN" ]
+    channelNames = [u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN"]
 
-    modeNames = [ u"DEFAULT_MODE" ]
+    modeNames = [u"DEFAULT_MODE"]
 
-    literalNames = [ u"<INVALID>",
-            u"'<'", u"'<='", u"'>'", u"'>='", u"'''", u"':'", u"'.'", u"','", 
-            u"')'", u"'('", u"']'", u"'['", u"'+'", u"'-'", u"'^'", u"'/'", 
-            u"'*'" ]
+    literalNames = [u"<INVALID>", u"'<'", u"'<='", u"'>'", u"'>='", u"'''",
+                    u"':'", u"'.'", u"','", u"')'", u"'('", u"']'", u"'['",
+                    u"'+'", u"'-'", u"'^'", u"'/'", u"'*'"]
 
-    symbolicNames = [ u"<INVALID>",
-            u"IntLiteral", u"FloatLiteral", u"HexLiteral", u"BinaryLiteral", 
-            u"StringLiteral", u"BoolLiteral", u"TimestampLiteral", u"AND", 
-            u"OR", u"NOT", u"FOLLOWEDBY", u"LIKE", u"MATCHES", u"ISSUPERSET", 
-            u"ISSUBSET", u"LAST", u"IN", u"START", u"STOP", u"SECONDS", 
-            u"TRUE", u"FALSE", u"WITHIN", u"REPEATS", u"TIMES", u"IdentifierWithoutHyphen", 
-            u"IdentifierWithHyphen", u"EQ", u"NEQ", u"LT", u"LE", u"GT", 
-            u"GE", u"QUOTE", u"COLON", u"DOT", u"COMMA", u"RPAREN", u"LPAREN", 
-            u"RBRACK", u"LBRACK", u"PLUS", u"HYPHEN", u"MINUS", u"POWER_OP", 
-            u"DIVIDE", u"ASTERISK", u"WS", u"COMMENT", u"LINE_COMMENT" ]
+    symbolicNames = [u"<INVALID>", u"IntLiteral", u"FloatLiteral",
+                     u"HexLiteral", u"BinaryLiteral", u"StringLiteral",
+                     u"BoolLiteral", u"TimestampLiteral", u"AND", u"OR",
+                     u"NOT", u"FOLLOWEDBY", u"LIKE", u"MATCHES", u"ISSUPERSET",
+                     u"ISSUBSET", u"LAST", u"IN", u"START", u"STOP", u"SECONDS",
+                     u"TRUE", u"FALSE", u"WITHIN", u"REPEATS", u"TIMES",
+                     u"IdentifierWithoutHyphen", u"IdentifierWithHyphen",
+                     u"EQ", u"NEQ", u"LT", u"LE", u"GT", u"GE", u"QUOTE",
+                     u"COLON", u"DOT", u"COMMA", u"RPAREN", u"LPAREN",
+                     u"RBRACK", u"LBRACK", u"PLUS", u"HYPHEN", u"MINUS",
+                     u"POWER_OP", u"DIVIDE", u"ASTERISK", u"WS", u"COMMENT",
+                     u"LINE_COMMENT"]
 
-    ruleNames = [ u"IntLiteral", u"FloatLiteral", u"HexLiteral", u"BinaryLiteral", 
-                  u"StringLiteral", u"BoolLiteral", u"TimestampLiteral", 
-                  u"AND", u"OR", u"NOT", u"FOLLOWEDBY", u"LIKE", u"MATCHES", 
-                  u"ISSUPERSET", u"ISSUBSET", u"LAST", u"IN", u"START", 
-                  u"STOP", u"SECONDS", u"TRUE", u"FALSE", u"WITHIN", u"REPEATS", 
-                  u"TIMES", u"IdentifierWithoutHyphen", u"IdentifierWithHyphen", 
-                  u"EQ", u"NEQ", u"LT", u"LE", u"GT", u"GE", u"QUOTE", u"COLON", 
-                  u"DOT", u"COMMA", u"RPAREN", u"LPAREN", u"RBRACK", u"LBRACK", 
-                  u"PLUS", u"HYPHEN", u"MINUS", u"POWER_OP", u"DIVIDE", 
-                  u"ASTERISK", u"A", u"B", u"C", u"D", u"E", u"F", u"G", 
-                  u"H", u"I", u"J", u"K", u"L", u"M", u"N", u"O", u"P", 
-                  u"Q", u"R", u"S", u"T", u"U", u"V", u"W", u"X", u"Y", 
-                  u"Z", u"HexDigit", u"TwoHexDigits", u"Base64Char", u"WS", 
-                  u"COMMENT", u"LINE_COMMENT" ]
+    ruleNames = [u"IntLiteral", u"FloatLiteral", u"HexLiteral", u"BinaryLiteral",
+                 u"StringLiteral", u"BoolLiteral", u"TimestampLiteral",
+                 u"AND", u"OR", u"NOT", u"FOLLOWEDBY", u"LIKE", u"MATCHES",
+                 u"ISSUPERSET", u"ISSUBSET", u"LAST", u"IN", u"START",
+                 u"STOP", u"SECONDS", u"TRUE", u"FALSE", u"WITHIN", u"REPEATS",
+                 u"TIMES", u"IdentifierWithoutHyphen", u"IdentifierWithHyphen",
+                 u"EQ", u"NEQ", u"LT", u"LE", u"GT", u"GE", u"QUOTE", u"COLON",
+                 u"DOT", u"COMMA", u"RPAREN", u"LPAREN", u"RBRACK", u"LBRACK",
+                 u"PLUS", u"HYPHEN", u"MINUS", u"POWER_OP", u"DIVIDE",
+                 u"ASTERISK", u"A", u"B", u"C", u"D", u"E", u"F", u"G",
+                 u"H", u"I", u"J", u"K", u"L", u"M", u"N", u"O", u"P",
+                 u"Q", u"R", u"S", u"T", u"U", u"V", u"W", u"X", u"Y",
+                 u"Z", u"HexDigit", u"TwoHexDigits", u"Base64Char", u"WS",
+                 u"COMMENT", u"LINE_COMMENT"]
 
     grammarFileName = u"STIXPattern.g4"
 
@@ -350,5 +353,3 @@ class STIXPatternLexer(Lexer):
         self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None
-
-
