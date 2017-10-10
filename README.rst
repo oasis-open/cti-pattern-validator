@@ -14,7 +14,7 @@ and associated documentation for the tool. The validator can be used as
 a command-line tool or as a Python library which can be included in
 other applications.
 
-|Travis-CI Build Status|
+|Build_Status| |Coverage| |Version|
 
 Requirements
 ------------
@@ -227,6 +227,9 @@ general questions about Open Repository participation to OASIS Staff at
 repository-admin@oasis-open.org and any specific CLA-related questions
 to repository-cla@oasis-open.org.
 
-.. |Travis-CI Build Status| image:: https://api.travis-ci.org/oasis-open/cti-pattern-validator.svg?branch=master
+.. |Build_Status| image:: https://api.travis-ci.org/oasis-open/cti-pattern-validator.svg?branch=master
    :target: https://travis-ci.org/oasis-open/cti-pattern-validator
-
+.. |Coverage| image:: https://codecov.io/gh/oasis-open/cti-pattern-validator/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/oasis-open/cti-pattern-validator
+.. |Version| image:: https://img.shields.io/pypi/v/stix2-patterns.svg?maxAge=3600
+   :target: https://pypi.python.org/pypi/stix2-patterns/
