@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.6.0 - Released 2017-11-13
+
+* #32 - Added a public walk() method to the Pattern class. (@chisholm)
+* Make repository structure match other projects. (@emmanvg)
+
 0.5.0 - Released 2017-07-12
 
 * Separate object and path components in inspector.
