@@ -1,8 +1,8 @@
 cti-pattern-validator
 =====================
 
-This is an `OASIS Open Repository
-<https://www.oasis-open.org/resources/open-repositories/>`__.
+This is an `OASIS Open
+Repository <https://www.oasis-open.org/resources/open-repositories/>`__.
 See the `Governance <#governance>`__ section for more information.
 
 The STIX 2 Pattern Validator is a software tool for checking the syntax
