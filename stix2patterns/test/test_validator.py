@@ -37,6 +37,8 @@ FAIL_CASES = [
         "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting SECONDS"),
     ("[network-traffic:dst_ref.value ISSUBSET ]",  # Missing second Comparison operand
         "FAIL: Error found at line 1:40. missing StringLiteral at ']'"),
+    ("[file:hashes.MD5 =? 'cead3f77f6cda6ec00f57d76c9a6879f']",  # '=?' isn't a valid operator
+        "FAIL: Error found at line 1:18. extraneous input '?'"),
     # TODO: add more failing test cases.
 ]
 
