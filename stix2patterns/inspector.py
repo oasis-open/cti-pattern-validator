@@ -73,14 +73,14 @@ class InspectionListener(STIXPatternListener):
     def exitWithinQualifier(self, ctx):
         self.__qualifiers.add(
             u"WITHIN {0} SECONDS".format(
-                ctx.IntLiteral() or ctx.FloatLiteral()
+                ctx.IntPosLiteral() or ctx.FloatPosLiteral()
             )
         )
 
     def exitRepeatedQualifier(self, ctx):
         self.__qualifiers.add(
             u"REPEATS {0} TIMES".format(
-                ctx.IntLiteral()
+                ctx.IntPosLiteral()
             )
         )
 
@@ -172,4 +172,4 @@ class InspectionListener(STIXPatternListener):
         if ctx.ASTERISK():
             self.__obj_path.append(INDEX_STAR)
         else:
-            self.__obj_path.append(int(ctx.IntLiteral().getText()))
+            self.__obj_path.append(int(ctx.IntPosLiteral().getText()))

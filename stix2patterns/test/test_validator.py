@@ -32,9 +32,11 @@ FAIL_CASES = [
     ("[file:name MATCHES /.*\\.dll/]",  # Quotes around regular expression
         "FAIL: Error found at line 1:19. mismatched input '/' expecting StringLiteral"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN ]",  # Missing Qualifier value
-        "FAIL: Error found at line 1:63. mismatched input ']' expecting {IntLiteral, FloatLiteral}"),
+        "FAIL: Error found at line 1:63. mismatched input ']' expecting {IntPosLiteral, FloatPosLiteral}"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS]",  # SECONDS is the only valid time unit
         "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting SECONDS"),
+    ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN -5 SECONDS]",  # Negative integer is invalid
+        "FAIL: Error found at line 1:63. mismatched input '-5' expecting {IntPosLiteral, FloatPosLiteral}"),
     ("[network-traffic:dst_ref.value ISSUBSET ]",  # Missing second Comparison operand
         "FAIL: Error found at line 1:40. missing StringLiteral at ']'"),
     ("[file:hashes.MD5 =? 'cead3f77f6cda6ec00f57d76c9a6879f']",  # '=?' isn't a valid operator
