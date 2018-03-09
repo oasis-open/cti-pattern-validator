@@ -43,6 +43,8 @@ FAIL_CASES = [
         "FAIL: Error found at line 1:18. extraneous input '?'"),
     ("[x_whatever:detected == t'2457-73-22T32:81:84.1Z']",  # Not a valid date
         "FAIL: Error found at line 1:24. extraneous input 't'"),
+    ("[artifact:payload_bin = b'====']",  # Not valid Base64
+        "FAIL: Error found at line 1:24. extraneous input 'b'"),
     # TODO: add more failing test cases.
 ]
 
@@ -76,6 +78,7 @@ PASS_CASES = [
     "[network-connection:extended_properties[0].source_payload MATCHES 'dGVzdHRlc3R0ZXN0']",
     "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 SECONDS",
     "[x_whatever:detected == t'2018-03-22T12:11:14.1Z']",
+    "[artifact:payload_bin = b'dGhpcyBpcyBhIHRlc3Q=']",
 ]
 
 
