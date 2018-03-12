@@ -19,7 +19,7 @@ other applications.
 Requirements
 ------------
 
--  `Python <https://www.python.org>`__ 2.6, 2.7, 3.3, 3.4, 3.5, or 3.6
+-  `Python <https://www.python.org>`__ 2.7 or 3.4+
 -  ANTLR grammar runtime (4.7 or newer):
 
    -  `antlr4-python2-runtime <https://pypi.python.org/pypi/antlr4-python2-runtime>`__
@@ -27,9 +27,8 @@ Requirements
    -  `antlr4-python3-runtime <https://pypi.python.org/pypi/antlr4-python3-runtime>`__
       (Python 3)
 
--  `enum34 <https://pypi.python.org/pypi/enum34>`__ (Python 3.3)
 -  `six <https://pypi.python.org/pypi/six>`__
--  `typing <https://pypi.python.org/pypi/typing>`__ (Python 3.0-3.4)
+-  `typing <https://pypi.python.org/pypi/typing>`__ (Python 3.4)
 
 Installation
 ------------
