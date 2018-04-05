@@ -25,11 +25,9 @@ Requirements
 -  `Python <https://www.python.org>`__ 2.7 or 3.4+
 -  ANTLR grammar runtime (4.7 or newer):
 
-   -  `antlr4-python2-runtime <https://pypi.python.org/pypi/antlr4-
-   python2-runtime>`__
+   -  `antlr4-python2-runtime <https://pypi.python.org/pypi/antlr4-python2-runtime>`__
       (Python 2.7)
-   -  `antlr4-python3-runtime <https://pypi.python.org/pypi/antlr4-
-   python3-runtime>`__
+   -  `antlr4-python3-runtime <https://pypi.python.org/pypi/antlr4-python3-runtime>`__
       (Python 3)
 
 -  `six <https://pypi.python.org/pypi/six>`__
@@ -67,8 +65,7 @@ returns a list of errors encountered while parsing the pattern.
 
     from stix2patterns.validator import run_validator
 
-    pattern = "[file-object:hashes.md5 =
-    '79054025255fb1a26e4bc422aef54eb4']"
+    pattern = "[file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4']"
     errors = run_validator(pattern)
 
 User Input
@@ -86,11 +83,9 @@ Ctrl-C is pressed. Example:
 
     $ validate-patterns
 
-    Enter a pattern to validate: [file-object:hashes.md5 =
-    '79054025255fb1a26e4bc422aef54eb4']
+    Enter a pattern to validate: [file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4']
 
-    PASS: [file-object:hashes.md5 =
-    '79054025255fb1a26e4bc422aef54eb4']
+    PASS: [file-object:hashes.md5 = '79054025255fb1a26e4bc422aef54eb4']
 
 File Input
 ~~~~~~~~~~
@@ -137,9 +132,7 @@ the validator).
 
    .. code:: bash
 
-       $ java -jar "/path/to/antlr-4.7-complete.jar" -Dlanguage=
-       Python2 STIXPattern.g4 -o /path/to/cti-pattern-
-       validator/stix2patterns/grammars
+       $ java -jar "/path/to/antlr-4.7-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -o /path/to/cti-pattern-       validator/stix2patterns/grammars
 
 5. Commit the resulting files to git.
 
@@ -270,13 +263,10 @@ Staff at
 repository-admin@oasis-open.org and any specific CLA-related questions
 to repository-cla@oasis-open.org.
 
-.. |Build_Status| image:: https://api.travis-ci.org/oasis-open/cti-
-pattern-validator.svg?branch=master
+.. |Build_Status| image:: https://api.travis-ci.org/oasis-open/cti-pattern-validator.svg?branch=master
    :target: https://travis-ci.org/oasis-open/cti-pattern-validator
-.. |Coverage| image:: https://codecov.io/gh/oasis-open/cti-pattern-
-validator/branch/master/graph/badge.svg
+.. |Coverage| image:: https://codecov.io/gh/oasis-open/cti-pattern-validator/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/oasis-open/cti-pattern-validator
-.. |Version| image:: https://img.shields.io/pypi/v/stix2-
-patterns.svg?maxAge=3600
+.. |Version| image:: https://img.shields.io/pypi/v/stix2-patterns.svg?maxAge=3600
    :target: https://pypi.python.org/pypi/stix2-patterns/
 
