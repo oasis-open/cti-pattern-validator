@@ -1,7 +1,5 @@
 # Generated from STIXPattern.g4 by ANTLR 4.7.1
-
 from antlr4 import *
-
 
 # This class defines a complete listener for a parse tree produced by STIXPatternParser.
 class STIXPatternListener(ParseTreeListener):
@@ -283,3 +281,5 @@ class STIXPatternListener(ParseTreeListener):
     # Exit a parse tree produced by STIXPatternParser#orderableLiteral.
     def exitOrderableLiteral(self, ctx):
         pass
+
+

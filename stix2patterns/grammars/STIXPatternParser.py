@@ -1,12 +1,9 @@
 # Generated from STIXPattern.g4 by ANTLR 4.7.1
 # encoding: utf-8
 from __future__ import print_function
-
+from antlr4 import *
 from io import StringIO
 import sys
-
-from antlr4 import *
-
 
 def serializedATN():
     with StringIO() as buf:
@@ -120,29 +117,28 @@ class STIXPatternParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
-                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
-                     u"'<'", u"'<='", u"'>'", u"'>='", u"'''", u"':'", u"'.'",
-                     u"','", u"')'", u"'('", u"']'", u"'['", u"'+'", u"<INVALID>",
-                     u"'-'", u"'^'", u"'/'", u"'*'" ]
+    literalNames = [ u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
+                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
+                     u"<INVALID>", u"<INVALID>", u"'AND'", u"'OR'", u"'NOT'", 
+                     u"'FOLLOWEDBY'", u"'LIKE'", u"'MATCHES'", u"'ISSUPERSET'", 
+                     u"'ISSUBSET'", u"'LAST'", u"'IN'", u"'START'", u"'STOP'", 
+                     u"'SECONDS'", u"'true'", u"'false'", u"'WITHIN'", u"'REPEATS'", 
+                     u"'TIMES'", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
+                     u"<INVALID>", u"'<'", u"'<='", u"'>'", u"'>='", u"'''", 
+                     u"':'", u"'.'", u"','", u"')'", u"'('", u"']'", u"'['", 
+                     u"'+'", u"<INVALID>", u"'-'", u"'^'", u"'/'", u"'*'" ]
 
-    symbolicNames = [ u"<INVALID>", u"IntNegLiteral", u"IntPosLiteral",
-                      u"FloatNegLiteral", u"FloatPosLiteral", u"HexLiteral",
-                      u"BinaryLiteral", u"StringLiteral", u"BoolLiteral",
-                      u"TimestampLiteral", u"AND", u"OR", u"NOT", u"FOLLOWEDBY",
-                      u"LIKE", u"MATCHES", u"ISSUPERSET", u"ISSUBSET", u"LAST",
-                      u"IN", u"START", u"STOP", u"SECONDS", u"TRUE", u"FALSE",
-                      u"WITHIN", u"REPEATS", u"TIMES", u"IdentifierWithoutHyphen",
-                      u"IdentifierWithHyphen", u"EQ", u"NEQ", u"LT", u"LE",
-                      u"GT", u"GE", u"QUOTE", u"COLON", u"DOT", u"COMMA",
-                      u"RPAREN", u"LPAREN", u"RBRACK", u"LBRACK", u"PLUS",
-                      u"HYPHEN", u"MINUS", u"POWER_OP", u"DIVIDE", u"ASTERISK",
+    symbolicNames = [ u"<INVALID>", u"IntNegLiteral", u"IntPosLiteral", 
+                      u"FloatNegLiteral", u"FloatPosLiteral", u"HexLiteral", 
+                      u"BinaryLiteral", u"StringLiteral", u"BoolLiteral", 
+                      u"TimestampLiteral", u"AND", u"OR", u"NOT", u"FOLLOWEDBY", 
+                      u"LIKE", u"MATCHES", u"ISSUPERSET", u"ISSUBSET", u"LAST", 
+                      u"IN", u"START", u"STOP", u"SECONDS", u"TRUE", u"FALSE", 
+                      u"WITHIN", u"REPEATS", u"TIMES", u"IdentifierWithoutHyphen", 
+                      u"IdentifierWithHyphen", u"EQ", u"NEQ", u"LT", u"LE", 
+                      u"GT", u"GE", u"QUOTE", u"COLON", u"DOT", u"COMMA", 
+                      u"RPAREN", u"LPAREN", u"RBRACK", u"LBRACK", u"PLUS", 
+                      u"HYPHEN", u"MINUS", u"POWER_OP", u"DIVIDE", u"ASTERISK", 
                       u"WS", u"COMMENT", u"LINE_COMMENT", u"InvalidCharacter" ]
 
     RULE_pattern = 0
@@ -164,12 +160,12 @@ class STIXPatternParser ( Parser ):
     RULE_primitiveLiteral = 16
     RULE_orderableLiteral = 17
 
-    ruleNames =  [ u"pattern", u"observationExpressions", u"observationExpressionOr",
-                   u"observationExpressionAnd", u"observationExpression",
-                   u"comparisonExpression", u"comparisonExpressionAnd",
-                   u"propTest", u"startStopQualifier", u"withinQualifier",
-                   u"repeatedQualifier", u"objectPath", u"objectType", u"firstPathComponent",
-                   u"objectPathComponent", u"setLiteral", u"primitiveLiteral",
+    ruleNames =  [ u"pattern", u"observationExpressions", u"observationExpressionOr", 
+                   u"observationExpressionAnd", u"observationExpression", 
+                   u"comparisonExpression", u"comparisonExpressionAnd", 
+                   u"propTest", u"startStopQualifier", u"withinQualifier", 
+                   u"repeatedQualifier", u"objectPath", u"objectType", u"firstPathComponent", 
+                   u"objectPathComponent", u"setLiteral", u"primitiveLiteral", 
                    u"orderableLiteral" ]
 
     EOF = Token.EOF
@@ -337,7 +333,7 @@ class STIXPatternParser ( Parser ):
                     self.state = 42
                     self.match(STIXPatternParser.FOLLOWEDBY)
                     self.state = 43
-                    self.observationExpressions(3)
+                    self.observationExpressions(3) 
                 self.state = 48
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
@@ -412,7 +408,7 @@ class STIXPatternParser ( Parser ):
                     self.state = 53
                     self.match(STIXPatternParser.OR)
                     self.state = 54
-                    self.observationExpressionOr(3)
+                    self.observationExpressionOr(3) 
                 self.state = 59
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,1,self._ctx)
@@ -487,7 +483,7 @@ class STIXPatternParser ( Parser ):
                     self.state = 64
                     self.match(STIXPatternParser.AND)
                     self.state = 65
-                    self.observationExpressionAnd(3)
+                    self.observationExpressionAnd(3) 
                 self.state = 70
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,2,self._ctx)
@@ -510,7 +506,7 @@ class STIXPatternParser ( Parser ):
         def getRuleIndex(self):
             return STIXPatternParser.RULE_observationExpression
 
-
+     
         def copyFrom(self, ctx):
             super(STIXPatternParser.ObservationExpressionContext, self).copyFrom(ctx)
 
@@ -711,7 +707,7 @@ class STIXPatternParser ( Parser ):
                         self.repeatedQualifier()
                         pass
 
-
+             
                 self.state = 92
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
@@ -786,7 +782,7 @@ class STIXPatternParser ( Parser ):
                     self.state = 97
                     self.match(STIXPatternParser.OR)
                     self.state = 98
-                    self.comparisonExpression(3)
+                    self.comparisonExpression(3) 
                 self.state = 103
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
@@ -861,7 +857,7 @@ class STIXPatternParser ( Parser ):
                     self.state = 108
                     self.match(STIXPatternParser.AND)
                     self.state = 109
-                    self.comparisonExpressionAnd(3)
+                    self.comparisonExpressionAnd(3) 
                 self.state = 114
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
@@ -884,7 +880,7 @@ class STIXPatternParser ( Parser ):
         def getRuleIndex(self):
             return STIXPatternParser.RULE_propTest
 
-
+     
         def copyFrom(self, ctx):
             super(STIXPatternParser.PropTestContext, self).copyFrom(ctx)
 
@@ -1603,7 +1599,7 @@ class STIXPatternParser ( Parser ):
         def getRuleIndex(self):
             return STIXPatternParser.RULE_objectPathComponent
 
-
+     
         def copyFrom(self, ctx):
             super(STIXPatternParser.ObjectPathComponentContext, self).copyFrom(ctx)
 
@@ -1740,7 +1736,7 @@ class STIXPatternParser ( Parser ):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
                     self.state = 202
-                    self.objectPathComponent(4)
+                    self.objectPathComponent(4) 
                 self.state = 207
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
@@ -1983,41 +1979,46 @@ class STIXPatternParser ( Parser ):
     def observationExpressions_sempred(self, localctx, predIndex):
             if predIndex == 0:
                 return self.precpred(self._ctx, 2)
-
+         
 
     def observationExpressionOr_sempred(self, localctx, predIndex):
             if predIndex == 1:
                 return self.precpred(self._ctx, 2)
-
+         
 
     def observationExpressionAnd_sempred(self, localctx, predIndex):
             if predIndex == 2:
                 return self.precpred(self._ctx, 2)
-
+         
 
     def observationExpression_sempred(self, localctx, predIndex):
             if predIndex == 3:
                 return self.precpred(self._ctx, 3)
-
+         
 
             if predIndex == 4:
                 return self.precpred(self._ctx, 2)
-
+         
 
             if predIndex == 5:
                 return self.precpred(self._ctx, 1)
-
+         
 
     def comparisonExpression_sempred(self, localctx, predIndex):
             if predIndex == 6:
                 return self.precpred(self._ctx, 2)
-
+         
 
     def comparisonExpressionAnd_sempred(self, localctx, predIndex):
             if predIndex == 7:
                 return self.precpred(self._ctx, 2)
-
+         
 
     def objectPathComponent_sempred(self, localctx, predIndex):
             if predIndex == 8:
                 return self.precpred(self._ctx, 3)
+         
+
+
+
+
