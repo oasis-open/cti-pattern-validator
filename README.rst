@@ -124,7 +124,7 @@ new Python source files. (The .jar file is not needed for normal use
 of
 the validator).
 
-1. Download antlr-4.7-complete.jar from http://www.antlr.org/download/
+1. Download antlr-4.7.1-complete.jar from http://www.antlr.org/download/
 2. Clone the stix2-json-schemas repository or download the
    STIXPattern.g4 file.
 3. Change to the directory containing the STIXPattern.g4 file.
@@ -132,7 +132,7 @@ the validator).
 
    .. code:: bash
 
-       $ java -jar "/path/to/antlr-4.7-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -o /path/to/cti-pattern-       validator/stix2patterns/grammars
+       $ java -jar "/path/to/antlr-4.7.1-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -o /path/to/cti-pattern-validator/stix2patterns/grammars
 
 5. Commit the resulting files to git.
 
