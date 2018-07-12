@@ -79,6 +79,7 @@ PASS_CASES = [
     "[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 SECONDS",
     "[x_whatever:detected == t'2018-03-22T12:11:14.1Z']",
     "[artifact:payload_bin = b'dGhpcyBpcyBhIHRlc3Q=']",
+    "[foo:bar=1] REPEATS 9 TIMES",
 ]
 
 
