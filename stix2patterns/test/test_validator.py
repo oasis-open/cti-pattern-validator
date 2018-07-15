@@ -45,6 +45,8 @@ FAIL_CASES = [
         "FAIL: Error found at line 1:24. extraneous input 't'"),
     ("[artifact:payload_bin = b'====']",  # Not valid Base64
         "FAIL: Error found at line 1:24. extraneous input 'b'"),
+    ("[foo:bar=1] within 2 seconds",  # keywords must be uppercase
+        "FAIL: Error found at line 1:12. mismatched input 'within' expecting <EOF>")
     # TODO: add more failing test cases.
 ]
 
