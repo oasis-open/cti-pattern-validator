@@ -34,7 +34,7 @@ FAIL_CASES = [
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN ]",  # Missing Qualifier value
         "FAIL: Error found at line 1:63. mismatched input ']' expecting {IntPosLiteral, FloatPosLiteral}"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS]",  # SECONDS is the only valid time unit
-        "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting SECONDS"),
+        "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting 'SECONDS'"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN -5 SECONDS]",  # Negative integer is invalid
         "FAIL: Error found at line 1:63. mismatched input '-5' expecting {IntPosLiteral, FloatPosLiteral}"),
     ("[network-traffic:dst_ref.value ISSUBSET ]",  # Missing second Comparison operand
@@ -45,6 +45,8 @@ FAIL_CASES = [
         "FAIL: Error found at line 1:24. extraneous input 't'"),
     ("[artifact:payload_bin = b'====']",  # Not valid Base64
         "FAIL: Error found at line 1:24. extraneous input 'b'"),
+    ("[foo:bar=1] within 2 seconds",  # keywords must be uppercase
+        "FAIL: Error found at line 1:12. mismatched input 'within' expecting <EOF>")
     # TODO: add more failing test cases.
 ]
 
@@ -80,6 +82,7 @@ PASS_CASES = [
     "[x_whatever:detected == t'2018-03-22T12:11:14.1Z']",
     "[artifact:payload_bin = b'dGhpcyBpcyBhIHRlc3Q=']",
     "[foo:bar=1] REPEATS 9 TIMES",
+    "[network-traffic:start = '2018-04-20T12:36:24.558Z']"
 ]
 
 

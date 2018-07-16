@@ -2,6 +2,7 @@
     sha: ea227f024bd89d638aea319c92806737e3375979
     hooks:
     -   id: trailing-whitespace
+        exclude: stix2patterns/grammars/*
     -   id: flake8
         args:
         - --ignore=F403,F405
