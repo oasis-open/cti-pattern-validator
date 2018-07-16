@@ -5,16 +5,6 @@ from setuptools import find_packages, setup
 with open('README.rst') as f:
     readme = f.read()
 
-
-def get_version():
-    with open('stix2patterns/version.py') as f:
-        for line in f.readlines():
-            if line.startswith("__version__"):
-                version = line.split()[-1].strip('"')
-                return version
-        raise AttributeError("Package does not have a __version__")
-
-
 doc_requires = [
     'sphinx',
 ]
@@ -37,7 +27,7 @@ dev_requires = doc_requires + test_requires + [
 
 setup(
     name='stix2-patterns',
-    version=get_version(),
+    version='0.6.0',
     description='Validate STIX 2 Patterns.',
     long_description=readme,
     url="https://github.com/oasis-open/cti-pattern-validator",
