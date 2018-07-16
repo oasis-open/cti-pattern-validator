@@ -223,7 +223,7 @@ repositories/maintainers-guide#additionalMaintainers>`__.
 .. _currentMaintainers:
 
 Current Maintainers of this TC Open Repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  `Greg Back <mailto:gback@mitre.org>`__; GitHub ID:
    https://github.com/gtback; WWW: `MITRE <https://www.mitre.org>`__
@@ -231,7 +231,7 @@ Current Maintainers of this TC Open Repository
    https://github.com/ikiril01; WWW: `MITRE <https://www.mitre.org>`__
 
 About OASIS TC Open Repositories
------------------------------
+--------------------------------
 
 -  `TC Open Repositories: Overview and
    Resources <https://www.oasis-open.org/resources/open-
@@ -269,4 +269,3 @@ to repository-cla@oasis-open.org.
    :target: https://codecov.io/gh/oasis-open/cti-pattern-validator
 .. |Version| image:: https://img.shields.io/pypi/v/stix2-patterns.svg?maxAge=3600
    :target: https://pypi.python.org/pypi/stix2-patterns/
-

@@ -1,4 +1,5 @@
 import pytest
+
 from stix2patterns.inspector import INDEX_STAR
 from stix2patterns.pattern import Pattern
 

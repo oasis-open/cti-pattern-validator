@@ -1,5 +1,8 @@
-include *.md
-include requirements.txt
+include .isort.cfg
+include .pre-commit-config.yaml
+include CHANGELOG
+include CONTRIBUTING.md
+include dev-requirements.txt
 include LICENSE
 include tox.ini
 include stix2patterns/test/spec_examples.txt

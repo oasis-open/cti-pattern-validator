@@ -4,6 +4,7 @@ Test cases for stix2patterns/validator.py.
 import os
 
 import pytest
+
 from stix2patterns.validator import validate
 
 TEST_CASE_FILE = os.path.join(os.path.dirname(__file__), 'spec_examples.txt')
