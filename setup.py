@@ -27,7 +27,7 @@ dev_requires = doc_requires + test_requires + [
 
 setup(
     name='stix2-patterns',
-    version='0.6.0',
+    version='1.0.0',
     description='Validate STIX 2 Patterns.',
     long_description=readme,
     url="https://github.com/oasis-open/cti-pattern-validator",
