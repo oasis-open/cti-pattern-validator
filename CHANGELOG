@@ -7,8 +7,8 @@ CHANGELOG
 * #39 - Raise error for unexepected unused character values.
 * #41 - Raise error for negative REPEAT values.
 * #42 - Improved Timestamp validation.
-# #43 - Validate Base64 binary literals.
-# #48 - Make pattern qualifier and operator keywords case-sensitive.
+* #43 - Validate Base64 binary literals.
+* #48 - Make pattern qualifier and operator keywords case-sensitive.
 * Drop support for Python 2.6 and 3.3.
 
 0.6.0 - Released 2017-11-13
