@@ -27,8 +27,7 @@ Testing
 The STIX Pattern Validator's test suite can be run with `pytest
 <http://pytest.org>`__.
 
-You can also test against the examples provided in the supplied ``examples.txt``
-file.
+You can also test against the examples provided in the supplied example file.
 
 .. code:: bash
 
