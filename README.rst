@@ -7,7 +7,7 @@ This is an `OASIS TC Open Repository
 
 The STIX 2 Pattern Validator is a software tool for checking the syntax of the
 Cyber Threat Intelligence (CTI) STIX Pattern expressions, which are used within
-STIX to express conditions (represented with the Cyber Observable data model)
+STIX to express conditions (prepresented with the Cyber Observable data model)
 that indicate particular cyber threat activity. The repository contains source
 code, an ANTLR grammar, automated tests and associated documentation for the
 tool. The validator can be used as a command-line tool or as a Python library
