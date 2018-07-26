@@ -1,6 +1,6 @@
 include .isort.cfg
 include .pre-commit-config.yaml
-include CHANGELOG
+include CHANGELOG.rst
 include CONTRIBUTING.md
 include dev-requirements.txt
 include LICENSE
