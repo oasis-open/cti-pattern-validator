@@ -16,6 +16,7 @@ which can be included in other applications.
    installation
    usage
    developers
+   changelog
 
 .. toctree::
    :maxdepth: 2
