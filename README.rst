@@ -108,8 +108,8 @@ additional or substitute Maintainers, per `consensus agreements
 Current Maintainers of this TC Open Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Greg Back <mailto:gback@mitre.org>`__; GitHub ID:
-   https://github.com/gtback; WWW: `MITRE <https://www.mitre.org>`__
+-  `Chris Lenk <mailto:clenk@mitre.org>`__; GitHub ID:
+   https://github.com/clenk; WWW: `MITRE <https://www.mitre.org>`__
 -  `Ivan Kirillov <mailto:ikirillov@mitre.org>`__; GitHub ID:
    https://github.com/ikiril01; WWW: `MITRE <https://www.mitre.org>`__
 
