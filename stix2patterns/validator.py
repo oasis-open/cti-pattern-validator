@@ -1,12 +1,12 @@
-'''
+"""
 Validates a user entered pattern against STIXPattern grammar.
-'''
+"""
 
 from __future__ import print_function
+
 import argparse
 
-from antlr4 import InputStream
-from antlr4 import CommonTokenStream
+from antlr4 import CommonTokenStream, InputStream
 from antlr4.error.ErrorListener import ErrorListener
 import six
 
@@ -15,10 +15,10 @@ from .grammars.STIXPatternParser import STIXPatternParser
 
 
 class STIXPatternErrorListener(ErrorListener):
-    '''
+    """
     Modifies ErrorListener to collect error message and set flag to False when
     invalid pattern is encountered.
-    '''
+    """
     def __init__(self):
         super(STIXPatternErrorListener, self).__init__()
         self.err_strings = []
@@ -29,10 +29,10 @@ class STIXPatternErrorListener(ErrorListener):
 
 
 def run_validator(pattern):
-    '''
+    """
     Validates a pattern against the STIX Pattern grammar.  Error messages are
     returned in a list.  The test passed if the returned list is empty.
-    '''
+    """
 
     start = ''
     if isinstance(pattern, six.string_types):
@@ -75,12 +75,12 @@ def run_validator(pattern):
 
 
 def validate(user_input, ret_errs=False, print_errs=False):
-    '''
+    """
     Wrapper for run_validator function that returns True if the user_input
     contains a valid STIX pattern or False otherwise. The error messages may
     also be returned or printed based upon the ret_errs and print_errs arg
     values.
-    '''
+    """
 
     errs = run_validator(user_input)
     passed = len(errs) == 0
@@ -96,10 +96,10 @@ def validate(user_input, ret_errs=False, print_errs=False):
 
 
 def main():
-    '''
+    """
     Continues to validate patterns until it encounters EOF within a pattern
     file or Ctrl-C is pressed by the user.
-    '''
+    """
     parser = argparse.ArgumentParser(description='Validate STIX Patterns.')
     parser.add_argument('-f', '--file',
                         help="Specify this arg to read patterns from a file.",

@@ -2,9 +2,9 @@ import antlr4
 import antlr4.error.ErrorListener
 import six
 
-import stix2patterns.inspector
 from stix2patterns.grammars.STIXPatternLexer import STIXPatternLexer
 from stix2patterns.grammars.STIXPatternParser import STIXPatternParser
+import stix2patterns.inspector
 
 
 class ParserErrorListener(antlr4.error.ErrorListener.ErrorListener):
@@ -42,9 +42,16 @@ class Pattern(object):
         """
 
         inspector = stix2patterns.inspector.InspectionListener()
-        antlr4.ParseTreeWalker.DEFAULT.walk(inspector, self.__parse_tree)
+        self.walk(inspector)
 
         return inspector.pattern_data()
+
+    def walk(self, listener):
+        """Walk the parse tree, using the given listener.  The listener
+        should be a
+        stix2patterns.grammars.STIXPatternListener.STIXPatternListener (or
+        subclass) instance."""
+        antlr4.ParseTreeWalker.DEFAULT.walk(listener, self.__parse_tree)
 
     def __do_parse(self, pattern_str):
         """
