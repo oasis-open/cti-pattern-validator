@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+
+1.1.0 - Released 2018-11-20
+---------------------------
+
+* Add a visitor to the ANTLR parser
+* Add testing for Python 3.7
+
 1.0.0 - Released 2018-07-18
 ---------------------------
 
