@@ -18,23 +18,31 @@ HASHES_REGEX = {
 }
 
 def verify_object(pattern):
+    """ Verifies obervation expression against regex for correct syntax """
+    
+    pattern = str(pattern).replace(']', '').replace('[','')
 
-    """ extract hash type and string in order to verify them """
-    pattern = str(pattern).strip(']').strip('[')
-    try:
-        hash_search = re.findall(r':(.*?)\.', pattern)[0]
-    except:
-        hash_search = None
-    if hash_search == 'hashes':
-        hash_type = pattern[12:].split('\'')[1]
-        hash_type = hash_type.upper().replace('-', '')
-        hash_string = pattern.split('=')[1].strip().strip('\'')
-            
-        if hash_type in HASHES_REGEX:
-            print "here"
-            if not re.match(HASHES_REGEX[hash_type][0], hash_string):
-                return "FAIL: '{0}' is not a valid {1} hash".format(hash_string, 
-                hash_type)
-        else:
-            return "FAIL: '{0}' is not a valid hash type".format(hash_type)
+    #Split list by possible Obervation Operators
+    pattern_list = re.split(" AND | FOLLOWEDBY | OR ", pattern)
+    error_list = []
+    for observation in pattern_list:
+        try:
+            hash_search = re.findall(r':(.*?)\.', observation)[0]
+        except:
+            hash_search = None
+        if hash_search == 'hashes':
+            try:
+                hash_type = re.findall(r'\.(.+?)\s', observation)[0].replace("\'", "").replace("\'", "")
+            except:
+                return
+            hash_type = hash_type.upper().replace('-', '')
+            hash_string = observation.split('=')[1].strip().strip('\'')
+                
+            if hash_type in HASHES_REGEX:
+                if not re.match(HASHES_REGEX[hash_type][0], hash_string):
+                    error_list.append( "FAIL: '{0}' is not a valid {1} hash".format(hash_string, 
+                    hash_type))
+            else:
+                error_list.append("FAIL: '{0}' is not a valid hash type".format(hash_type))
+    return error_list
 
