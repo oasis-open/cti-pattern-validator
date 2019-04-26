@@ -8,6 +8,7 @@ import argparse
 
 from antlr4 import CommonTokenStream, InputStream
 from antlr4.error.ErrorListener import ErrorListener
+import object_validtor
 import six
 
 from .grammars.STIXPatternLexer import STIXPatternLexer
@@ -70,6 +71,10 @@ def run_validator(pattern):
     if not (start[0] == '[' or start == '(['):
         parseErrListener.err_strings[0] = "FAIL: Error found at line 1:0. " \
                                           "input is missing square brackets"
+
+    obj_validtor_results = object_validtor.verify_object(pattern)
+    if obj_validtor_results:
+        parseErrListener.err_strings.append(obj_validtor_results)
 
     return parseErrListener.err_strings
 
