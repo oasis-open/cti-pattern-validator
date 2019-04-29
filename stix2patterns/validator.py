@@ -5,11 +5,11 @@ Validates a user entered pattern against STIXPattern grammar.
 from __future__ import print_function
 
 import argparse
+import object_validtor
+import six
 
 from antlr4 import CommonTokenStream, InputStream
 from antlr4.error.ErrorListener import ErrorListener
-import object_validtor
-import six
 
 from .grammars.STIXPatternLexer import STIXPatternLexer
 from .grammars.STIXPatternParser import STIXPatternParser
