@@ -30,13 +30,13 @@ def verify_object(pattern):
     for observation in pattern_list:
         try:
             hash_search = re.findall(r':(.*?)\.', observation)[0]
-        except:
+        except Exception:
             hash_search = None
         if hash_search == 'hashes':
             try:
                 hash_type = re.findall(r'\.(.+?)\s', observation)[0].\
                     replace("\'", "").replace("\'", "")
-            except:
+            except Exception:
                 return
             hash_type = hash_type.upper().replace('-', '')
             hash_string = observation.split('=')[1].strip().strip('\'')
