@@ -77,10 +77,10 @@ def run_validator(pattern):
     if len(parseErrListener.err_strings) == 0:
         ParseTreeWalker.DEFAULT.walk(inspection_listener, tree)
         patt_data = inspection_listener.pattern_data()
-        obj_validtor_results = object_validator.verify_object(patt_data)
+        obj_validator_results = object_validator.verify_object(patt_data)
 
-        if obj_validtor_results:
-            parseErrListener.err_strings.extend(obj_validtor_results)
+        if obj_validator_results:
+            parseErrListener.err_strings.extend(obj_validator_results)
 
     return parseErrListener.err_strings
 

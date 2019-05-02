@@ -47,7 +47,11 @@ FAIL_CASES = [
     ("[artifact:payload_bin = b'====']",  # Not valid Base64
         "FAIL: Error found at line 1:24. extraneous input 'b'"),
     ("[foo:bar=1] within 2 seconds",  # keywords must be uppercase
-        "FAIL: Error found at line 1:12. mismatched input 'within' expecting <EOF>")
+        "FAIL: Error found at line 1:12. mismatched input 'within' expecting <EOF>"),
+    ("[file:hashes.FOO = 'cead3f77f6cda6ec00f57d76c9a6879f']",  # Invalid hash type
+        "FAIL: 'FOO' is not a valid hash type"),
+    ("[file:hashes.'SHA-256' = 'f00']",  # Malformed hash value
+        "FAIL: 'f00' is not a valid SHA-256 hash"),
     # TODO: add more failing test cases.
 ]
 
