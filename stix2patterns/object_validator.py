@@ -26,10 +26,9 @@ def verify_object(patt_data):
     for type_name, comp in patt_data.comparisons.items():
         for expression in comp:
             if 'hashes' in expression[0]:
-                hash_type = str(expression[0][1].upper().replace('-', '').
-                                replace("\'", "").replace("\'", ""))
-                hash_string = str(expression[2].replace("\'", "").
-                                  replace("\'", ""))
+                hash_type = str(expression[0][-1].upper().replace('-', '').
+                                replace("\'", ""))
+                hash_string = str(expression[2].replace("\'", ""))
                 if hash_type in HASHES_REGEX:
                     if not re.match(HASHES_REGEX[hash_type][0], hash_string):
                         error_list.append("FAIL: '{0}' is not a valid {1}"
