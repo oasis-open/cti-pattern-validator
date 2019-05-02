@@ -34,7 +34,4 @@ def verify_object(patt_data):
                         error_list.append("FAIL: '{0}' is not a valid {1} "
                                           "hash".format(hash_string,
                                                         expression[0][-1]))
-                else:
-                    error_list.append("FAIL: '{0}' is not a valid hash type"
-                                      .format(hash_type))
     return error_list
