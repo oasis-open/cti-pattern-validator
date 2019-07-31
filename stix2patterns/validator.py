@@ -6,31 +6,15 @@ from __future__ import print_function
 
 import argparse
 
-from antlr4 import CommonTokenStream, InputStream, ParseTreeWalker
-from antlr4.error.ErrorListener import ErrorListener
+from antlr4 import InputStream
 import six
 
-from . import object_validator
-from .grammars.STIXPatternLexer import STIXPatternLexer
-from .grammars.STIXPatternParser import STIXPatternParser
-from .inspector import InspectionListener
+from . import DEFAULT_VERSION
+from .v20.validator import run_validator as run_validator20
+from .v21.validator import run_validator as run_validator21
 
 
-class STIXPatternErrorListener(ErrorListener):
-    """
-    Modifies ErrorListener to collect error message and set flag to False when
-    invalid pattern is encountered.
-    """
-    def __init__(self):
-        super(STIXPatternErrorListener, self).__init__()
-        self.err_strings = []
-
-    def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
-        self.err_strings.append("FAIL: Error found at line %d:%d. %s" %
-                                (line, column, msg))
-
-
-def run_validator(pattern):
+def run_validator(pattern, stix_version=DEFAULT_VERSION):
     """
     Validates a pattern against the STIX Pattern grammar.  Error messages are
     returned in a list.  The test passed if the returned list is empty.
@@ -44,48 +28,13 @@ def run_validator(pattern):
         start = pattern.readline()[:2]
         pattern.seek(0)
 
-    parseErrListener = STIXPatternErrorListener()
-
-    lexer = STIXPatternLexer(pattern)
-    # it always adds a console listener by default... remove it.
-    lexer.removeErrorListeners()
-
-    stream = CommonTokenStream(lexer)
-
-    parser = STIXPatternParser(stream)
-
-    # it always adds a console listener by default... remove it.
-    parser.removeErrorListeners()
-    parser.addErrorListener(parseErrListener)
-
-    # To improve error messages, replace "<INVALID>" in the literal
-    # names with symbolic names.  This is a hack, but seemed like
-    # the simplest workaround.
-    for i, lit_name in enumerate(parser.literalNames):
-        if lit_name == u"<INVALID>":
-            parser.literalNames[i] = parser.symbolicNames[i]
-
-    tree = parser.pattern()
-    inspection_listener = InspectionListener()
-
-    # replace with easier-to-understand error message
-    if not (start[0] == '[' or start == '(['):
-        parseErrListener.err_strings[0] = "FAIL: Error found at line 1:0. " \
-                                          "input is missing square brackets"
-
-    # validate observed objects
-    if len(parseErrListener.err_strings) == 0:
-        ParseTreeWalker.DEFAULT.walk(inspection_listener, tree)
-        patt_data = inspection_listener.pattern_data()
-        obj_validator_results = object_validator.verify_object(patt_data)
-
-        if obj_validator_results:
-            parseErrListener.err_strings.extend(obj_validator_results)
-
-    return parseErrListener.err_strings
+    if stix_version == '2.1':
+        return run_validator21(pattern, start)
+    else:
+        return run_validator20(pattern, start)
 
 
-def validate(user_input, ret_errs=False, print_errs=False):
+def validate(user_input, stix_version=DEFAULT_VERSION, ret_errs=False, print_errs=False):
     """
     Wrapper for run_validator function that returns True if the user_input
     contains a valid STIX pattern or False otherwise. The error messages may
@@ -93,7 +42,7 @@ def validate(user_input, ret_errs=False, print_errs=False):
     values.
     """
 
-    errs = run_validator(user_input)
+    errs = run_validator(user_input, stix_version)
     passed = len(errs) == 0
 
     if print_errs:
@@ -115,6 +64,9 @@ def main():
     parser.add_argument('-f', '--file',
                         help="Specify this arg to read patterns from a file.",
                         type=argparse.FileType("r"))
+    parser.add_argument('-v', '--version',
+                        default=DEFAULT_VERSION,
+                        help="Specify version of STIX 2 specification to validate against.")
     args = parser.parse_args()
 
     pass_count = fail_count = 0
@@ -134,7 +86,7 @@ def main():
             pattern = nextpattern()
             if not pattern:
                 break
-            tests_passed, err_strings = validate(pattern, True)
+            tests_passed, err_strings = validate(pattern, args.version, True)
 
             if tests_passed:
                 print("\nPASS: %s" % pattern)

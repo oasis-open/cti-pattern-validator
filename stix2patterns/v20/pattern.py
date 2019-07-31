@@ -1,23 +1,10 @@
 import antlr4
-import antlr4.error.ErrorListener
 import six
 
-from stix2patterns.grammars.STIXPatternLexer import STIXPatternLexer
-from stix2patterns.grammars.STIXPatternParser import STIXPatternParser
-import stix2patterns.inspector
-
-
-class ParserErrorListener(antlr4.error.ErrorListener.ErrorListener):
-    """
-    Simple error listener which just remembers the last error message received.
-    """
-    def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
-        self.error_message = u"{}:{}: {}".format(line, column, msg)
-
-
-class ParseException(Exception):
-    """Represents a parse error."""
-    pass
+from ..exceptions import ParseException, ParserErrorListener
+from .grammars.STIXPatternLexer import STIXPatternLexer
+from .grammars.STIXPatternParser import STIXPatternParser
+from .inspector import InspectionListener
 
 
 class Pattern(object):
@@ -41,7 +28,7 @@ class Pattern(object):
         :return: Pattern information
         """
 
-        inspector = stix2patterns.inspector.InspectionListener()
+        inspector = InspectionListener()
         self.walk(inspector)
 
         return inspector.pattern_data()

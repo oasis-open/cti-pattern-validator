@@ -43,7 +43,8 @@ setup(
         'typing ; python_version<"3.5" and python_version>="3"',
     ],
     package_data={
-        'stix2patterns.test': ['spec_examples.txt'],
+        'stix2patterns.test.v20': ['spec_examples.txt'],
+        'stix2patterns.test.v21': ['spec_examples.txt'],
     },
     entry_points={
         'console_scripts': [
