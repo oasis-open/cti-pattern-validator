@@ -11,8 +11,6 @@ from stix2patterns.v21.pattern import Pattern
     (u"[foo:bar = 1] WITHIN 123 SECONDS", set([u"WITHIN 123 SECONDS"])),
     (u"[foo:bar = 1] START t'1932-11-12T15:42:15Z' STOP t'1964-10-23T21:12:26Z'",
         set([u"START t'1932-11-12T15:42:15Z' STOP t'1964-10-23T21:12:26Z'"])),
-    (u"[foo:bar = 1] REPEATS 1 TIMES REPEATS 2 TIMES",
-        set([u"REPEATS 1 TIMES", u"REPEATS 2 TIMES"])),
     (u"[foo:bar = 1] REPEATS 1 TIMES AND [foo:baz = 2] WITHIN 1.23 SECONDS",
         set([u"REPEATS 1 TIMES", u"WITHIN 1.23 SECONDS"])),
     (u"([foo:bar = 1] START t'1932-11-12T15:42:15Z' STOP t'1964-10-23T21:12:26Z' AND [foo:abc < h'12ab']) WITHIN 22 SECONDS "

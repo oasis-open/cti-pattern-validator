@@ -25,11 +25,6 @@ class STIXPatternVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by STIXPatternParser#observationExpressionRepeated.
-    def visitObservationExpressionRepeated(self, ctx):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by STIXPatternParser#observationExpressionSimple.
     def visitObservationExpressionSimple(self, ctx):
         return self.visitChildren(ctx)
@@ -37,16 +32,6 @@ class STIXPatternVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by STIXPatternParser#observationExpressionCompound.
     def visitObservationExpressionCompound(self, ctx):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by STIXPatternParser#observationExpressionWithin.
-    def visitObservationExpressionWithin(self, ctx):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by STIXPatternParser#observationExpressionStartStop.
-    def visitObservationExpressionStartStop(self, ctx):
         return self.visitChildren(ctx)
 
 
@@ -97,6 +82,16 @@ class STIXPatternVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by STIXPatternParser#propTestParen.
     def visitPropTestParen(self, ctx):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by STIXPatternParser#propTestExists.
+    def visitPropTestExists(self, ctx):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by STIXPatternParser#qualifier.
+    def visitQualifier(self, ctx):
         return self.visitChildren(ctx)
 
 

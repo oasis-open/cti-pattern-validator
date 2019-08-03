@@ -17,7 +17,7 @@ def test_spec_patterns(test_input):
     """
     Validate patterns from STIX 2.0 Patterning spec.
     """
-    pass_test = validate(test_input, print_errs=True)
+    pass_test = validate(test_input, stix_version='2.0', print_errs=True)
     assert pass_test is True
 
 
@@ -59,7 +59,7 @@ def test_fail_patterns(test_input, test_output):
     """
     Validate that patterns fail as expected.
     """
-    pass_test, errors = validate(test_input, ret_errs=True, print_errs=True)
+    pass_test, errors = validate(test_input, stix_version='2.0', ret_errs=True, print_errs=True)
     assert errors[0].startswith(test_output)
     assert pass_test is False
 
@@ -94,5 +94,5 @@ def test_pass_patterns(test_input):
     """
     Validate that patterns pass as expected.
     """
-    pass_test = validate(test_input, print_errs=True)
+    pass_test = validate(test_input, stix_version='2.0', print_errs=True)
     assert pass_test is True
