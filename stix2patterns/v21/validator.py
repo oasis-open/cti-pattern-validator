@@ -2,8 +2,6 @@
 Validates a user entered pattern against STIXPattern grammar.
 """
 
-from __future__ import print_function
-
 from antlr4 import CommonTokenStream, ParseTreeWalker
 
 from . import object_validator
