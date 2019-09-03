@@ -7,6 +7,7 @@ with open('README.rst') as f:
 
 doc_requires = [
     'sphinx',
+    'sphinx-prompt',
 ]
 
 test_requires = [
