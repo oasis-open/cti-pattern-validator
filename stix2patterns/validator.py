@@ -13,6 +13,7 @@ import six
 from . import object_validator
 from .grammars.STIXPatternLexer import STIXPatternLexer
 from .grammars.STIXPatternParser import STIXPatternParser
+from .helpers import leading_characters
 from .inspector import InspectionListener
 
 
@@ -37,11 +38,11 @@ def run_validator(pattern):
     """
     start = ''
     if isinstance(pattern, six.string_types):
-        start = pattern[:2]
+        start = leading_characters(pattern, 2)
         pattern = InputStream(pattern)
 
     if not start:
-        start = pattern.readline()[:2]
+        start = leading_characters(pattern.readline(), 2)
         pattern.seek(0)
 
     parseErrListener = STIXPatternErrorListener()
