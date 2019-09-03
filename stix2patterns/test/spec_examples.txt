@@ -21,3 +21,4 @@
 [network-traffic:dst_ref.value ISSUBSET '2001:0db8:dead:beef:0000:0000:0000:0000/64']
 ([file:name = 'foo.dll'] AND [win-registry-key:key = 'HKEY_LOCAL_MACHINE\\foo\\bar']) OR [process:name = 'fooproc' OR process:name = 'procfoo']
 [file:hashes.MD5 = 'cead3f77f6cda6ec00f57d76c9a69faa']
+( [(network-traffic:dst_port IN(443,6443,8443) AND network-traffic:src_packets != 0) ])
