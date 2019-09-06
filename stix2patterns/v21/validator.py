@@ -42,8 +42,8 @@ def run_validator(pattern, start):
 
     # replace with easier-to-understand error message
     if not (start[0] == '[' or start == '(['):
-        parseErrListener.err_strings[0] = "FAIL: Error found at line 1:0. " \
-                                          "input is missing square brackets"
+        parseErrListener.err_strings.insert(0, "FAIL: Error found at line 1:0. "
+                                               "input is missing square brackets")
 
     # validate observed objects
     if len(parseErrListener.err_strings) == 0:

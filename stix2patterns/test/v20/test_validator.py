@@ -85,7 +85,8 @@ PASS_CASES = [
     "[x_whatever:detected == t'2018-03-22T12:11:14.1Z']",
     "[artifact:payload_bin = b'dGhpcyBpcyBhIHRlc3Q=']",
     "[foo:bar=1] REPEATS 9 TIMES",
-    "[network-traffic:start = '2018-04-20T12:36:24.558Z']"
+    "[network-traffic:start = '2018-04-20T12:36:24.558Z']",
+    "( [(network-traffic:dst_port IN(443,6443,8443) AND network-traffic:src_packets != 0) ])",  # Misplaced whitespace
 ]
 
 

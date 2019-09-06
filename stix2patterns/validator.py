@@ -10,6 +10,7 @@ from antlr4 import InputStream
 import six
 
 from . import DEFAULT_VERSION
+from .helpers import leading_characters
 from .v20.validator import run_validator as run_validator20
 from .v21.validator import run_validator as run_validator21
 
@@ -21,11 +22,11 @@ def run_validator(pattern, stix_version=DEFAULT_VERSION):
     """
     start = ''
     if isinstance(pattern, six.string_types):
-        start = pattern[:2]
+        start = leading_characters(pattern, 2)
         pattern = InputStream(pattern)
 
     if not start:
-        start = pattern.readline()[:2]
+        start = leading_characters(pattern.readline(), 2)
         pattern.seek(0)
 
     if stix_version == '2.1':

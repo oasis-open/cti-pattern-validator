@@ -112,6 +112,8 @@ Current Maintainers of this TC Open Repository
    https://github.com/clenk; WWW: `MITRE <https://www.mitre.org>`__
 -  `Ivan Kirillov <mailto:ikirillov@mitre.org>`__; GitHub ID:
    https://github.com/ikiril01; WWW: `MITRE <https://www.mitre.org>`__
+-  `Jason Keirstead <mailto:Jason.Keirstead@ca.ibm.com>`__; GitHub ID:
+   https://github.com/JasonKeirstead; WWW: `IBM <http://www.ibm.com/>`__
 
 About OASIS TC Open Repositories
 --------------------------------
