@@ -62,11 +62,11 @@ source files. (The .jar file is not needed for normal use of the validator).
 1. Download antlr-4.7.1-complete.jar from http://www.antlr.org/download/
 2. Clone the stix2-json-schemas repository or download the STIXPattern.g4 file.
 3. Change to the directory containing the STIXPattern.g4 file.
-4. Run the following command
+4. Run the following command (for STIX v2.1)
 
    .. prompt:: bash
 
-       java -jar "/path/to/antlr-4.7.1-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -visitor -o /path/to/cti-pattern-validator/stix2patterns/grammars
+       java -jar "/path/to/antlr-4.7.1-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -visitor -o /path/to/cti-pattern-validator/stix2patterns/v21/grammars
 
 5. Commit the resulting files to git.
 
@@ -97,13 +97,14 @@ You can run a specific test file by passing it on the command line:
 
 .. prompt:: bash
 
-    pytest stix2patterns/test/test_<xxx>.py
+    pytest stix2patterns/test/v21/test_<xxx>.py
 
 You can also test against the examples provided in the supplied example file.
+Note that you must specify which version to test.
 
 .. prompt:: bash
 
-    validate-patterns -f stix2patterns/test/spec_examples.txt
+    validate-patterns -v 2.1 -f stix2patterns/test/v21/spec_examples.txt
 
 To ensure that the test you wrote is running, you can deliberately add an
 ``assert False`` statement at the beginning of the test. This is another benefit
