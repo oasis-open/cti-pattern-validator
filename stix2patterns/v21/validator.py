@@ -49,9 +49,16 @@ def run_validator(pattern, start):
     if len(parseErrListener.err_strings) == 0:
         ParseTreeWalker.DEFAULT.walk(inspection_listener, tree)
         patt_data = inspection_listener.pattern_data()
-        obj_validator_results = object_validator.verify_object(patt_data)
 
+        # check objects
+        obj_validator_results = object_validator.verify_object(patt_data)
         if obj_validator_results:
             parseErrListener.err_strings.extend(obj_validator_results)
+
+        # check qualifiers
+        qualifiers = [q.split()[0] for q in patt_data.qualifiers]
+        if len(qualifiers) != len(set(qualifiers)):
+            parseErrListener.err_strings.insert(0, "FAIL: The same qualifier is"
+                                                   " used more than once")
 
     return parseErrListener.err_strings

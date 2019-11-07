@@ -40,6 +40,15 @@ class STIXPatternListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by STIXPatternParser#observationExpressionRepeated.
+    def enterObservationExpressionRepeated(self, ctx):
+        pass
+
+    # Exit a parse tree produced by STIXPatternParser#observationExpressionRepeated.
+    def exitObservationExpressionRepeated(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by STIXPatternParser#observationExpressionSimple.
     def enterObservationExpressionSimple(self, ctx):
         pass
@@ -55,6 +64,24 @@ class STIXPatternListener(ParseTreeListener):
 
     # Exit a parse tree produced by STIXPatternParser#observationExpressionCompound.
     def exitObservationExpressionCompound(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by STIXPatternParser#observationExpressionWithin.
+    def enterObservationExpressionWithin(self, ctx):
+        pass
+
+    # Exit a parse tree produced by STIXPatternParser#observationExpressionWithin.
+    def exitObservationExpressionWithin(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by STIXPatternParser#observationExpressionStartStop.
+    def enterObservationExpressionStartStop(self, ctx):
+        pass
+
+    # Exit a parse tree produced by STIXPatternParser#observationExpressionStartStop.
+    def exitObservationExpressionStartStop(self, ctx):
         pass
 
 
@@ -154,15 +181,6 @@ class STIXPatternListener(ParseTreeListener):
 
     # Exit a parse tree produced by STIXPatternParser#propTestExists.
     def exitPropTestExists(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by STIXPatternParser#qualifier.
-    def enterQualifier(self, ctx):
-        pass
-
-    # Exit a parse tree produced by STIXPatternParser#qualifier.
-    def exitQualifier(self, ctx):
         pass
 
 

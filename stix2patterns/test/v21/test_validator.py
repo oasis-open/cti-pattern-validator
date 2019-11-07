@@ -33,11 +33,11 @@ FAIL_CASES = [
     ("[file:name MATCHES /.*\\.dll/]",  # Quotes around regular expression
         "FAIL: Error found at line 1:19. mismatched input '/' expecting StringLiteral"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN ]",  # Missing Qualifier value
-        "FAIL: Error found at line 1:63. no viable alternative at input 'WITHIN]'"),
+        "FAIL: Error found at line 1:63. mismatched input ']' expecting {IntPosLiteral, FloatPosLiteral}"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 HOURS]",  # SECONDS is the only valid time unit
-        "FAIL: Error found at line 1:65. no viable alternative at input 'WITHIN5HOURS'"),
+        "FAIL: Error found at line 1:65. mismatched input 'HOURS' expecting 'SECONDS'"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN -5 SECONDS]",  # Negative integer is invalid
-        "FAIL: Error found at line 1:63. no viable alternative at input 'WITHIN-5'"),
+        "FAIL: Error found at line 1:63. mismatched input '-5' expecting {IntPosLiteral, FloatPosLiteral}"),
     ("[network-traffic:dst_ref.value ISSUBSET ]",  # Missing second Comparison operand
         "FAIL: Error found at line 1:40. missing StringLiteral at ']'"),
     ("[file:hashes.MD5 =? 'cead3f77f6cda6ec00f57d76c9a6879f']",  # '=?' isn't a valid operator
@@ -51,7 +51,7 @@ FAIL_CASES = [
     ("[file:hashes.'SHA-256' = 'f00']",  # Malformed hash value
         "FAIL: 'f00' is not a valid SHA-256 hash"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 SECONDS WITHIN 6 SECONDS",
-        "FAIL: Error found at line 1:73. no viable alternative at input 'WITHIN5SECONDSWITHIN'"),
+        "FAIL: The same qualifier is used more than once"),
     # TODO: add more failing test cases.
 ]
 
