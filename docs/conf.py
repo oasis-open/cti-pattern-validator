@@ -4,8 +4,8 @@ project = 'stix2-patterns'
 copyright = '2018, OASIS Open'
 author = 'OASIS Open'
 
-version = '1.1.0'
-release = '1.1.0'
+version = '1.2.0'
+release = '1.2.0'
 
 extensions = [
     'sphinx.ext.autodoc',
