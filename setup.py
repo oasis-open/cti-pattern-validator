@@ -20,7 +20,6 @@ dev_requires = doc_requires + test_requires + [
     'bumpversion',
     'check-manifest',
     'pre-commit',
-    'readme_renderer',
     # test_requires are installed into every tox environemnt, so we don't
     # want to include tox there.
     'tox',
@@ -31,6 +30,7 @@ setup(
     version='1.1.0',
     description='Validate STIX 2 Patterns.',
     long_description=readme,
+    long_description_content_type='text/x-rst',
     url="https://github.com/oasis-open/cti-pattern-validator",
     author='OASIS Cyber Threat Intelligence Technical Committee',
     author_email='cti-users@lists.oasis-open.org',
@@ -44,7 +44,8 @@ setup(
         'typing ; python_version<"3.5" and python_version>="3"',
     ],
     package_data={
-        'stix2patterns.test': ['spec_examples.txt'],
+        'stix2patterns.test.v20': ['spec_examples.txt'],
+        'stix2patterns.test.v21': ['spec_examples.txt'],
     },
     entry_points={
         'console_scripts': [

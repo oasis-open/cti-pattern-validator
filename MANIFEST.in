@@ -5,7 +5,8 @@ include CONTRIBUTING.md
 include dev-requirements.txt
 include LICENSE
 include tox.ini
-include stix2patterns/test/spec_examples.txt
+include stix2patterns/test/v20/spec_examples.txt
+include stix2patterns/test/v21/spec_examples.txt
 
 recursive-include docs *
 prune docs/_build
