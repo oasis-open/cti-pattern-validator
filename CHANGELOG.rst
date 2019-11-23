@@ -2,6 +2,14 @@ CHANGELOG
 =========
 
 
+1.2.0 - Released 2019-11-22
+---------------------------
+
+* #59 Fixed bug where malformed hashes would pass (@JohannKT)
+* #63, #64 Fixed bugs with leading and trailing whitespace (@squioc)
+* Support STIX 2.1 patterns
+* Add testing for Python 3.8
+
 1.1.0 - Released 2018-11-20
 ---------------------------
 
