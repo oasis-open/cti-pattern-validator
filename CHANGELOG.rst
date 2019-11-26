@@ -2,6 +2,11 @@ CHANGELOG
 =========
 
 
+1.2.1 - Released 2019-11-26
+---------------------------
+
+* Fix some imports for backwards compatibility
+
 1.2.0 - Released 2019-11-22
 ---------------------------
 
