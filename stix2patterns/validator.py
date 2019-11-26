@@ -10,6 +10,7 @@ from antlr4 import InputStream
 import six
 
 from . import DEFAULT_VERSION
+from .exceptions import STIXPatternErrorListener  # noqa: F401
 from .helpers import leading_characters
 from .v20.validator import run_validator as run_validator20
 from .v21.validator import run_validator as run_validator21
