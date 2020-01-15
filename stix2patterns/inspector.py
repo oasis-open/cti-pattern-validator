@@ -1,4 +1,5 @@
 import collections
+import enum
 
 
 class InspectionException(Exception):
@@ -12,6 +13,9 @@ _PatternData = collections.namedtuple("pattern_data",
 
 # For representing a "star" array index step in an object path
 INDEX_STAR = object()
+
+
+QualType = enum.Enum("QualType", "WITHIN REPEATS STARTSTOP")
 
 
 def _string_literal_to_string(string_literal_token):
