@@ -2,15 +2,18 @@
 Validates a user entered pattern against STIXPattern grammar.
 """
 
+import enum
+
 from antlr4 import CommonTokenStream, ParseTreeWalker
 
 from . import object_validator
 from ..exceptions import STIXPatternErrorListener
-from ..inspector import QualType
 from .grammars.STIXPatternLexer import STIXPatternLexer
 from .grammars.STIXPatternListener import STIXPatternListener
 from .grammars.STIXPatternParser import STIXPatternParser
 from .inspector import InspectionListener
+
+QualType = enum.Enum("QualType", "WITHIN REPEATS STARTSTOP")
 
 
 class DuplicateQualifierTypeError(Exception):

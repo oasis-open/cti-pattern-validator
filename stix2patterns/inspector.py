@@ -15,9 +15,6 @@ _PatternData = collections.namedtuple("pattern_data",
 INDEX_STAR = object()
 
 
-QualType = enum.Enum("QualType", "WITHIN REPEATS STARTSTOP")
-
-
 def _string_literal_to_string(string_literal_token):
     """Converts the StringLiteral token to a plain string: get text content,
     removes quote characters, and unescapes it.
