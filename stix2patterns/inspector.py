@@ -1,5 +1,4 @@
 import collections
-import enum
 
 
 class InspectionException(Exception):
