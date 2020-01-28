@@ -20,7 +20,7 @@ dev_requires = doc_requires + test_requires + [
     'bumpversion',
     'check-manifest',
     'pre-commit',
-    # test_requires are installed into every tox environemnt, so we don't
+    # test_requires are installed into every tox environment, so we don't
     # want to include tox there.
     'tox',
 ]
@@ -38,8 +38,8 @@ setup(
     maintainer_email='clenk@mitre.org',
     packages=find_packages(),
     install_requires=[
-        'antlr4-python2-runtime>=4.7 ; python_version<"3"',
-        'antlr4-python3-runtime>=4.7 ; python_version>="3"',
+        'antlr4-python2-runtime~=4.8.0 ; python_version<"3"',
+        'antlr4-python3-runtime~=4.8.0 ; python_version>="3"',
         'six',
         'typing ; python_version<"3.5" and python_version>="3"',
     ],
