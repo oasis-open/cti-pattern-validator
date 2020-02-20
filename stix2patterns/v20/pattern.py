@@ -40,6 +40,15 @@ class Pattern(object):
         subclass) instance."""
         antlr4.ParseTreeWalker.DEFAULT.walk(listener, self.__parse_tree)
 
+    def visit(self, visitor):
+        """
+        Walk the parse tree using the given visitor.
+
+        :param visitor: A visitor object (STIXPatternVisitor instance)
+        :return: The visitor's return value
+        """
+        return visitor.visit(self.__parse_tree)
+
     def __do_parse(self, pattern_str):
         """
         Parses the given pattern and returns the antlr parse tree.
