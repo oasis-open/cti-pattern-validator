@@ -42,6 +42,7 @@ setup(
         'antlr4-python3-runtime~=4.8.0 ; python_version>="3"',
         'six',
         'typing ; python_version<"3.5" and python_version>="3"',
+        'enum34 ; python_version<"3.4"',
     ],
     package_data={
         'stix2patterns.test.v20': ['spec_examples.txt'],

@@ -51,7 +51,13 @@ FAIL_CASES = [
     ("[file:hashes.'SHA-256' = 'f00']",  # Malformed hash value
         "FAIL: 'f00' is not a valid SHA-256 hash"),
     ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] WITHIN 5 SECONDS WITHIN 6 SECONDS",
-        "FAIL: The same qualifier is used more than once"),
+        "FAIL: Duplicate qualifier type encountered: WITHIN"),
+    ("([win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] REPEATS 2 TIMES REPEATS 3 TIMES)",
+        "FAIL: Duplicate qualifier type encountered: REPEATS"),
+    ("[win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] "
+     "START t'2016-06-01T01:30:00.123Z' STOP t'2016-06-01T02:20:00.123Z' "
+     "START t'2016-06-01T01:30:00.123Z' STOP t'2016-06-01T02:20:00.123Z'",
+        "FAIL: Duplicate qualifier type encountered: STARTSTOP"),
     # TODO: add more failing test cases.
 ]
 
@@ -89,6 +95,12 @@ PASS_CASES = [
     "[foo:bar=1] REPEATS 9 TIMES",
     "[network-traffic:start = '2018-04-20T12:36:24.558Z']",
     "( [(network-traffic:dst_port IN(443,6443,8443) AND network-traffic:src_packets != 0) ])",  # Misplaced whitespace
+    "([win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar']) WITHIN 5 SECONDS WITHIN 6 SECONDS",
+    "([win-registry-key:key = 'hkey_local_machine\\\\foo\\\\bar'] REPEATS 2 TIMES) REPEATS 2 TIMES",
+    "[network-traffic:src_port = 37020 AND user-account:user_id = 'root'] "
+    "START t'2016-06-01T01:30:00.123Z' STOP t'2016-06-01T02:20:00.123Z' OR "
+    "[ipv4-addr:value = '192.168.122.83'] "
+    "START t'2016-06-01T03:55:00.123Z' STOP t'2016-06-01T04:30:24.743Z'"
 ]
 
 

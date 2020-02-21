@@ -2,13 +2,68 @@
 Validates a user entered pattern against STIXPattern grammar.
 """
 
+import enum
+
 from antlr4 import CommonTokenStream, ParseTreeWalker
 
 from . import object_validator
 from ..exceptions import STIXPatternErrorListener
 from .grammars.STIXPatternLexer import STIXPatternLexer
+from .grammars.STIXPatternListener import STIXPatternListener
 from .grammars.STIXPatternParser import STIXPatternParser
 from .inspector import InspectionListener
+
+QualType = enum.Enum("QualType", "WITHIN REPEATS STARTSTOP")
+
+
+class DuplicateQualifierTypeError(Exception):
+    """
+    Instances represent finding multiple qualifiers of the same type directly
+    applied to an observation expression (i.e. not on some parenthesized group
+    of which the observation expression is a member).
+    """
+    def __init__(self, qual_type):
+        """
+        Initialize this exception instance.
+
+        :param qual_type: The qualifier type which was found to be duplicated.
+            Must be a member of the QualType enum.
+        """
+        message = "Duplicate qualifier type encountered: " + qual_type.name
+
+        super(DuplicateQualifierTypeError, self).__init__(message)
+
+        self.qual_type = qual_type
+
+
+class ValidationListener(STIXPatternListener):
+    """
+    Does some pattern validation via a parse tree traversal.
+    """
+    def __init__(self):
+        self.__qual_types = None
+
+    def __check_qualifier_type(self, qual_type):
+        if self.__qual_types is not None:
+            if qual_type in self.__qual_types:
+                raise DuplicateQualifierTypeError(qual_type)
+            else:
+                self.__qual_types.add(qual_type)
+
+    def exitObservationExpressionSimple(self, ctx):
+        self.__qual_types = set()
+
+    def exitObservationExpressionCompound(self, ctx):
+        self.__qual_types = None
+
+    def exitObservationExpressionWithin(self, ctx):
+        self.__check_qualifier_type(QualType.WITHIN)
+
+    def exitObservationExpressionRepeated(self, ctx):
+        self.__check_qualifier_type(QualType.REPEATS)
+
+    def exitObservationExpressionStartStop(self, ctx):
+        self.__check_qualifier_type(QualType.STARTSTOP)
 
 
 def run_validator(pattern, start):
@@ -38,7 +93,6 @@ def run_validator(pattern, start):
             parser.literalNames[i] = parser.symbolicNames[i]
 
     tree = parser.pattern()
-    inspection_listener = InspectionListener()
 
     # replace with easier-to-understand error message
     if not (start[0] == '[' or start == '(['):
@@ -47,6 +101,7 @@ def run_validator(pattern, start):
 
     # validate observed objects
     if len(parseErrListener.err_strings) == 0:
+        inspection_listener = InspectionListener()
         ParseTreeWalker.DEFAULT.walk(inspection_listener, tree)
         patt_data = inspection_listener.pattern_data()
 
@@ -56,9 +111,9 @@ def run_validator(pattern, start):
             parseErrListener.err_strings.extend(obj_validator_results)
 
         # check qualifiers
-        qualifiers = [q.split()[0] for q in patt_data.qualifiers]
-        if len(qualifiers) != len(set(qualifiers)):
-            parseErrListener.err_strings.insert(0, "FAIL: The same qualifier is"
-                                                   " used more than once")
+        try:
+            ParseTreeWalker.DEFAULT.walk(ValidationListener(), tree)
+        except DuplicateQualifierTypeError as e:
+            parseErrListener.err_strings.insert(0, "FAIL: " + e.args[0])
 
     return parseErrListener.err_strings
