@@ -2,6 +2,13 @@ CHANGELOG
 =========
 
 
+1.3.0 - Released 2020-03-04
+---------------------------
+
+* #68 Update to ANTLR 4.8 (@chisholm)
+* #69 Add "visit()" methods to Pattern classes (@chisholm)
+* #71 Fix bug with multiple qualifiers in a pattern (@chisholm)
+
 1.2.1 - Released 2019-11-26
 ---------------------------
 
