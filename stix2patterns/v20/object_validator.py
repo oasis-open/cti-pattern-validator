@@ -21,6 +21,7 @@ HASHES_REGEX = {
 
 def verify_object(patt_data):
     error_list = []
+    msg = "FAIL: '{}' is not a valid {} hash"
 
     # iterate over observed objects
     for type_name, comp in patt_data.comparisons.items():
@@ -31,7 +32,7 @@ def verify_object(patt_data):
                 hash_string = str(expression[2].replace("\'", ""))
                 if hash_type in HASHES_REGEX:
                     if not re.match(HASHES_REGEX[hash_type][0], hash_string):
-                        error_list.append("FAIL: '{0}' is not a valid {1} "
-                                          "hash".format(hash_string,
-                                                        expression[0][-1]))
+                        error_list.append(
+                            msg.format(hash_string, expression[0][-1])
+                        )
     return error_list
