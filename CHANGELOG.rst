@@ -2,6 +2,11 @@ CHANGELOG
 =========
 
 
+1.3.1 - Released 2020-07-09
+---------------------------
+
+* #75 Fix bug with SSDEEP hashes in STIX 2.1 (@emmanvg)
+
 1.3.0 - Released 2020-03-04
 ---------------------------
 
