@@ -1,4 +1,5 @@
 import re
+import stix2patterns.inspector
 
 HASHES_REGEX = {
     "MD5": (r"^[a-fA-F0-9]{32}$", "MD5"),
@@ -25,14 +26,17 @@ def verify_object(patt_data):
 
     # iterate over observed objects
     for type_name, comp in patt_data.comparisons.items():
-        for expression in comp:
-            if 'hashes' in expression[0]:
-                hash_type = str(expression[0][-1].upper().replace('-', '').
-                                replace("\'", ""))
-                hash_string = str(expression[2].replace("\'", ""))
-                if hash_type in HASHES_REGEX:
-                    if not re.match(HASHES_REGEX[hash_type][0], hash_string):
-                        error_list.append(
-                            msg.format(hash_string, expression[0][-1])
-                        )
+        for obj_path, op, value in comp:
+            if 'hashes' in obj_path:
+                hash_selector = obj_path[-1]
+                if hash_selector is not stix2patterns.inspector.INDEX_STAR:
+                    hash_type = str(
+                        hash_selector.upper().replace('-', '').replace("'", "")
+                    )
+                    hash_string = value.replace("'", "")
+                    if hash_type in HASHES_REGEX:
+                        if not re.match(HASHES_REGEX[hash_type][0], hash_string):
+                            error_list.append(
+                                msg.format(hash_string, hash_selector)
+                            )
     return error_list
