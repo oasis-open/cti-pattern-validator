@@ -30,9 +30,8 @@ def verify_object(patt_data):
             if 'hashes' in obj_path:
                 hash_selector = obj_path[-1]
                 if hash_selector is not stix2patterns.inspector.INDEX_STAR:
-                    hash_type = str(
+                    hash_type = \
                         hash_selector.upper().replace('-', '').replace("'", "")
-                    )
                     hash_string = value.replace("'", "")
                     if hash_type in HASHES_REGEX:
                         if not re.match(HASHES_REGEX[hash_type][0], hash_string):
