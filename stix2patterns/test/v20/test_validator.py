@@ -87,6 +87,7 @@ PASS_CASES = [
     "[foo:bar=1] REPEATS 9 TIMES",
     "[network-traffic:start = '2018-04-20T12:36:24.558Z']",
     "( [(network-traffic:dst_port IN(443,6443,8443) AND network-traffic:src_packets != 0) ])",  # Misplaced whitespace
+    "[file:hashes[*] = '8665c8d477534008b3058b72e2dae8ae']",
 ]
 
 

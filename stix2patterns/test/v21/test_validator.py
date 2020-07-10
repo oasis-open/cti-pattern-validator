@@ -100,7 +100,8 @@ PASS_CASES = [
     "[network-traffic:src_port = 37020 AND user-account:user_id = 'root'] "
     "START t'2016-06-01T01:30:00.123Z' STOP t'2016-06-01T02:20:00.123Z' OR "
     "[ipv4-addr:value = '192.168.122.83'] "
-    "START t'2016-06-01T03:55:00.123Z' STOP t'2016-06-01T04:30:24.743Z'"
+    "START t'2016-06-01T03:55:00.123Z' STOP t'2016-06-01T04:30:24.743Z'",
+    "[file:hashes[*] = '8665c8d477534008b3058b72e2dae8ae']",
 ]
 
 
