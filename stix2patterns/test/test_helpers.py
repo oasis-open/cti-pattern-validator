@@ -1,14 +1,24 @@
 """
 Test cases for stix2patterns/helpers.py.
 """
+import pytest
 
-from stix2patterns.helpers import leading_characters
+from stix2patterns.helpers import brackets_check
 
 
-def test_leading_characters():
+@pytest.mark.parametrize(
+    "value", [
+        '[file:size = 1280]',
+        ' [file:size = 1280]',
+        '( [file:size = 1280])',
+        '( ( [file:size = 1280]) )',
+        '(( ( ( [file:size = 1280])) ))',
+        '[',
+    ],
+)
+def test_brackets_check(value):
+    assert brackets_check(value)
 
-    assert leading_characters('[file:size = 1280]', 2) == '[f'
-    assert leading_characters(' [file:size = 1280]', 2) == '[f'
-    assert leading_characters('( [file:size = 1280])', 2) == '(['
-    assert leading_characters('[', 2) == '['
-    assert leading_characters(None, 2) is None
+
+def test_brackets_check_fail():
+    assert not brackets_check(None)

@@ -1,4 +1,5 @@
 import re
+
 import stix2patterns.inspector
 
 HASHES_REGEX = {

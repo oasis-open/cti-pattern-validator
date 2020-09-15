@@ -1,22 +1,30 @@
-import string
+import six
 
 
-def leading_characters(s, length):
+def brackets_check(pattern):
     """
-    Returns non-whitespace leading characters
+    Check whether the pattern is missing square brackets, in a way which does
+    not require the usual parsing.  This is a light hack to provide an improved
+    error message in this particular case.
 
-    :param str s: The string to process
-    :param int length: The number of characters to return
-    :return: The non-whitespace leading characters
-    :rtype: str or None
+    :param pattern: A STIX pattern string
+    :return: True if the pattern had its brackets; False if not
     """
-    if s is None:
-        return None
+    if isinstance(pattern, six.string_types):
+        # the non-whitespace chars
+        non_ws_chars = (c for c in pattern if not c.isspace())
 
-    stripped = []
-    for char in s:
-        if char not in string.whitespace:
-            stripped.append(char)
+        # There can be an arbitrary number of open parens first... skip over those
+        c = next(non_ws_chars, None)
+        while c == "(":
+            c = next(non_ws_chars, None)
 
-    upper_bound = min(length, len(stripped))
-    return ''.join(stripped[:upper_bound])
+        if c == "[":
+            result = True
+        else:
+            result = False
+
+    else:
+        result = False
+
+    return result

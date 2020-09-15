@@ -66,7 +66,7 @@ class ValidationListener(STIXPatternListener):
         self.__check_qualifier_type(QualType.STARTSTOP)
 
 
-def run_validator(pattern, start):
+def run_validator(pattern):
     """
     Validates a pattern against the STIX Pattern grammar.  Error messages are
     returned in a list.  The test passed if the returned list is empty.
@@ -93,11 +93,6 @@ def run_validator(pattern, start):
             parser.literalNames[i] = parser.symbolicNames[i]
 
     tree = parser.pattern()
-
-    # replace with easier-to-understand error message
-    if not (start[0] == '[' or start == '(['):
-        parseErrListener.err_strings.insert(0, "FAIL: Error found at line 1:0. "
-                                               "input is missing square brackets")
 
     # validate observed objects
     if len(parseErrListener.err_strings) == 0:
