@@ -20,5 +20,14 @@ def test_brackets_check(value):
     assert brackets_check(value)
 
 
-def test_brackets_check_fail():
+@pytest.mark.parametrize(
+    "value", [
+        None,
+        "file:size = 1280",
+        "(file:size = 1280)",
+        " ( file:size = 1280 ) ",
+        " (( (( file:size = 1280 ) )) ) ",
+    ]
+)
+def test_brackets_check_fail(value):
     assert not brackets_check(None)
