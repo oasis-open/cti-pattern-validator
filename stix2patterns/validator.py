@@ -11,7 +11,7 @@ import six
 
 from . import DEFAULT_VERSION
 from .exceptions import STIXPatternErrorListener  # noqa: F401
-from .helpers import leading_characters
+from .helpers import brackets_check
 from .v20.validator import run_validator as run_validator20
 from .v21.validator import run_validator as run_validator21
 
@@ -21,19 +21,26 @@ def run_validator(pattern, stix_version=DEFAULT_VERSION):
     Validates a pattern against the STIX Pattern grammar.  Error messages are
     returned in a list.  The test passed if the returned list is empty.
     """
-    start = ''
     if isinstance(pattern, six.string_types):
-        start = leading_characters(pattern, 2)
+        pattern_str = pattern
         pattern = InputStream(pattern)
 
-    if not start:
-        start = leading_characters(pattern.readline(), 2)
+    else:
+        pattern_str = pattern.readline()
         pattern.seek(0)
 
     if stix_version == '2.1':
-        return run_validator21(pattern, start)
+        err_messages = run_validator21(pattern)
     else:
-        return run_validator20(pattern, start)
+        err_messages = run_validator20(pattern)
+
+    if not brackets_check(pattern_str):
+        err_messages.insert(
+            0,
+            "FAIL: Error found at line 1:0. input is missing square brackets"
+        )
+
+    return err_messages
 
 
 def validate(user_input, stix_version=DEFAULT_VERSION, ret_errs=False, print_errs=False):
