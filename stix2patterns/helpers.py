@@ -11,13 +11,12 @@ def brackets_check(pattern):
     :return: True if the pattern had its brackets; False if not
     """
     if isinstance(pattern, six.string_types):
-        # the non-whitespace chars
-        non_ws_chars = (c for c in pattern if not c.isspace())
 
-        # There can be an arbitrary number of open parens first... skip over those
-        c = next(non_ws_chars, None)
-        while c == "(":
-            c = next(non_ws_chars, None)
+        # There can be an arbitrary number of open parens first... skip over
+        # those
+        for c in pattern:
+            if c != "(" and not c.isspace():
+                break
 
         if c == "[":
             result = True
