@@ -2,6 +2,12 @@ CHANGELOG
 =========
 
 
+1.3.2 - Released 2020-12-10
+---------------------------
+
+* #79 Fix bug to prevent crashing on '*' selector in hashes (@chisholm)
+* #81 Fix bug with bracket checking to allow for nested parentheses (@chisholm)
+
 1.3.1 - Released 2020-07-09
 ---------------------------
 
