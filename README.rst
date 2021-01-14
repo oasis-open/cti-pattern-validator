@@ -137,8 +137,8 @@ possible or appropriate, questions may be directed by email to the Maintainer(s)
 Open Repository participation to OASIS Staff at repository-admin@oasis-open.org
 and any specific CLA-related questions to repository-cla@oasis-open.org.
 
-.. |Build_Status| image:: https://api.travis-ci.org/oasis-open/cti-pattern-validator.svg?branch=master
-   :target: https://travis-ci.org/oasis-open/cti-pattern-validator
+.. |Build_Status| image:: https://github.com/oasis-open/cti-pattern-validator/workflows/cti-pattern-validator%20test%20harness/badge.svg
+   :target: https://github.com/oasis-open/cti-pattern-validator/actions?query=workflow%3A%22cti-pattern-validator+test+harness%22
 .. |Coverage| image:: https://codecov.io/gh/oasis-open/cti-pattern-validator/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/oasis-open/cti-pattern-validator
 .. |Version| image:: https://img.shields.io/pypi/v/stix2-patterns.svg?maxAge=3600
