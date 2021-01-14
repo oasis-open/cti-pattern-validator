@@ -38,11 +38,8 @@ setup(
     maintainer_email='clenk@mitre.org',
     packages=find_packages(),
     install_requires=[
-        'antlr4-python2-runtime~=4.8.0 ; python_version<"3"',
         'antlr4-python3-runtime~=4.8.0 ; python_version>="3"',
         'six',
-        'typing ; python_version<"3.5" and python_version>="3"',
-        'enum34 ; python_version<"3.4"',
     ],
     package_data={
         'stix2patterns.test.v20': ['spec_examples.txt'],
@@ -56,13 +53,11 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
     extras_require={
         'dev': dev_requires,
