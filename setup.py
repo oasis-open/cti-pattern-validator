@@ -36,9 +36,10 @@ setup(
     author_email='cti-users@lists.oasis-open.org',
     maintainer='Chris Lenk',
     maintainer_email='clenk@mitre.org',
+    python_requires=">=3.6",
     packages=find_packages(),
     install_requires=[
-        'antlr4-python3-runtime~=4.8.0 ; python_version>="3"',
+        'antlr4-python3-runtime~=4.9.0',
         'six',
     ],
     package_data={
