@@ -19,6 +19,8 @@ repos:
     hooks:
     -   id: isort
         name: Sort python imports (shows diff)
+        exclude: grammars
         args: ["-c", "--diff"]
     -   id: isort
         name: Sort python imports (fixes files)
+        exclude: grammars
