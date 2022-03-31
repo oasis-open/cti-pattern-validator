@@ -2,6 +2,12 @@ CHANGELOG
 =========
 
 
+2.0.0 - Released 2022-03-31
+---------------------------
+
+* #85 Update to ANTLR 4.9 (@chisholm)
+* #88 Default to STIX 2.1 version patterns
+
 1.3.2 - Released 2020-12-10
 ---------------------------
 
