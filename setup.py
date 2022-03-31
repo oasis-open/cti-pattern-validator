@@ -27,7 +27,7 @@ dev_requires = doc_requires + test_requires + [
 
 setup(
     name='stix2-patterns',
-    version='1.3.2',
+    version='2.0.0',
     description='Validate STIX 2 Patterns.',
     long_description=readme,
     long_description_content_type='text/x-rst',
