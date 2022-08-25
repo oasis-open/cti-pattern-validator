@@ -14,9 +14,12 @@ tool. The validator can be used as a command-line tool or as a Python library
 which can be included in other applications.
 
 |Build_Status| |Coverage| |Version|
-.. |CodeQL| image:: https://github.com/oasis-open/cti-pattern-validator/workflows/CodeQL/badge.svg?branch=master
-.. |OpenSSF Scorecard| image:: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator/badge 
-   :target: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator
+.. code:: rst
+  |CodeQL|
+  .. |CodeQL| image:: https://github.com/oasis-open/cti-pattern-validator/workflows/CodeQL/badge.svg?branch=master
+
+  .. |OpenSSF Scorecard| image:: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator/badge 
+     :target: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator
 
 Quickstart
 ----------
