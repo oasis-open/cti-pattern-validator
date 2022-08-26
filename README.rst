@@ -13,10 +13,7 @@ code, an ANTLR grammar, automated tests and associated documentation for the
 tool. The validator can be used as a command-line tool or as a Python library
 which can be included in other applications.
 
-|Build_Status| |Coverage| |Version|
-
-.. image:: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator/badge 
-     :target: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator
+|Build_Status| |Coverage| |Version| |Scorecard|
 
 Quickstart
 ----------
@@ -148,3 +145,5 @@ and any specific CLA-related questions to repository-cla@oasis-open.org.
    :target: https://codecov.io/gh/oasis-open/cti-pattern-validator
 .. |Version| image:: https://img.shields.io/pypi/v/stix2-patterns.svg?maxAge=3600
    :target: https://pypi.org/project/stix2-patterns/
+.. |Scorecard| image:: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator/badge
+     :target: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator
