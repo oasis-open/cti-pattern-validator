@@ -14,6 +14,7 @@ tool. The validator can be used as a command-line tool or as a Python library
 which can be included in other applications.
 
 |Build_Status| |Coverage| |Version|
+
 .. image:: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator/badge 
      :target: https://api.securityscorecards.dev/projects/github.com/oasis-open/cti-pattern-validator
 
