@@ -38,7 +38,6 @@ setup(
     packages=find_packages(),
     install_requires=[
         'antlr4-python3-runtime~=4.9.0',
-        'six',
     ],
     package_data={
         'stix2patterns.test.v20': ['spec_examples.txt'],
