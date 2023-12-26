@@ -1,5 +1,4 @@
 import antlr4
-import six
 
 from ..exceptions import ParseException, ParserErrorListener
 from .grammars.STIXPatternLexer import STIXPatternLexer
@@ -106,8 +105,4 @@ class Pattern(object):
             # invocation.  Wish this could be cleaner...
             parser._errHandler.reportError(parser, real_exc)
 
-            # should probably chain exceptions if we can...
-            # Should I report the cancellation or recognition exception as the
-            # cause...?
-            six.raise_from(ParseException(error_listener.error_message),
-                           real_exc)
+            raise ParseException(error_listener.error_message) from real_exc

@@ -7,7 +7,6 @@ from __future__ import print_function
 import argparse
 
 from antlr4 import InputStream
-import six
 
 from . import DEFAULT_VERSION
 from .exceptions import STIXPatternErrorListener  # noqa: F401
@@ -21,7 +20,7 @@ def run_validator(pattern, stix_version=DEFAULT_VERSION):
     Validates a pattern against the STIX Pattern grammar.  Error messages are
     returned in a list.  The test passed if the returned list is empty.
     """
-    if isinstance(pattern, six.string_types):
+    if isinstance(pattern, str):
         pattern_str = pattern
         pattern = InputStream(pattern)
 
@@ -88,7 +87,7 @@ def main():
     if args.file:
         nextpattern = args.file.readline
     else:
-        nextpattern = functools.partial(six.moves.input, "Enter a pattern to validate: ")
+        nextpattern = functools.partial(input, "Enter a pattern to validate: ")
 
     try:
         while True:
