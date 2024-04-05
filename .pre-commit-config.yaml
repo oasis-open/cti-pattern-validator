@@ -15,7 +15,7 @@ repos:
         - --ignore=F403,F405
         - --max-line-length=160
 -   repo: https://github.com/PyCQA/isort
-    rev: 5.7.0
+    rev: 5.13.2
     hooks:
     -   id: isort
         name: Sort python imports (shows diff)
