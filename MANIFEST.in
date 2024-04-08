@@ -1,5 +1,5 @@
 include .isort.cfg
-include .pre-commit-config.yaml
+include .*.yaml
 include CHANGELOG.rst
 include CONTRIBUTING.md
 include dev-requirements.txt

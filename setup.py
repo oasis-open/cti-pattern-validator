@@ -34,7 +34,7 @@ setup(
     url="https://github.com/oasis-open/cti-pattern-validator",
     author='OASIS Cyber Threat Intelligence Technical Committee',
     author_email='cti-users@lists.oasis-open.org',
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     packages=find_packages(),
     install_requires=[
         'antlr4-python3-runtime~=4.9.0',
@@ -53,10 +53,11 @@ setup(
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
     ],
     extras_require={
         'dev': dev_requires,
