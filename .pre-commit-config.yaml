@@ -6,7 +6,7 @@ repos:
         exclude: grammars
     -   id: check-merge-conflict
 -   repo: https://github.com/PyCQA/flake8
-    rev: 3.8.4
+    rev: 5.0.4
     hooks:
     -   id: flake8
         name: Check project styling
@@ -15,7 +15,7 @@ repos:
         - --ignore=F403,F405
         - --max-line-length=160
 -   repo: https://github.com/PyCQA/isort
-    rev: 5.7.0
+    rev: 5.13.2
     hooks:
     -   id: isort
         name: Sort python imports (shows diff)
