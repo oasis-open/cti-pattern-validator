@@ -1,6 +1,6 @@
-# Generated from STIXPattern.g4 by ANTLR 4.9.2
+# Generated from STIXPattern.g4 by ANTLR 4.13.2
 from antlr4 import *
-if __name__ is not None and "." in __name__:
+if "." in __name__:
     from .STIXPatternParser import STIXPatternParser
 else:
     from STIXPatternParser import STIXPatternParser
@@ -101,6 +101,11 @@ class STIXPatternVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by STIXPatternParser#propTestParen.
     def visitPropTestParen(self, ctx:STIXPatternParser.PropTestParenContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by STIXPatternParser#propTestExists.
+    def visitPropTestExists(self, ctx:STIXPatternParser.PropTestExistsContext):
         return self.visitChildren(ctx)
 
 
