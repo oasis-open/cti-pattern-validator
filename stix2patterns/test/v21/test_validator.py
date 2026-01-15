@@ -72,6 +72,57 @@ def test_fail_patterns(test_input, test_output):
     assert pass_test is False
 
 
+TIMESTAMP_PASS_CASES = [
+    # Basic valid timestamps
+    "[x:created = t'2024-01-15T12:30:45Z']",
+    "[x:created = t'2024-12-31T23:59:59Z']",
+    "[x:created = t'2024-01-01T00:00:00Z']",
+    # Millisecond precision
+    "[x:created = t'2024-01-15T12:30:45.123Z']",
+    "[x:created = t'2024-01-15T12:30:45.123456Z']",
+    # Leap year Feb 29
+    "[x:created = t'2024-02-29T12:00:00Z']",  # 2024 is a leap year
+    "[x:created = t'2000-02-29T12:00:00Z']",  # 2000 is a leap year (divisible by 400)
+    # START/STOP qualifiers with timestamps
+    "[file:name = 'test'] START t'2024-01-01T00:00:00Z' STOP t'2024-12-31T23:59:59Z'",
+    # Note: The grammar validates timestamp SYNTAX but not SEMANTIC correctness.
+    # These are syntactically valid (day 01-31, month 01-12) but semantically invalid dates.
+    # Calendar validation (e.g., Feb has 28/29 days) is not performed by the parser.
+    "[x:created = t'2024-02-30T12:00:00Z']",  # Feb 30 - syntactically valid
+    "[x:created = t'2024-04-31T12:00:00Z']",  # Apr 31 - syntactically valid
+    "[x:created = t'2023-02-29T12:00:00Z']",  # Non-leap year Feb 29 - syntactically valid
+]
+
+TIMESTAMP_FAIL_CASES = [
+    # Invalid month (must be 01-12)
+    ("[x:created = t'2024-13-01T12:00:00Z']",
+        "FAIL: Error found at line 1:"),
+    ("[x:created = t'2024-00-01T12:00:00Z']",
+        "FAIL: Error found at line 1:"),
+    # Invalid day (must be 01-31)
+    ("[x:created = t'2024-01-32T12:00:00Z']",
+        "FAIL: Error found at line 1:"),
+    ("[x:created = t'2024-01-00T12:00:00Z']",
+        "FAIL: Error found at line 1:"),
+    # Invalid hour (must be 00-23)
+    ("[x:created = t'2024-01-15T25:00:00Z']",
+        "FAIL: Error found at line 1:"),
+    # Invalid minute (must be 00-59)
+    ("[x:created = t'2024-01-15T12:60:00Z']",
+        "FAIL: Error found at line 1:"),
+    # Invalid second (must be 00-59)
+    ("[x:created = t'2024-01-15T12:30:61Z']",
+        "FAIL: Error found at line 1:"),
+    # Missing timezone designator
+    ("[x:created = t'2024-01-15T12:30:45']",
+        "FAIL: Error found at line 1:"),
+    # Malformed timestamp format
+    ("[x:created = t'not-a-timestamp']",
+        "FAIL: Error found at line 1:"),
+    ("[x:created = t'2024/01/15T12:30:45Z']",
+        "FAIL: Error found at line 1:"),
+]
+
 PASS_CASES = [
     "[file:size = 1280]",
     "[file:size != 1280]",
@@ -112,3 +163,22 @@ def test_pass_patterns(test_input):
     """
     pass_test = validate(test_input, stix_version='2.1', print_errs=True)
     assert pass_test is True
+
+
+@pytest.mark.parametrize("test_input", TIMESTAMP_PASS_CASES)
+def test_timestamp_pass_patterns(test_input):
+    """
+    Validate that valid timestamp patterns pass.
+    """
+    pass_test = validate(test_input, stix_version='2.1', print_errs=True)
+    assert pass_test is True
+
+
+@pytest.mark.parametrize("test_input,test_output", TIMESTAMP_FAIL_CASES)
+def test_timestamp_fail_patterns(test_input, test_output):
+    """
+    Validate that invalid timestamp patterns fail.
+    """
+    pass_test, errors = validate(test_input, stix_version='2.1', ret_errs=True, print_errs=True)
+    assert errors[0].startswith(test_output)
+    assert pass_test is False
