@@ -2,6 +2,14 @@ CHANGELOG
 =========
 
 
+2.1.0 - Released 2025-12-29
+---------------------------
+
+* Update to ANTLR 4.13 (@brianatdetections)
+* Add Python 3.13 support
+* Add automated grammar regeneration script
+* Fix documentation to use Python3 instead of Python2 for ANTLR generation
+
 2.0.0 - Released 2022-03-31
 ---------------------------
 
