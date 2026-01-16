@@ -59,16 +59,23 @@ repository. If the grammar changes, the code in this repository should be
 updated to match. To do so, use the Java ANTLR package to generate new Python
 source files. (The .jar file is not needed for normal use of the validator).
 
-1. Download antlr-4.7.1-complete.jar from http://www.antlr.org/download/
+1. Download antlr-4.13.2-complete.jar from https://www.antlr.org/download/
 2. Clone the stix2-json-schemas repository or download the STIXPattern.g4 file.
 3. Change to the directory containing the STIXPattern.g4 file.
 4. Run the following command (for STIX v2.1)
 
    .. prompt:: bash
 
-       java -jar "/path/to/antlr-4.7.1-complete.jar" -Dlanguage=Python2 STIXPattern.g4 -visitor -o /path/to/cti-pattern-validator/stix2patterns/v21/grammars
+       java -jar "/path/to/antlr-4.13.2-complete.jar" -Dlanguage=Python3 STIXPattern.g4 -visitor -o /path/to/cti-pattern-validator/stix2patterns/v21/grammars
 
-5. Commit the resulting files to git.
+5. Remove any generated .interp and .tokens files (not needed for Python runtime).
+6. Commit the resulting .py files to git.
+
+Alternatively, use the provided regeneration script:
+
+   .. prompt:: bash
+
+       ./scripts/regenerate_grammars.sh
 
 Testing
 -------

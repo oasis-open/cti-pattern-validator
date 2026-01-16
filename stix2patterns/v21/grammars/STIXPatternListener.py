@@ -1,6 +1,6 @@
-# Generated from STIXPattern.g4 by ANTLR 4.9.2
+# Generated from STIXPattern.g4 by ANTLR 4.13.2
 from antlr4 import *
-if __name__ is not None and "." in __name__:
+if "." in __name__:
     from .STIXPatternParser import STIXPatternParser
 else:
     from STIXPatternParser import STIXPatternParser

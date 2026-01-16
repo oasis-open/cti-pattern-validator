@@ -9,15 +9,15 @@ from stix2patterns.v20.pattern import Pattern
     (u"[foo:bar = 1] REPEATS 5 TIMES", set([u"REPEATS 5 TIMES"])),
     (u"[foo:bar = 1] WITHIN 10.3 SECONDS", set([u"WITHIN 10.3 SECONDS"])),
     (u"[foo:bar = 1] WITHIN 123 SECONDS", set([u"WITHIN 123 SECONDS"])),
-    (u"[foo:bar = 1] START '1932-11-12T15:42:15Z' STOP '1964-10-53T21:12:26Z'",
-        set([u"START '1932-11-12T15:42:15Z' STOP '1964-10-53T21:12:26Z'"])),
+    (u"[foo:bar = 1] START t'1932-11-12T15:42:15Z' STOP t'1964-10-23T21:12:26Z'",
+        set([u"START t'1932-11-12T15:42:15Z' STOP t'1964-10-23T21:12:26Z'"])),
     (u"[foo:bar = 1] REPEATS 1 TIMES REPEATS 2 TIMES",
         set([u"REPEATS 1 TIMES", u"REPEATS 2 TIMES"])),
     (u"[foo:bar = 1] REPEATS 1 TIMES AND [foo:baz = 2] WITHIN 1.23 SECONDS",
         set([u"REPEATS 1 TIMES", u"WITHIN 1.23 SECONDS"])),
-    (u"([foo:bar = 1] START '1932-11-12T15:42:15Z' STOP '1964-10-53T21:12:26Z' AND [foo:abc < h'12ab']) WITHIN 22 SECONDS "
+    (u"([foo:bar = 1] START t'1932-11-12T15:42:15Z' STOP t'1964-10-23T21:12:26Z' AND [foo:abc < h'12ab']) WITHIN 22 SECONDS "
      u"OR [frob:baz NOT IN (1,2,3)] REPEATS 31 TIMES",
-        set([u"START '1932-11-12T15:42:15Z' STOP '1964-10-53T21:12:26Z'",
+        set([u"START t'1932-11-12T15:42:15Z' STOP t'1964-10-23T21:12:26Z'",
             u"WITHIN 22 SECONDS", u"REPEATS 31 TIMES"]))
 ])
 def test_qualifiers(pattern, expected_qualifiers):

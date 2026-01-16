@@ -27,7 +27,7 @@ dev_requires = doc_requires + test_requires + [
 
 setup(
     name='stix2-patterns',
-    version='2.0.0',
+    version='2.1.0',
     description='Validate STIX 2 Patterns.',
     long_description=readme,
     long_description_content_type='text/x-rst',
@@ -37,7 +37,7 @@ setup(
     python_requires=">=3.8",
     packages=find_packages(),
     install_requires=[
-        'antlr4-python3-runtime~=4.9.0',
+        'antlr4-python3-runtime~=4.13.0',
         'six',
     ],
     package_data={
@@ -58,6 +58,7 @@ setup(
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
     ],
     extras_require={
         'dev': dev_requires,

@@ -40,7 +40,7 @@ class InspectionListener(STIXPatternListener):
     def exitStartStopQualifier(self, ctx):
         self.__qualifiers.add(
             u"START {0} STOP {1}".format(
-                ctx.StringLiteral(0), ctx.StringLiteral(1)
+                ctx.TimestampLiteral(0), ctx.TimestampLiteral(1)
             )
         )
 
