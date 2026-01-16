@@ -1,6 +1,3 @@
-import six
-
-
 def brackets_check(pattern):
     """
     Check whether the pattern is missing square brackets, in a way which does
@@ -10,7 +7,7 @@ def brackets_check(pattern):
     :param pattern: A STIX pattern string
     :return: True if the pattern had its brackets; False if not
     """
-    if isinstance(pattern, six.string_types):
+    if isinstance(pattern, str):
 
         # There can be an arbitrary number of open parens first... skip over
         # those
