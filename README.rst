@@ -108,12 +108,12 @@ additional or substitute Maintainers, per `consensus agreements
 Current Maintainers of this TC Open Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Jason Keirstead <mailto:Jason.Keirstead@ca.ibm.com>`__; GitHub ID:
-   https://github.com/JasonKeirstead; WWW: `IBM <http://www.ibm.com/>`__
 -  `Emily Ratliff <mailto:Emily.Ratliff@ibm.com>`__; GitHub ID:
    https://github.com/ejratl; WWW: `IBM <http://www.ibm.com/>`__
--  `Duncan Sparrell <mailto:duncan@sfractal.com>`__; GitHub ID:
-   https://github.com/sparrell; WWW: `sFractal <http://sfractal.com/>`__
+-  `Alexandre Dulaunoy <mailto:alexandre.dulaunoy@circl.lu>`__; GitHub ID:
+   https://github.com/adulau; WWW: `CIRCL <http://www.circl.lu/>`__
+-  `Christian Studer <mailto:christian.studer@circl.lu>`__; GitHub ID:
+   https://github.com/chrisr3d; WWW: `CIRCL <http://www.circl.lu/>`__
 
 About OASIS TC Open Repositories
 --------------------------------
