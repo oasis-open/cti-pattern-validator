@@ -27,14 +27,14 @@ dev_requires = doc_requires + test_requires + [
 
 setup(
     name='stix2-patterns',
-    version='2.1.0',
+    version='2.1.1',
     description='Validate STIX 2 Patterns.',
     long_description=readme,
     long_description_content_type='text/x-rst',
     url="https://github.com/oasis-open/cti-pattern-validator",
     author='OASIS Cyber Threat Intelligence Technical Committee',
     author_email='cti-users@lists.oasis-open.org',
-    python_requires=">=3.8",
+    python_requires=">=3.10",
     packages=find_packages(),
     install_requires=[
         'antlr4-python3-runtime~=4.13.0',
@@ -52,8 +52,6 @@ setup(
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
