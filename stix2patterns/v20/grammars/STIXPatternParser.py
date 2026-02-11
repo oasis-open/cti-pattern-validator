@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,54,236,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,53,231,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,1,0,1,0,1,0,1,1,1,1,1,1,
         1,1,1,1,1,1,5,1,46,8,1,10,1,12,1,49,9,1,1,2,1,2,1,2,1,2,1,2,1,2,
@@ -22,76 +22,73 @@ def serializedATN():
         1,7,3,7,126,8,7,1,7,1,7,1,7,1,7,1,7,3,7,133,8,7,1,7,1,7,1,7,1,7,
         1,7,3,7,140,8,7,1,7,1,7,1,7,1,7,1,7,3,7,147,8,7,1,7,1,7,1,7,1,7,
         1,7,3,7,154,8,7,1,7,1,7,1,7,1,7,1,7,3,7,161,8,7,1,7,1,7,1,7,1,7,
-        1,7,1,7,1,7,1,7,3,7,171,8,7,1,7,1,7,3,7,175,8,7,1,8,1,8,1,8,1,8,
-        1,8,1,9,1,9,1,9,1,9,1,10,1,10,1,10,1,10,1,11,1,11,1,11,1,11,3,11,
-        194,8,11,1,12,1,12,1,13,1,13,1,14,1,14,1,14,1,14,1,14,1,14,3,14,
-        206,8,14,1,14,1,14,5,14,210,8,14,10,14,12,14,213,9,14,1,15,1,15,
-        1,15,1,15,1,15,1,15,5,15,221,8,15,10,15,12,15,224,9,15,1,15,1,15,
-        3,15,228,8,15,1,16,1,16,3,16,232,8,16,1,17,1,17,1,17,0,7,2,4,6,8,
-        10,12,28,18,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,0,7,
-        1,0,31,32,1,0,33,36,2,0,2,2,4,4,1,0,29,30,2,0,7,7,29,29,2,0,1,2,
-        50,50,2,0,1,7,9,9,248,0,36,1,0,0,0,2,39,1,0,0,0,4,50,1,0,0,0,6,61,
-        1,0,0,0,8,81,1,0,0,0,10,94,1,0,0,0,12,105,1,0,0,0,14,174,1,0,0,0,
-        16,176,1,0,0,0,18,181,1,0,0,0,20,185,1,0,0,0,22,189,1,0,0,0,24,195,
-        1,0,0,0,26,197,1,0,0,0,28,205,1,0,0,0,30,227,1,0,0,0,32,231,1,0,
-        0,0,34,233,1,0,0,0,36,37,3,2,1,0,37,38,5,0,0,1,38,1,1,0,0,0,39,40,
-        6,1,-1,0,40,41,3,4,2,0,41,47,1,0,0,0,42,43,10,2,0,0,43,44,5,13,0,
-        0,44,46,3,2,1,3,45,42,1,0,0,0,46,49,1,0,0,0,47,45,1,0,0,0,47,48,
-        1,0,0,0,48,3,1,0,0,0,49,47,1,0,0,0,50,51,6,2,-1,0,51,52,3,6,3,0,
-        52,58,1,0,0,0,53,54,10,2,0,0,54,55,5,11,0,0,55,57,3,4,2,3,56,53,
-        1,0,0,0,57,60,1,0,0,0,58,56,1,0,0,0,58,59,1,0,0,0,59,5,1,0,0,0,60,
-        58,1,0,0,0,61,62,6,3,-1,0,62,63,3,8,4,0,63,69,1,0,0,0,64,65,10,2,
-        0,0,65,66,5,10,0,0,66,68,3,6,3,3,67,64,1,0,0,0,68,71,1,0,0,0,69,
-        67,1,0,0,0,69,70,1,0,0,0,70,7,1,0,0,0,71,69,1,0,0,0,72,73,6,4,-1,
-        0,73,74,5,44,0,0,74,75,3,10,5,0,75,76,5,43,0,0,76,82,1,0,0,0,77,
-        78,5,42,0,0,78,79,3,2,1,0,79,80,5,41,0,0,80,82,1,0,0,0,81,72,1,0,
-        0,0,81,77,1,0,0,0,82,91,1,0,0,0,83,84,10,3,0,0,84,90,3,16,8,0,85,
-        86,10,2,0,0,86,90,3,18,9,0,87,88,10,1,0,0,88,90,3,20,10,0,89,83,
-        1,0,0,0,89,85,1,0,0,0,89,87,1,0,0,0,90,93,1,0,0,0,91,89,1,0,0,0,
-        91,92,1,0,0,0,92,9,1,0,0,0,93,91,1,0,0,0,94,95,6,5,-1,0,95,96,3,
-        12,6,0,96,102,1,0,0,0,97,98,10,2,0,0,98,99,5,11,0,0,99,101,3,10,
-        5,3,100,97,1,0,0,0,101,104,1,0,0,0,102,100,1,0,0,0,102,103,1,0,0,
-        0,103,11,1,0,0,0,104,102,1,0,0,0,105,106,6,6,-1,0,106,107,3,14,7,
-        0,107,113,1,0,0,0,108,109,10,2,0,0,109,110,5,10,0,0,110,112,3,12,
-        6,3,111,108,1,0,0,0,112,115,1,0,0,0,113,111,1,0,0,0,113,114,1,0,
-        0,0,114,13,1,0,0,0,115,113,1,0,0,0,116,118,3,22,11,0,117,119,5,12,
-        0,0,118,117,1,0,0,0,118,119,1,0,0,0,119,120,1,0,0,0,120,121,7,0,
-        0,0,121,122,3,32,16,0,122,175,1,0,0,0,123,125,3,22,11,0,124,126,
-        5,12,0,0,125,124,1,0,0,0,125,126,1,0,0,0,126,127,1,0,0,0,127,128,
-        7,1,0,0,128,129,3,34,17,0,129,175,1,0,0,0,130,132,3,22,11,0,131,
-        133,5,12,0,0,132,131,1,0,0,0,132,133,1,0,0,0,133,134,1,0,0,0,134,
-        135,5,20,0,0,135,136,3,30,15,0,136,175,1,0,0,0,137,139,3,22,11,0,
-        138,140,5,12,0,0,139,138,1,0,0,0,139,140,1,0,0,0,140,141,1,0,0,0,
-        141,142,5,14,0,0,142,143,5,7,0,0,143,175,1,0,0,0,144,146,3,22,11,
-        0,145,147,5,12,0,0,146,145,1,0,0,0,146,147,1,0,0,0,147,148,1,0,0,
-        0,148,149,5,15,0,0,149,150,5,7,0,0,150,175,1,0,0,0,151,153,3,22,
-        11,0,152,154,5,12,0,0,153,152,1,0,0,0,153,154,1,0,0,0,154,155,1,
-        0,0,0,155,156,5,17,0,0,156,157,5,7,0,0,157,175,1,0,0,0,158,160,3,
-        22,11,0,159,161,5,12,0,0,160,159,1,0,0,0,160,161,1,0,0,0,161,162,
-        1,0,0,0,162,163,5,16,0,0,163,164,5,7,0,0,164,175,1,0,0,0,165,166,
-        5,42,0,0,166,167,3,10,5,0,167,168,5,41,0,0,168,175,1,0,0,0,169,171,
-        5,12,0,0,170,169,1,0,0,0,170,171,1,0,0,0,171,172,1,0,0,0,172,173,
-        5,18,0,0,173,175,3,22,11,0,174,116,1,0,0,0,174,123,1,0,0,0,174,130,
-        1,0,0,0,174,137,1,0,0,0,174,144,1,0,0,0,174,151,1,0,0,0,174,158,
-        1,0,0,0,174,165,1,0,0,0,174,170,1,0,0,0,175,15,1,0,0,0,176,177,5,
-        21,0,0,177,178,5,9,0,0,178,179,5,22,0,0,179,180,5,9,0,0,180,17,1,
-        0,0,0,181,182,5,26,0,0,182,183,7,2,0,0,183,184,5,23,0,0,184,19,1,
-        0,0,0,185,186,5,27,0,0,186,187,5,2,0,0,187,188,5,28,0,0,188,21,1,
-        0,0,0,189,190,3,24,12,0,190,191,5,38,0,0,191,193,3,26,13,0,192,194,
-        3,28,14,0,193,192,1,0,0,0,193,194,1,0,0,0,194,23,1,0,0,0,195,196,
-        7,3,0,0,196,25,1,0,0,0,197,198,7,4,0,0,198,27,1,0,0,0,199,200,6,
-        14,-1,0,200,201,5,39,0,0,201,206,7,4,0,0,202,203,5,44,0,0,203,204,
-        7,5,0,0,204,206,5,43,0,0,205,199,1,0,0,0,205,202,1,0,0,0,206,211,
-        1,0,0,0,207,208,10,3,0,0,208,210,3,28,14,4,209,207,1,0,0,0,210,213,
-        1,0,0,0,211,209,1,0,0,0,211,212,1,0,0,0,212,29,1,0,0,0,213,211,1,
-        0,0,0,214,215,5,42,0,0,215,228,5,41,0,0,216,217,5,42,0,0,217,222,
-        3,32,16,0,218,219,5,40,0,0,219,221,3,32,16,0,220,218,1,0,0,0,221,
-        224,1,0,0,0,222,220,1,0,0,0,222,223,1,0,0,0,223,225,1,0,0,0,224,
-        222,1,0,0,0,225,226,5,41,0,0,226,228,1,0,0,0,227,214,1,0,0,0,227,
-        216,1,0,0,0,228,31,1,0,0,0,229,232,3,34,17,0,230,232,5,8,0,0,231,
-        229,1,0,0,0,231,230,1,0,0,0,232,33,1,0,0,0,233,234,7,6,0,0,234,35,
-        1,0,0,0,23,47,58,69,81,89,91,102,113,118,125,132,139,146,153,160,
-        170,174,193,205,211,222,227,231
+        1,7,1,7,1,7,3,7,170,8,7,1,8,1,8,1,8,1,8,1,8,1,9,1,9,1,9,1,9,1,10,
+        1,10,1,10,1,10,1,11,1,11,1,11,1,11,3,11,189,8,11,1,12,1,12,1,13,
+        1,13,1,14,1,14,1,14,1,14,1,14,1,14,3,14,201,8,14,1,14,1,14,5,14,
+        205,8,14,10,14,12,14,208,9,14,1,15,1,15,1,15,1,15,1,15,1,15,5,15,
+        216,8,15,10,15,12,15,219,9,15,1,15,1,15,3,15,223,8,15,1,16,1,16,
+        3,16,227,8,16,1,17,1,17,1,17,0,7,2,4,6,8,10,12,28,18,0,2,4,6,8,10,
+        12,14,16,18,20,22,24,26,28,30,32,34,0,7,1,0,30,31,1,0,32,35,2,0,
+        2,2,4,4,1,0,28,29,2,0,7,7,28,28,2,0,1,2,49,49,2,0,1,7,9,9,241,0,
+        36,1,0,0,0,2,39,1,0,0,0,4,50,1,0,0,0,6,61,1,0,0,0,8,81,1,0,0,0,10,
+        94,1,0,0,0,12,105,1,0,0,0,14,169,1,0,0,0,16,171,1,0,0,0,18,176,1,
+        0,0,0,20,180,1,0,0,0,22,184,1,0,0,0,24,190,1,0,0,0,26,192,1,0,0,
+        0,28,200,1,0,0,0,30,222,1,0,0,0,32,226,1,0,0,0,34,228,1,0,0,0,36,
+        37,3,2,1,0,37,38,5,0,0,1,38,1,1,0,0,0,39,40,6,1,-1,0,40,41,3,4,2,
+        0,41,47,1,0,0,0,42,43,10,2,0,0,43,44,5,13,0,0,44,46,3,2,1,3,45,42,
+        1,0,0,0,46,49,1,0,0,0,47,45,1,0,0,0,47,48,1,0,0,0,48,3,1,0,0,0,49,
+        47,1,0,0,0,50,51,6,2,-1,0,51,52,3,6,3,0,52,58,1,0,0,0,53,54,10,2,
+        0,0,54,55,5,11,0,0,55,57,3,4,2,3,56,53,1,0,0,0,57,60,1,0,0,0,58,
+        56,1,0,0,0,58,59,1,0,0,0,59,5,1,0,0,0,60,58,1,0,0,0,61,62,6,3,-1,
+        0,62,63,3,8,4,0,63,69,1,0,0,0,64,65,10,2,0,0,65,66,5,10,0,0,66,68,
+        3,6,3,3,67,64,1,0,0,0,68,71,1,0,0,0,69,67,1,0,0,0,69,70,1,0,0,0,
+        70,7,1,0,0,0,71,69,1,0,0,0,72,73,6,4,-1,0,73,74,5,43,0,0,74,75,3,
+        10,5,0,75,76,5,42,0,0,76,82,1,0,0,0,77,78,5,41,0,0,78,79,3,2,1,0,
+        79,80,5,40,0,0,80,82,1,0,0,0,81,72,1,0,0,0,81,77,1,0,0,0,82,91,1,
+        0,0,0,83,84,10,3,0,0,84,90,3,16,8,0,85,86,10,2,0,0,86,90,3,18,9,
+        0,87,88,10,1,0,0,88,90,3,20,10,0,89,83,1,0,0,0,89,85,1,0,0,0,89,
+        87,1,0,0,0,90,93,1,0,0,0,91,89,1,0,0,0,91,92,1,0,0,0,92,9,1,0,0,
+        0,93,91,1,0,0,0,94,95,6,5,-1,0,95,96,3,12,6,0,96,102,1,0,0,0,97,
+        98,10,2,0,0,98,99,5,11,0,0,99,101,3,10,5,3,100,97,1,0,0,0,101,104,
+        1,0,0,0,102,100,1,0,0,0,102,103,1,0,0,0,103,11,1,0,0,0,104,102,1,
+        0,0,0,105,106,6,6,-1,0,106,107,3,14,7,0,107,113,1,0,0,0,108,109,
+        10,2,0,0,109,110,5,10,0,0,110,112,3,12,6,3,111,108,1,0,0,0,112,115,
+        1,0,0,0,113,111,1,0,0,0,113,114,1,0,0,0,114,13,1,0,0,0,115,113,1,
+        0,0,0,116,118,3,22,11,0,117,119,5,12,0,0,118,117,1,0,0,0,118,119,
+        1,0,0,0,119,120,1,0,0,0,120,121,7,0,0,0,121,122,3,32,16,0,122,170,
+        1,0,0,0,123,125,3,22,11,0,124,126,5,12,0,0,125,124,1,0,0,0,125,126,
+        1,0,0,0,126,127,1,0,0,0,127,128,7,1,0,0,128,129,3,34,17,0,129,170,
+        1,0,0,0,130,132,3,22,11,0,131,133,5,12,0,0,132,131,1,0,0,0,132,133,
+        1,0,0,0,133,134,1,0,0,0,134,135,5,19,0,0,135,136,3,30,15,0,136,170,
+        1,0,0,0,137,139,3,22,11,0,138,140,5,12,0,0,139,138,1,0,0,0,139,140,
+        1,0,0,0,140,141,1,0,0,0,141,142,5,14,0,0,142,143,5,7,0,0,143,170,
+        1,0,0,0,144,146,3,22,11,0,145,147,5,12,0,0,146,145,1,0,0,0,146,147,
+        1,0,0,0,147,148,1,0,0,0,148,149,5,15,0,0,149,150,5,7,0,0,150,170,
+        1,0,0,0,151,153,3,22,11,0,152,154,5,12,0,0,153,152,1,0,0,0,153,154,
+        1,0,0,0,154,155,1,0,0,0,155,156,5,17,0,0,156,157,5,7,0,0,157,170,
+        1,0,0,0,158,160,3,22,11,0,159,161,5,12,0,0,160,159,1,0,0,0,160,161,
+        1,0,0,0,161,162,1,0,0,0,162,163,5,16,0,0,163,164,5,7,0,0,164,170,
+        1,0,0,0,165,166,5,41,0,0,166,167,3,10,5,0,167,168,5,40,0,0,168,170,
+        1,0,0,0,169,116,1,0,0,0,169,123,1,0,0,0,169,130,1,0,0,0,169,137,
+        1,0,0,0,169,144,1,0,0,0,169,151,1,0,0,0,169,158,1,0,0,0,169,165,
+        1,0,0,0,170,15,1,0,0,0,171,172,5,20,0,0,172,173,5,9,0,0,173,174,
+        5,21,0,0,174,175,5,9,0,0,175,17,1,0,0,0,176,177,5,25,0,0,177,178,
+        7,2,0,0,178,179,5,22,0,0,179,19,1,0,0,0,180,181,5,26,0,0,181,182,
+        5,2,0,0,182,183,5,27,0,0,183,21,1,0,0,0,184,185,3,24,12,0,185,186,
+        5,37,0,0,186,188,3,26,13,0,187,189,3,28,14,0,188,187,1,0,0,0,188,
+        189,1,0,0,0,189,23,1,0,0,0,190,191,7,3,0,0,191,25,1,0,0,0,192,193,
+        7,4,0,0,193,27,1,0,0,0,194,195,6,14,-1,0,195,196,5,38,0,0,196,201,
+        7,4,0,0,197,198,5,43,0,0,198,199,7,5,0,0,199,201,5,42,0,0,200,194,
+        1,0,0,0,200,197,1,0,0,0,201,206,1,0,0,0,202,203,10,3,0,0,203,205,
+        3,28,14,4,204,202,1,0,0,0,205,208,1,0,0,0,206,204,1,0,0,0,206,207,
+        1,0,0,0,207,29,1,0,0,0,208,206,1,0,0,0,209,210,5,41,0,0,210,223,
+        5,40,0,0,211,212,5,41,0,0,212,217,3,32,16,0,213,214,5,39,0,0,214,
+        216,3,32,16,0,215,213,1,0,0,0,216,219,1,0,0,0,217,215,1,0,0,0,217,
+        218,1,0,0,0,218,220,1,0,0,0,219,217,1,0,0,0,220,221,5,40,0,0,221,
+        223,1,0,0,0,222,209,1,0,0,0,222,211,1,0,0,0,223,31,1,0,0,0,224,227,
+        3,34,17,0,225,227,5,8,0,0,226,224,1,0,0,0,226,225,1,0,0,0,227,33,
+        1,0,0,0,228,229,7,6,0,0,229,35,1,0,0,0,22,47,58,69,81,89,91,102,
+        113,118,125,132,139,146,153,160,169,188,200,206,217,222,226
     ]
 
 class STIXPatternParser ( Parser ):
@@ -108,20 +105,20 @@ class STIXPatternParser ( Parser ):
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "'AND'", "'OR'", "'NOT'", 
                      "'FOLLOWEDBY'", "'LIKE'", "'MATCHES'", "'ISSUPERSET'", 
-                     "'ISSUBSET'", "'EXISTS'", "'LAST'", "'IN'", "'START'", 
-                     "'STOP'", "'SECONDS'", "'true'", "'false'", "'WITHIN'", 
-                     "'REPEATS'", "'TIMES'", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "'<'", "'<='", "'>'", "'>='", "'''", "':'", 
-                     "'.'", "','", "')'", "'('", "']'", "'['", "'+'", "<INVALID>", 
+                     "'ISSUBSET'", "'LAST'", "'IN'", "'START'", "'STOP'",
+                     "'SECONDS'", "'true'", "'false'", "'WITHIN'", "'REPEATS'",
+                     "'TIMES'", "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                     "'<'", "'<='", "'>'", "'>='", "'''", "':'", "'.'",
+                     "','", "')'", "'('", "']'", "'['", "'+'", "<INVALID>",
                      "'-'", "'^'", "'/'", "'*'" ]
 
     symbolicNames = [ "<INVALID>", "IntNegLiteral", "IntPosLiteral", "FloatNegLiteral", 
                       "FloatPosLiteral", "HexLiteral", "BinaryLiteral", 
                       "StringLiteral", "BoolLiteral", "TimestampLiteral", 
                       "AND", "OR", "NOT", "FOLLOWEDBY", "LIKE", "MATCHES", 
-                      "ISSUPERSET", "ISSUBSET", "EXISTS", "LAST", "IN", 
-                      "START", "STOP", "SECONDS", "TRUE", "FALSE", "WITHIN", 
-                      "REPEATS", "TIMES", "IdentifierWithoutHyphen", "IdentifierWithHyphen", 
+                      "ISSUPERSET", "ISSUBSET", "LAST", "IN", "START", "STOP",
+                      "SECONDS", "TRUE", "FALSE", "WITHIN", "REPEATS", "TIMES",
+                      "IdentifierWithoutHyphen", "IdentifierWithHyphen",
                       "EQ", "NEQ", "LT", "LE", "GT", "GE", "QUOTE", "COLON", 
                       "DOT", "COMMA", "RPAREN", "LPAREN", "RBRACK", "LBRACK", 
                       "PLUS", "HYPHEN", "MINUS", "POWER_OP", "DIVIDE", "ASTERISK", 
@@ -171,43 +168,42 @@ class STIXPatternParser ( Parser ):
     MATCHES=15
     ISSUPERSET=16
     ISSUBSET=17
-    EXISTS=18
-    LAST=19
-    IN=20
-    START=21
-    STOP=22
-    SECONDS=23
-    TRUE=24
-    FALSE=25
-    WITHIN=26
-    REPEATS=27
-    TIMES=28
-    IdentifierWithoutHyphen=29
-    IdentifierWithHyphen=30
-    EQ=31
-    NEQ=32
-    LT=33
-    LE=34
-    GT=35
-    GE=36
-    QUOTE=37
-    COLON=38
-    DOT=39
-    COMMA=40
-    RPAREN=41
-    LPAREN=42
-    RBRACK=43
-    LBRACK=44
-    PLUS=45
-    HYPHEN=46
-    MINUS=47
-    POWER_OP=48
-    DIVIDE=49
-    ASTERISK=50
-    WS=51
-    COMMENT=52
-    LINE_COMMENT=53
-    InvalidCharacter=54
+    LAST=18
+    IN=19
+    START=20
+    STOP=21
+    SECONDS=22
+    TRUE=23
+    FALSE=24
+    WITHIN=25
+    REPEATS=26
+    TIMES=27
+    IdentifierWithoutHyphen=28
+    IdentifierWithHyphen=29
+    EQ=30
+    NEQ=31
+    LT=32
+    LE=33
+    GT=34
+    GE=35
+    QUOTE=36
+    COLON=37
+    DOT=38
+    COMMA=39
+    RPAREN=40
+    LPAREN=41
+    RBRACK=42
+    LBRACK=43
+    PLUS=44
+    HYPHEN=45
+    MINUS=46
+    POWER_OP=47
+    DIVIDE=48
+    ASTERISK=49
+    WS=50
+    COMMENT=51
+    LINE_COMMENT=52
+    InvalidCharacter=53
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -691,7 +687,7 @@ class STIXPatternParser ( Parser ):
             self.state = 81
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [44]:
+            if token in [43]:
                 localctx = STIXPatternParser.ObservationExpressionSimpleContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
@@ -703,7 +699,7 @@ class STIXPatternParser ( Parser ):
                 self.state = 75
                 self.match(STIXPatternParser.RBRACK)
                 pass
-            elif token in [42]:
+            elif token in [41]:
                 localctx = STIXPatternParser.ObservationExpressionCompoundContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
@@ -957,35 +953,6 @@ class STIXPatternParser ( Parser ):
         def copyFrom(self, ctx:ParserRuleContext):
             super().copyFrom(ctx)
 
-
-
-    class PropTestExistsContext(PropTestContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a STIXPatternParser.PropTestContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def EXISTS(self):
-            return self.getToken(STIXPatternParser.EXISTS, 0)
-        def objectPath(self):
-            return self.getTypedRuleContext(STIXPatternParser.ObjectPathContext,0)
-
-        def NOT(self):
-            return self.getToken(STIXPatternParser.NOT, 0)
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPropTestExists" ):
-                listener.enterPropTestExists(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPropTestExists" ):
-                listener.exitPropTestExists(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitPropTestExists" ):
-                return visitor.visitPropTestExists(self)
-            else:
-                return visitor.visitChildren(self)
 
 
     class PropTestRegexContext(PropTestContext):
@@ -1252,9 +1219,9 @@ class STIXPatternParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_propTest)
         self._la = 0 # Token type
         try:
-            self.state = 174
+            self.state = 169
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,16,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
             if la_ == 1:
                 localctx = STIXPatternParser.PropTestEqualContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
@@ -1270,7 +1237,7 @@ class STIXPatternParser ( Parser ):
 
                 self.state = 120
                 _la = self._input.LA(1)
-                if not(_la==31 or _la==32):
+                if not(_la==30 or _la==31):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1294,7 +1261,7 @@ class STIXPatternParser ( Parser ):
 
                 self.state = 127
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 128849018880) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 64424509440) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1409,23 +1376,6 @@ class STIXPatternParser ( Parser ):
                 self.match(STIXPatternParser.RPAREN)
                 pass
 
-            elif la_ == 9:
-                localctx = STIXPatternParser.PropTestExistsContext(self, localctx)
-                self.enterOuterAlt(localctx, 9)
-                self.state = 170
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if _la==12:
-                    self.state = 169
-                    self.match(STIXPatternParser.NOT)
-
-
-                self.state = 172
-                self.match(STIXPatternParser.EXISTS)
-                self.state = 173
-                self.objectPath()
-                pass
-
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1481,13 +1431,13 @@ class STIXPatternParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_startStopQualifier)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 176
+            self.state = 171
             self.match(STIXPatternParser.START)
-            self.state = 177
+            self.state = 172
             self.match(STIXPatternParser.TimestampLiteral)
-            self.state = 178
+            self.state = 173
             self.match(STIXPatternParser.STOP)
-            self.state = 179
+            self.state = 174
             self.match(STIXPatternParser.TimestampLiteral)
         except RecognitionException as re:
             localctx.exception = re
@@ -1544,16 +1494,16 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 181
+            self.state = 176
             self.match(STIXPatternParser.WITHIN)
-            self.state = 182
+            self.state = 177
             _la = self._input.LA(1)
             if not(_la==2 or _la==4):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 183
+            self.state = 178
             self.match(STIXPatternParser.SECONDS)
         except RecognitionException as re:
             localctx.exception = re
@@ -1606,11 +1556,11 @@ class STIXPatternParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_repeatedQualifier)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 185
+            self.state = 180
             self.match(STIXPatternParser.REPEATS)
-            self.state = 186
+            self.state = 181
             self.match(STIXPatternParser.IntPosLiteral)
-            self.state = 187
+            self.state = 182
             self.match(STIXPatternParser.TIMES)
         except RecognitionException as re:
             localctx.exception = re
@@ -1667,19 +1617,20 @@ class STIXPatternParser ( Parser ):
 
         localctx = STIXPatternParser.ObjectPathContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_objectPath)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 189
+            self.state = 184
             self.objectType()
-            self.state = 190
+            self.state = 185
             self.match(STIXPatternParser.COLON)
-            self.state = 191
+            self.state = 186
             self.firstPathComponent()
-            self.state = 193
+            self.state = 188
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,17,self._ctx)
-            if la_ == 1:
-                self.state = 192
+            _la = self._input.LA(1)
+            if _la==38 or _la==43:
+                self.state = 187
                 self.objectPathComponent(0)
 
 
@@ -1732,9 +1683,9 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 195
+            self.state = 190
             _la = self._input.LA(1)
-            if not(_la==29 or _la==30):
+            if not(_la==28 or _la==29):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1788,9 +1739,9 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 197
+            self.state = 192
             _la = self._input.LA(1)
-            if not(_la==7 or _la==29):
+            if not(_la==7 or _la==28):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1919,47 +1870,47 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 205
+            self.state = 200
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [39]:
+            if token in [38]:
                 localctx = STIXPatternParser.KeyPathStepContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 200
+                self.state = 195
                 self.match(STIXPatternParser.DOT)
-                self.state = 201
+                self.state = 196
                 _la = self._input.LA(1)
-                if not(_la==7 or _la==29):
+                if not(_la==7 or _la==28):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
                 pass
-            elif token in [44]:
+            elif token in [43]:
                 localctx = STIXPatternParser.IndexPathStepContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 202
+                self.state = 197
                 self.match(STIXPatternParser.LBRACK)
-                self.state = 203
+                self.state = 198
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1125899906842630) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 562949953421318) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 204
+                self.state = 199
                 self.match(STIXPatternParser.RBRACK)
                 pass
             else:
                 raise NoViableAltException(self)
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 211
+            self.state = 206
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
@@ -1967,15 +1918,15 @@ class STIXPatternParser ( Parser ):
                     _prevctx = localctx
                     localctx = STIXPatternParser.PathStepContext(self, STIXPatternParser.ObjectPathComponentContext(self, _parentctx, _parentState))
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_objectPathComponent)
-                    self.state = 207
+                    self.state = 202
                     if not self.precpred(self._ctx, 3):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                    self.state = 208
+                    self.state = 203
                     self.objectPathComponent(4) 
-                self.state = 213
+                self.state = 208
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2038,36 +1989,36 @@ class STIXPatternParser ( Parser ):
         self.enterRule(localctx, 30, self.RULE_setLiteral)
         self._la = 0 # Token type
         try:
-            self.state = 227
+            self.state = 222
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,21,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,20,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 214
+                self.state = 209
                 self.match(STIXPatternParser.LPAREN)
-                self.state = 215
+                self.state = 210
                 self.match(STIXPatternParser.RPAREN)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 216
+                self.state = 211
                 self.match(STIXPatternParser.LPAREN)
-                self.state = 217
+                self.state = 212
                 self.primitiveLiteral()
-                self.state = 222
+                self.state = 217
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==40:
-                    self.state = 218
+                while _la==39:
+                    self.state = 213
                     self.match(STIXPatternParser.COMMA)
-                    self.state = 219
+                    self.state = 214
                     self.primitiveLiteral()
-                    self.state = 224
+                    self.state = 219
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 225
+                self.state = 220
                 self.match(STIXPatternParser.RPAREN)
                 pass
 
@@ -2120,17 +2071,17 @@ class STIXPatternParser ( Parser ):
         localctx = STIXPatternParser.PrimitiveLiteralContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_primitiveLiteral)
         try:
-            self.state = 231
+            self.state = 226
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1, 2, 3, 4, 5, 6, 7, 9]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 229
+                self.state = 224
                 self.orderableLiteral()
                 pass
             elif token in [8]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 230
+                self.state = 225
                 self.match(STIXPatternParser.BoolLiteral)
                 pass
             else:
@@ -2203,7 +2154,7 @@ class STIXPatternParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 233
+            self.state = 228
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 766) != 0)):
                 self._errHandler.recoverInline(self)

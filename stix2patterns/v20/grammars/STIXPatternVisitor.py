@@ -104,11 +104,6 @@ class STIXPatternVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by STIXPatternParser#propTestExists.
-    def visitPropTestExists(self, ctx:STIXPatternParser.PropTestExistsContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by STIXPatternParser#startStopQualifier.
     def visitStartStopQualifier(self, ctx:STIXPatternParser.StartStopQualifierContext):
         return self.visitChildren(ctx)

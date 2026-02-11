@@ -179,15 +179,6 @@ class STIXPatternListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by STIXPatternParser#propTestExists.
-    def enterPropTestExists(self, ctx:STIXPatternParser.PropTestExistsContext):
-        pass
-
-    # Exit a parse tree produced by STIXPatternParser#propTestExists.
-    def exitPropTestExists(self, ctx:STIXPatternParser.PropTestExistsContext):
-        pass
-
-
     # Enter a parse tree produced by STIXPatternParser#startStopQualifier.
     def enterStartStopQualifier(self, ctx:STIXPatternParser.StartStopQualifierContext):
         pass
