@@ -17,8 +17,9 @@
 # The script will:
 #   1. Download ANTLR 4.13.2 JAR to /tmp if not present
 #   2. Clone/update the grammar source repository
-#   3. Regenerate parser files for all three grammar locations
-#   4. Clean up generated .interp and .tokens files
+#   3. Create a STIX 2.0 grammar variant (without EXISTS operator)
+#   4. Regenerate parser files for all three grammar locations
+#   5. Clean up generated .interp and .tokens files
 
 set -e
 
@@ -31,13 +32,6 @@ GRAMMAR_FILE="pattern_grammar/STIXPattern.g4"
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-
-# Output directories
-OUTPUT_DIRS=(
-    "${PROJECT_ROOT}/stix2patterns/grammars"
-    "${PROJECT_ROOT}/stix2patterns/v20/grammars"
-    "${PROJECT_ROOT}/stix2patterns/v21/grammars"
-)
 
 echo "=== STIX Pattern Validator Grammar Regeneration Script ==="
 echo ""
@@ -81,19 +75,37 @@ fi
 
 echo "Using grammar file: ${GRAMMAR_DIR}/${GRAMMAR_FILE}"
 
-# Regenerate parser files for each output directory
+# Create STIX 2.0 grammar variant (without EXISTS operator, which is v2.1 only)
+V20_GRAMMAR_DIR="/tmp/stix2-v20-grammar"
+mkdir -p "$V20_GRAMMAR_DIR"
+sed -e '/| NOT? EXISTS objectPath/d' \
+    -e "/^EXISTS:  'EXISTS' ;$/d" \
+    "${GRAMMAR_DIR}/${GRAMMAR_FILE}" > "${V20_GRAMMAR_DIR}/STIXPattern.g4"
+echo "Created STIX 2.0 grammar variant (without EXISTS operator)"
+
+# Regenerate parser files
 echo ""
 echo "Regenerating parser files..."
-cd "${GRAMMAR_DIR}/pattern_grammar"
 
-for OUTPUT_DIR in "${OUTPUT_DIRS[@]}"; do
-    echo "  -> ${OUTPUT_DIR}"
+# v2.1 grammar (full, with EXISTS) for generic and v21 directories
+cd "${GRAMMAR_DIR}/pattern_grammar"
+for OUTPUT_DIR in "${PROJECT_ROOT}/stix2patterns/grammars" "${PROJECT_ROOT}/stix2patterns/v21/grammars"; do
+    echo "  -> ${OUTPUT_DIR} (v2.1 grammar)"
     java -jar "$ANTLR_JAR" \
         -Dlanguage=Python3 \
         STIXPattern.g4 \
         -visitor \
         -o "$OUTPUT_DIR"
 done
+
+# v2.0 grammar (without EXISTS) for v20 directory
+cd "$V20_GRAMMAR_DIR"
+echo "  -> ${PROJECT_ROOT}/stix2patterns/v20/grammars (v2.0 grammar)"
+java -jar "$ANTLR_JAR" \
+    -Dlanguage=Python3 \
+    STIXPattern.g4 \
+    -visitor \
+    -o "${PROJECT_ROOT}/stix2patterns/v20/grammars"
 
 # Clean up generated artifacts (not needed for Python runtime)
 echo ""
@@ -104,7 +116,7 @@ find "$PROJECT_ROOT/stix2patterns" -name "*.tokens" -delete
 # Verify generated files
 echo ""
 echo "Verifying generated files..."
-for OUTPUT_DIR in "${OUTPUT_DIRS[@]}"; do
+for OUTPUT_DIR in "${PROJECT_ROOT}/stix2patterns/grammars" "${PROJECT_ROOT}/stix2patterns/v20/grammars" "${PROJECT_ROOT}/stix2patterns/v21/grammars"; do
     if [ -f "${OUTPUT_DIR}/STIXPatternParser.py" ]; then
         VERSION=$(head -1 "${OUTPUT_DIR}/STIXPatternParser.py" | grep -o "ANTLR [0-9.]*" || echo "unknown")
         echo "  ${OUTPUT_DIR}: $VERSION"
@@ -113,6 +125,14 @@ for OUTPUT_DIR in "${OUTPUT_DIRS[@]}"; do
         exit 1
     fi
 done
+
+# Verify EXISTS is not in v20 grammar
+if grep -q "EXISTS" "${PROJECT_ROOT}/stix2patterns/v20/grammars/STIXPatternLexer.py"; then
+    echo "  ERROR: EXISTS found in v20 grammar! This should not happen."
+    exit 1
+else
+    echo "  Verified: EXISTS not present in v20 grammar"
+fi
 
 echo ""
 echo "=== Grammar regeneration complete! ==="
